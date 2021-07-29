@@ -1,17 +1,49 @@
-  <% if logged_in? %>
-    <li><%= link_to 'Posts', '/posts', method: :get%></li>
-    <li class="right_links"><%= link_to 'Logout', '/logout', method: :post%></li>
-    <li class="right_links">Online: <%= current_user.username %></li>
+<div class="container">
+  <div class="row">
+
+    <div class="col-6">
+    
+    <img src="https://i.imgur.com/8RKTBwB.png" alt="">
+  </div>
+
+  
+  <div class="col-6 ">
+   <div class="container">
+   
+    
+    <% if logged_in? %>
+    <h1 class="d-flex justify-content-center"> ♠️ Welcome, <%= current_user.username.capitalize %> ♠️</h1>
+    <p class="d-flex justify-content-center"> 🟢 Online: <%= current_user.username.capitalize %></p>
+      <br>   <br>
+
+    <p class="d-flex justify-content-center"><%= link_to 'Posts', '/posts', method: :get , class:"btn btn-outline-primary"%></p>
+    <p class="d-flex justify-content-center"><%= link_to 'Logout', '/logout', method: :post , class:"btn btn-outline-danger"%></p>
+  
     <br>
-    <h1>Welcome, <%= current_user.username %></h1>
+    
   <% end %>
 
   <% if logged_in? == false %>
-    <li class="right_links"><%= link_to 'Login', '/login', method: :get%></li>
-    <li class="right_links"><%= link_to 'Sign Up', '/users/new', method: :get%></li>
+  <br> <br> <br>
+   <h1 class="d-flex justify-content-center">  ♠️ Welcome to Acebook ♠️ </h1>
+   <br> <br>
+  <p class="d-flex justify-content-center">Have an Account?</p>
+    <p class="d-flex justify-content-center"><%= link_to 'Login', '/login', method: :get , class:"btn btn-outline-primary"%></p>
     <br>
-    <h1>Welcome to Acebook</h1>
+    <p class="d-flex justify-content-center">New here?</p>
+    <p class="d-flex justify-content-center"><%= link_to 'Sign Up', '/users/new', method: :get, class:"btn btn-outline-primary"%></p>
+    <br>
   <% end %>
+   </div>
+
+  
+  </div>  
+  
+  
+  </div>
+
+</div>
+
 
 
 

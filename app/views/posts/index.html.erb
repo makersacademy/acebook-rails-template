@@ -1,10 +1,6 @@
+<div class="container">
 
-<li><%= link_to "Homepage", "/welcome", method: :get %></li>
-<li><%= link_to "New post", "/posts/new", method: :get%></li>
-<li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
-<li class="right_links">Online: <%= current_user.username %></li>
 
-<br>
 
 <h2>Posts</h2>
 
@@ -15,4 +11,4 @@
   <% end %>
 </ul>
 
-<%= button_to 'Logout', '/logout', method: :post%>
+</div>
