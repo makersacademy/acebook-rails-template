@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       if @post.save
         format.js
         format.html { redirect_to @post }
-        format.json { render 'show', status: :created, location: @post}
+        format.json { render 'show', status: :created, location: @post }
       end
     end
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-      @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc)
     @comment = Comment.new
   end
 
