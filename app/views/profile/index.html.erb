@@ -16,9 +16,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <% if current_user  %> 
-        <a class="nav-link"  href="/posts">Home</a>
-        <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
-        <%= link_to 'Sign Out', destroy_user_session_path, class:"nav-link", method: :delete %>
+        <a class="nav-link"  href="/posts"><i class="fas fa-home fa-lg"></i></a>
+        <a class="nav-link active" aria-current="page" href="/profile"><i class="far fa-user-circle fa-lg"></i></a>
+        <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fas fa-sign-out-alt fa-lg"></i></a>
         <% else %>
         <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %>
         <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
@@ -29,7 +29,7 @@
 </nav>
     
   </header>
-<br>
+
   <main>
 
   <% if current_user  %> 
@@ -37,7 +37,7 @@
     <div class="row">
     <div class="col justify-content-center">
     <div class="row justify-content-center">
-    <div class="profile">
+    <div class="profile m-3">
     <div class="profile_header d-flex align-items-center">
         <h1 class="text-primary">My Purrfile</h1>
         <a class="btn btn-secondary" href="<%=edit_user_registration_path%>">Edit Details </a>
@@ -65,6 +65,7 @@
     </div>
   </div>
   </div>
+  <br>
   
 
 

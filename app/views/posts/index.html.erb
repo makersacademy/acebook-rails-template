@@ -17,9 +17,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <% if current_user  %> 
-        <a class="nav-link active" aria-current="page" href="/posts">Home</a>
-        <a class="nav-link" href="/profile">Profile</a>
-        <%= link_to 'Sign Out', destroy_user_session_path, class:"nav-link", method: :delete %>
+        <a class="nav-link active" aria-current="page" href="/posts"><i class="fas fa-home fa-lg"></i></a>
+        <a class="nav-link" href="/profile"><i class="far fa-user-circle fa-lg"></i></a>
+        <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fas fa-sign-out-alt fa-lg"></i></a>
         <% else %>
         <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %>
         <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
