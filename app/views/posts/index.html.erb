@@ -34,10 +34,8 @@
                   <strong> <%= post.user.name %></strong>
                   
                   <% if post.user.name == current_user.name %>
-                 
-                  <%= link_to "Edit" , edit_post_path(post) %>
-                  <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
-
+                    <%= link_to "Edit" , edit_post_path(post) %>
+                    <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
                   <% end %>
                   <br>
                   <%= post.message %>
