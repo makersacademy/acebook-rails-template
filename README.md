@@ -4,7 +4,7 @@ Team members:
 * [Merryn Hurley-Rawlins](https://github.com/merrynhr)
 * [Zsuzsanna Ver](https://github.com/MrsVer)
 * [Cynthia Fu](https://github.com/YinnyF)
-* [Fabio Fodrihuez](https://github.com/frodri13)
+* [Fabio Rodriguez](https://github.com/frodri13)
 * [Masako Gray](https://github.com/1ugia)
 * [Sean Phillips](https://github.com/SeanEmmers)
 <br><br>
@@ -42,7 +42,6 @@ A full-stack web app inspired by the functionality of Facebook.
 
 Our card wall is here:
 * [Find our Trello board here](https://trello.com/b/Sj8Qlv4L/team-soda)
-* [Original Trello board from Makers](https://trello.com/b/aN3xtXXl/acebook-rails-template)
 
 ## How to contribute to this project
 
