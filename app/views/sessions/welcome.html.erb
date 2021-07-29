@@ -1,16 +1,17 @@
-<% if logged_in? %>
-  <li><%= link_to 'Posts', '/posts', method: :get%></li>
-  <li class="right_links"><%= link_to 'Logout', '/logout', method: :post%></li>
-  <br>
-  <h1>Welcome, <%= current_user.username %></h1>
-<% end %>
+  <% if logged_in? %>
+    <li><%= link_to 'Posts', '/posts', method: :get%></li>
+    <li class="right_links"><%= link_to 'Logout', '/logout', method: :post%></li>
+    <li class="right_links">Online: <%= current_user.username %></li>
+    <br>
+    <h1>Welcome, <%= current_user.username %></h1>
+  <% end %>
 
-<% if logged_in? == false %>
-  <li class="right_links"><%= link_to 'Login', '/login', method: :get%></li>
-  <li class="right_links"><%= link_to 'Sign Up', '/users/new', method: :get%></li>
-  <br>
-  <h1>Welcome to Acebook</h1>
-<% end %>
+  <% if logged_in? == false %>
+    <li class="right_links"><%= link_to 'Login', '/login', method: :get%></li>
+    <li class="right_links"><%= link_to 'Sign Up', '/users/new', method: :get%></li>
+    <br>
+    <h1>Welcome to Acebook</h1>
+  <% end %>
 
 
 
