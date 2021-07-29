@@ -54,7 +54,7 @@
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>
-              <p class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete, remote: true, class: 'delete' %></p>
+              <p class ='post__footer-el deletes'><%= link_to "Delete", post_path(post), method: :delete, class: 'deletes' %></p>
             <% else %>
               <p class ='post__footer-el delete'>Delete</p>
             <% end %>
