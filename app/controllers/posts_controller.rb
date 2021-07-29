@@ -20,7 +20,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order_by_created_at
     @post = Post.new
-    # @name = User.find(@post.user_id).name if @post.user_id != nil
   end
 
   def like
@@ -44,9 +43,9 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def as_json(options = {})
-    super(options.merge(include: [:user, comments: {include: :user}]))
-  end
+  # def as_json(options = {})
+  #   super(options.merge(include: [:user, comments: {include: :user}]))
+  # end
 
   private
 
