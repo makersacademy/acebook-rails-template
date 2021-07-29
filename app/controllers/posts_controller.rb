@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:like, :edit, :update, :destroy]
+  before_action :set_post, only: [ :edit, :update, :destroy] # :like
 
   def show
     respond_to do |format|
@@ -22,11 +22,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def like
-    @post.increment_likes(1)
-    @post.save!
-    redirect_to '/posts'
-  end
+  # def like
+  #   @post.increment_likes(1)
+  #   @post.save!
+  #   redirect_to '/posts'
+  # end
 
   def edit; end
 
