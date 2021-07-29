@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def show
     respond_to do |format|
       format.js {render inline: "location.reload();" }
+      # format.html {render 'index'}
     end
   end
 
