@@ -35,7 +35,8 @@ gem 'mini_magick'
 
 group :test do
   gem 'database_cleaner-active_record'
-  gem 'rubocop'
+  gem "rubocop", "0.79.0", require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :development, :test do
