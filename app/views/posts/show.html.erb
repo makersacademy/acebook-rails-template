@@ -13,7 +13,7 @@
     <strong>Comment:</strong>
     <%= comment.body %>
     <p>
-  <%= link_to 'Delete', [comment.post, comment],
+  <%= link_to 'Delete Comment', [comment.post, comment],
               method: :delete,
               data: { confirm: "Are you sure?" } %>
 </p>
