@@ -40,7 +40,7 @@
           </div>
 
           <div class ='post__footer-info'>
-            <div class ='likes'><div id ='<%=post.id + 100%>'><%= post.likes %></div><i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
+            <div class ='likes'><div id ='<%=post.id + 100%>'><%= post.likes.count %></div><i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
             <% if post.comments.length == 1 %>
               <div class ='comments_num'><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
             <% else %>
@@ -50,7 +50,7 @@
 
           <div class ='post_footer'>
             <p  class ='post__footer-el'>
-              <%= link_to 'Like', like_path(post), remote: true %><i style ='color: #ddd' class="fas fa-heart"></i>
+              <%= link_to 'Like', post_likes_path(post), method: post, remote: true %><i style ='color: #ddd' class="fas fa-heart"></i>
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>
