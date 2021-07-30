@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative 'web_helpers/users_helper.rb'
+require_relative 'web_helpers/users_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
@@ -11,7 +11,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "can submit a post with an uploaded image included" do
-    visit "/posts"
+    signup_login
     click_link "New post"
     fill_in "Message", with: "Image upload test!"
     page.attach_file("Image", Rails.root + "spec/test_assets/test_image_1.png")

@@ -1,0 +1,33 @@
+<p><%= @posts.message %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_post_path(@posts) %></li>
+  <li><%= link_to "Delete", post_path(@posts),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+<h3>Comments</h3>
+<% @posts.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+    <p>
+  <%= link_to 'Delete Comment', [comment.post, comment],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+</p>
+
+  </p>
+<% end %>
+
+
+<h4>Add a comment:</h4>
+<%= form_with model: [ @posts, @posts.comments.build ], local: true do |form| %>
+  <p>
+    <%= form.text_area :body, placeholder: "Comment On The Post" %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
