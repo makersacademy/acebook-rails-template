@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container">
     <a class="navbar-brand" >  
       <img src="https://icon-library.com/images/ace-of-spades-icon/ace-of-spades-icon-16.jpg" alt="" width="50" height="50"> Acebook
@@ -20,7 +20,9 @@
         <li class="nav-item">
         <li><%= link_to 'Posts', '/posts', method: :get, class:"nav-link active" %>
         </li>
+        
       </ul>
+      
       <form class="d-flex">
         <li class="nav-item dropdown ">
           <a class="nav-link btn-outline-primary dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
