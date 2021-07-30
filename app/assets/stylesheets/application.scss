@@ -37,7 +37,10 @@
     background-color: #3b5998;
     border-color: transparent;
     color: #fff;
-    margin: 10px;
+
+    &.user-buttons {
+      margin: 10px;
+    }
 }
 
 
