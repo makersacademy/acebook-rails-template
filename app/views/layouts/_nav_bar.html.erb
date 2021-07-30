@@ -16,18 +16,19 @@
     <div class="navbar-start">
         <a class="navbar-item" href="/posts"> Home </a>
         <a class="navbar-item" href="/pages/about"> About </a>
+
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
             <%= button_to "Profile", user_path(current_user), class: "button is-primary", method: "get" %>
             <%= button_to "Log out", logout_path, method: "delete", class: "button is-primary" %>
         <% else %>
+        <div class="navbar-end">
+        <div class="level-item has-text-centered">
           <%= button_to "Sign up", signup_path, class: "button is-primary", method: "get" %>
-          <%= button_to "Log in", login_path, class: "button is-light", method: "get" %>
-          </div>
+          <%= button_to "Log in", login_path, class: "button is-primary", method: "get" %>
         </div>
-      </div>
-    </div>
+        </div>
   </div>
   <%end%>
 </nav>

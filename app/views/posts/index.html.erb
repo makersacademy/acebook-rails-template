@@ -45,16 +45,11 @@
                       <%= image_tag(post.image, style: 'width:80%') %>
                     </p>
                   <% end %>
-                  <small>
-                    <a href="/posts/<%= post.id %>/like">Like</a>
-                    <br>
-                    <%= pluralize(post.likes,'like')%>
-                  </small>
+                  <%= button_to 'Like', post_likes_path(post), method: :post %>
+                  <p><%= pluralize(post.likes.count, 'like') %></p>
                 </p>
               </div>
-
               <%= render post.comments %>
-
             </div>
           </article>
 

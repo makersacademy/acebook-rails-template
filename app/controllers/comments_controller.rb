@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   # GET /comments or /comments.json
   def index
@@ -26,8 +26,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { flash[:success] = "Comment was successfully created."
-          redirect_to @post
-          }
+                      redirect_to @post
+        }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,12 +60,12 @@ class CommentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def comment_params
-      params.require(:comment).permit(:body, :post_id)
-    end
+  def comment_params
+    params.require(:comment).permit(:body, :post_id)
+  end
 end
