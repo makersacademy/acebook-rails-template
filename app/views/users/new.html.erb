@@ -8,6 +8,8 @@
   <%= f.label :username%><br>
   <%= f.text_field :username%><br>
   <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
+  <%= f.password_field :password%><br><br>
+  <%= f.label "Profile Picture" %><br>
+  <%= f.file_field :avatar %><br><br>
   <%= f.submit %>
 <%end%>

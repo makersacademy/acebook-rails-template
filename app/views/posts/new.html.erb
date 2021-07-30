@@ -2,6 +2,9 @@
 <li><%= link_to "Homepage", "/welcome", method: :get %></li>
 <li><%= link_to 'Posts', '/posts', method: :get%></li>
 <li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
+<% if current_user.avatar.attached? %>
+  <li class="right_links"><img src="<%=(url_for(current_user.avatar))%>" width="25" height="30"><li>
+<% end %>
 <li class="right_links">Online: <%= current_user.username %></li>
 
 <br><br>
@@ -9,4 +12,3 @@
 <h1>New Post</h1>
 
 <%= render "form", post: @post %>
-
