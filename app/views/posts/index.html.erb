@@ -1,7 +1,14 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+
+<h2>Posts</h2>
+
+<ul>
+<% @posts.each do |post| %>
+    <p><%= link_to post.message, post %></p>
+    <p><%= image_tag post.image if post.image.attached? %></p>
+  <% end %>
+</ul>
+
+</div>

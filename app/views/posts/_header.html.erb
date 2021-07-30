@@ -1,0 +1,46 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" >  
+      <img src="https://icon-library.com/images/ace-of-spades-icon/ace-of-spades-icon-16.jpg" alt="" width="50" height="50"> Acebook
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+      <%= link_to "Homepage", "/welcome", method: :get, class:"nav-link active" %>
+        </li>
+     
+     <li class="nav-item">
+     <%= link_to "New post", "/posts/new", method: :get , class:"nav-link active" %>
+        </li>
+        
+        <li class="nav-item">
+        <li><%= link_to 'Posts', '/posts', method: :get, class:"nav-link active" %>
+        </li>
+        
+      </ul>
+      
+      <form class="d-flex">
+        <li class="nav-item dropdown ">
+          <a class="nav-link btn-outline-primary dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item">
+            
+            <li><%= link_to 'Logout', '/logout', method: :post %></li>
+            </a></li>
+            <li><%= link_to 'Sign Up', '/users/new', method: :get%></li>
+            </a></li>
+            <li><%= link_to 'Login', '/login', method: :get %></li>
+          </ul>
+        </li>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<br>

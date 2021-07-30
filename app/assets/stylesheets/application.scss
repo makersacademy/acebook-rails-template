@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import "bootstrap";
+@import "font-awesome";
+
+
+body {
+  background-color: whitesmoke;
+  font-family: 'PT Sans Narrow', sans-serif;
+  
+}
+
+img {
+  max-width: 600px;
+ }
+
+.navbar {
+  color: white;
+}
+
+.footer {
+  background-color: rgba(215, 215, 215, 0.625);
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    align-items: center;
+  -webkit-box-shadow: 0px -6px 9px -3px rgba(114,114,114,0.39); 
+box-shadow: 0px -6px 9px -3px rgba(114,114,114,0.39);
+    
+}
+
+a {
+  color: Black;
+  text-decoration: none;
+}
+
+.fa-github-square {
+  margin-right: 5px;
+  margin-left: 5px;
+
+}
