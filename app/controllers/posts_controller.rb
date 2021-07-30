@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:like, :edit, :update, :destroy]
+  before_action :set_post, only: [ :edit, :update, :destroy]
 
   def show
     respond_to do |format|
@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def create
     params.inspect
-    @post = Post.create(post_params)
     @post = Post.create(post_params.merge(user_id: current_user.id))
     @user = User.find(current_user.id)
     @user.posts << @post
@@ -20,12 +19,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order_by_created_at
     @post = Post.new
-  end
-
-  def like
-    @post.increment_likes(1)
-    @post.save!
-    redirect_to '/posts'
   end
 
   def edit; end
@@ -42,10 +35,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-
-  # def as_json(options = {})
-  #   super(options.merge(include: [:user, comments: {include: :user}]))
-  # end
 
   private
 
