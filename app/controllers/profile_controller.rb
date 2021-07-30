@@ -7,5 +7,6 @@ class ProfileController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
-  def edit; end
+  def edit
+  end
 end

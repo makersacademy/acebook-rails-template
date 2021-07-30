@@ -3,9 +3,9 @@
     <div class="col d-flex justify-content-center vh-100">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-<h3>Update personal details</h3>
+
+<h3>Personal</h3>
 
   <div class="form-group">
     <%= f.label :firstname %> <i></i><br />
@@ -47,14 +47,18 @@
     <i class="far fa-image fa-lg"></i>
   </label>
 
-    <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+ <div class="actions mb-3 text-center">
+      <%= f.submit "Update", class:"btn btn-success" %>
+    </div>
+
+
+
+
   </div>
 
    <div class="col">
 
-  <h3>Edit login details</h3>
+  <h3>Login</h3>
 
   <div class="form-group">
     <%= f.label :email %><br />
@@ -66,7 +70,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -80,16 +84,23 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(*)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+<br>
+  <h6> Current Password required to update your details. </h6>
+
 <% end %>
 
-<h3>Cancel my account</h3>
+<br>
+<br>
+<br>
+<h3>Cancel Account?</h3> 
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
 </div>
 </div>

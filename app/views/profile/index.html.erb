@@ -40,7 +40,11 @@
     <div class="profile">
     <div class="profile_header d-flex align-items-center">
         <h1 class="text-primary">My Purrfile</h1>
-        <a class="btn btn-secondary" href="<%=edit_user_registration_path%>">Edit Details </a>
+
+         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Update
+                  </button>
+       
     </div>
     <div class="col d-flex justify-content-center">
   <% if current_user.avatar.attached? %>
@@ -123,6 +127,21 @@
         </div>
       <% end %>
 </div>
+
+    <div class="modal fade text-center" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true" style="max-height: 80vh;">
+  <div class="modal-dialog text-center">
+    <div class="modal-content text-center">
+      <div class="modal-header text-center">
+        <h2 class="modal-title text-center" id="exampleModalLabel">Update Account</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+      <%= render 'devise/registrations/edit' %>
+      </div>
+    </div>
+  </div>
+</div>
+
      
     
   </main>
