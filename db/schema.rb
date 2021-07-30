@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_07_29_171245) do
 
+# ActiveRecord::Schema.define(version: 2021_07_29_160820) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +43,8 @@ ActiveRecord::Schema.define(version: 2021_07_29_171245) do
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -71,7 +75,11 @@ ActiveRecord::Schema.define(version: 2021_07_29_171245) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+
+  add_foreign_key "comments", "users"
+
   add_foreign_key "posts", "users"
 end
