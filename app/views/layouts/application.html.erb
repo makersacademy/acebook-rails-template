@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Acebook" %></title>
+     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Acebook Social Media Site" %>">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
