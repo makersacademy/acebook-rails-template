@@ -9,7 +9,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "POST /" do
-    it "responds with 200" do
+    it "responds with 200 given a message" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
@@ -17,6 +17,15 @@ RSpec.describe PostsController, type: :controller do
     it "creates a post" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
+    end
+  end
+
+  describe 'POST #create' do
+    it 'attaches the uploaded file' do
+      file = fixture_file_upload("#{Rails.root}/spec/files/attachment.jpeg" , 'image/png')
+      expect {
+      post :create, params: { post: { image: file } }
+      }.to change(ActiveStorage::Attachment, :count).by(1)
     end
   end
 
