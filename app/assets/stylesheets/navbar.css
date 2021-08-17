@@ -1,3 +1,17 @@
 .navbar { 
-  color: grey
+  background-color: #3b5c98;
+  height: 60px;
+  padding: 10px;
+}
+.main {
+  height: 500px;
+  background-color: #edf0f5;
+}
+
+.nav-item {
+  list-style-type: none;
+  margin: 30px;
+  display: inline;
+  padding: 8px;
+  background-color: white;
 }
