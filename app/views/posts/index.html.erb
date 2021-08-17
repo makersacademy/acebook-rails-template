@@ -1,4 +1,13 @@
 <% @posts.reverse_each do |post| %>
+  <% if post.image.attached? %>
+  <img src="<%=(url_for(post.image))%>"
+     width="400" 
+     height="400"/>
+    <%# could maybe do with a better resizing option %>
+    <%# resize before it goes into storage? %>
+    <%# portrait vs landscape?? %>
+    
+  <% end %>
   <p><%= post.message %></p>
 <% end %>
 
