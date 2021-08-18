@@ -1,3 +1,6 @@
+
+<%= javascript_include_tag 'likes' %>
+
 <% @posts.reverse_each do |post| %>
   <% if post.image.attached? %>
   <img src="<%=(url_for(post.image))%>"
@@ -9,6 +12,9 @@
     
   <% end %>
   <p><%= post.message %></p>
+  <p>Likes: <%= post.likes.count %></p>
+  <%= button_to 'Like', post_likes_path(post.id), method: :post %> 
+
 <% end %>
 
 <%= link_to new_post_path do %>
