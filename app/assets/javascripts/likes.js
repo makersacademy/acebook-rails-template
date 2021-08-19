@@ -4,17 +4,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
   for ( let i  = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', (e) => { 
       e.preventDefault();
-     let id = buttons[i].id;
-     let likesContainer = document.getElementById(`likes${id}`);
+      let id = buttons[i].id;
+      let likesContainer = document.getElementById(`likes-for-post${id}`);
       $.ajax ({ 
         url: `posts/${id}/likes`,
         type: 'POST',
         success: function (response) {
-          let updatedLike = $($.parseHTML(response)).filter('p')[i];
-          likesContainer.innerHTML = updatedLike.innerHTML;
+          const post = $($.parseHTML(response)).filter('div.post')[i];
+          let updatedLike = post.querySelector(`.likes`).innerHTML;
+          likesContainer.innerHTML = updatedLike;
        }
       });
-      
     });
   }
 });
