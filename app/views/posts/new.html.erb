@@ -2,8 +2,7 @@
   <%= form.label :message %>
   <%= form.text_field :message %>
   <%= form.label "Upload an image" %>
-  <%= form.file_field :image %>
-
+  <%= form.file_field :image, accept: "image/jpeg, image/png, image/heic" %>
 
   <%= form.submit "Submit" %>
 <% end %>
