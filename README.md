@@ -34,3 +34,9 @@ ExecJS::RuntimeUnavailable:
  ```
 That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
 and then run `bundle exec rspec` again
+
+## Setup Bootstrap
+```
+- npm install yarn
+- yarn add bootstrap jquery popper.js
+```
