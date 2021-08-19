@@ -1,5 +1,3 @@
-
-
 <% @posts.reverse_each do |post| %>
   <% if post.image.attached? %>
   <img src="<%=(url_for(post.image))%>"
@@ -12,7 +10,7 @@
   <% end %>
   <h4><%= post.message %></h4>
   <p id="likes<%=post.id%>">Likes: <%= post.likes.count %></p>
-  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id %>
+  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id, class:'like-button'%>
 
 <% end %>
 <%= link_to new_post_path do %>
