@@ -5,12 +5,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   for ( var i = 0; i < button.length; i++) {
     button[i].addEventListener('click', (e) => {
     console.log('Button pressed!!!!')
-    // e.preventDefault()
-    e.stopPropagation()
-  })
+    e.preventDefault()
+    $.ajax ({ 
+      url: 'posts/:post_id/likes',
+      type: 'POST',
+    });
+    })
   }
-  })
+})
 
+  //url: post_likes_path
 
 // var buttons = document.querySelectorAll('button'),
 //     fn      = function(e) { e.preventDefault() };
