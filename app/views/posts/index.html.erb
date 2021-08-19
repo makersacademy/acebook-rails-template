@@ -1,5 +1,4 @@
 
-<%= javascript_include_tag 'likes' %>
 
 <% @posts.reverse_each do |post| %>
   <% if post.image.attached? %>
@@ -11,12 +10,11 @@
     <%# portrait vs landscape?? %>
     
   <% end %>
-  <p><%= post.message %></p>
-  <p>Likes: <%= post.likes.count %></p>
-  <%= button_to 'Like', post_likes_path(post.id), method: :post %> 
+  <h4><%= post.message %></h4>
+  <p id="likes<%=post.id%>">Likes: <%= post.likes.count %></p>
+  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id %>
 
 <% end %>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
