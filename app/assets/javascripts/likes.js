@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM fully loaded and parsed');
-  const button = document.querySelectorAll('.button_to') 
-  // let fn = function(e) { e.preventDefault() };
- 
+  const button = document.querySelectorAll('.button_to')  
   for ( let i  = 0; i < button.length; i++) {
     button[i].addEventListener('click', (e) => { 
       e.preventDefault();
