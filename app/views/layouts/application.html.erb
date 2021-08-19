@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Acebook" %></title>
+     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Acebook Social Media Site" %>">
     <%= csrf_meta_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -10,6 +11,27 @@
   </head>
 
   <body>
+   <div class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"> 
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log In</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log Out</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+      </ul>
+    </div>
+   
     <%= yield %>
   </body>
 </html>
