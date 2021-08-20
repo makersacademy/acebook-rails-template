@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         url: `posts/${post.id}/likes`,
         type: 'POST',
         success: function (response) {
-          const newpost = $($.parseHTML(response)).filter(`div#${post.id}`);
-          console.log(newpost);
-          let updatedLike = post.querySelector(`.likes`).innerHTML;
+          const newPost = $($.parseHTML(response)).filter(`div#${post.id}`)[0];
+          console.log(newPost);
+          let updatedLike = newPost.querySelector(`.likes`).innerHTML;
           post.querySelector('.likes').innerHTML = updatedLike;
        }
       });
