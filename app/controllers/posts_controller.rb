@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    fail "Fill in a field" if post_params[:message] == "" && post_params[:image] == nil
     @post = Post.create(post_params)
     redirect_to posts_url
   end
