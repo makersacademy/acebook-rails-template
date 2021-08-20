@@ -8,9 +8,13 @@
     <%# portrait vs landscape?? %>
     
   <% end %>
-  <p><%= post.message %></p>
-<% end %>
+  <div class='post' id='<%= post.id %>'>
+  <p class='post-content'><%= post.message %></p>
+  <div class='likes'>Likes: <%= post.likes.count %></div>
+  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id, class:'like-button'%>
+  </div>
 
+<% end %>
 <%= link_to new_post_path do %>
   New post
 <% end %>
