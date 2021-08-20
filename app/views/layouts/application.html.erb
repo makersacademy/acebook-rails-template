@@ -4,6 +4,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Acebook" %></title>
      <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Acebook Social Media Site" %>">
     <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -19,19 +20,19 @@
           <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Log In</a>
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Log Out</a>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         <li class="nav-item">
           <a class="nav-link" href="#">Settings</a>
         </li>
       </ul>
     </div>
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

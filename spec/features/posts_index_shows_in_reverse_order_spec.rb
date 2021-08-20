@@ -8,7 +8,9 @@ RSpec.feature "Timeline", type: :feature do
     visit "/posts/new"
     fill_in "Message", with: "Hello, again!"
     click_button "Submit"
-    expect(page.find('p:nth-child(1)')).to have_content "Hello, again!"
-    expect(page.find('p:nth-child(2)')).to have_content "Hello, world!"
+    
+    posts = page.all(".post-content")
+    expect(posts[0]).to have_content "Hello, again!"
+    expect(posts[1]).to have_content "Hello, world!"
   end
 end
