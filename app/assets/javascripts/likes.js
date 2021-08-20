@@ -1,20 +1,25 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log('DOM fully loaded and parsed');
-  const buttons = document.querySelectorAll('.like-button') 
-  for ( let i  = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', (e) => { 
+  // const buttons = document.querySelectorAll('.like-button')
+  const posts = document.querySelectorAll('.post');
+  console.log(posts);
+  posts.forEach((post) => {
+    post.querySelector('.like-button').addEventListener('click', (e) => {
+      console.log('listening'); 
       e.preventDefault();
-      let id = buttons[i].id;
-      let likesContainer = document.getElementById(`likes-for-post${id}`);
+      console.log(post.querySelector('.likes'));
+      let likesContainer = post.querySelector('.likes');
+      console.log(likesContainer);
       $.ajax ({ 
-        url: `posts/${id}/likes`,
+        url: `posts/${post.id}/likes`,
         type: 'POST',
         success: function (response) {
-          const post = $($.parseHTML(response)).filter('div.post')[i];
+          const newpost = $($.parseHTML(response)).filter(`div#${post.id}`);
+          console.log(newpost);
           let updatedLike = post.querySelector(`.likes`).innerHTML;
-          likesContainer.innerHTML = updatedLike;
+          post.querySelector('.likes').innerHTML = updatedLike;
        }
       });
     });
-  }
+  });
 });
