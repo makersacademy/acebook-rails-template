@@ -8,7 +8,7 @@ RSpec.feature "Liking posts", type: :feature do
     expect(page).to have_content "Likes: 0"
   end
 
-  scenario "posts start off with 0 likes" do
+  scenario "likes increase when like button is pressed" do
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
