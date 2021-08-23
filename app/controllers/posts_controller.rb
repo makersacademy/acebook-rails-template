@@ -4,8 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    if post_params[:message] == "" && post_params[:image] == nil
+      redirect_to new_post_url, notice: 'Cannot create an empty post.'
+    else
+      @post = Post.create(post_params)
+      redirect_to posts_url
+    end
   end
 
   def index
