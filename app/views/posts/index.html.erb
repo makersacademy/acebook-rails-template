@@ -1,4 +1,5 @@
 <div class="container">
+<br>
 <% @posts.reverse_each do |post| %>
   <% if post.image.attached? %>
   <img src="<%=(url_for(post.image))%>"
@@ -12,7 +13,8 @@
   <div class='post' id='<%= post.id %>'>
   <p class='post-content'><%= post.message %></p>
   <div class='likes'>Likes: <%= post.likes.count %></div>
-  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id, class:'like-button'%>
+  <%= button_to 'Like', post_likes_path(post.id), method: :post ,id: post.id, class:'btn btn-primary'%>
+  <br>
   </div>
 
 <% end %>

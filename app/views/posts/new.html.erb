@@ -1,8 +1,13 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-  <%= form.label "Upload an image" %>
-  <%= form.file_field :image, accept: "image/jpeg, image/png, image/heic" %>
+<div class="container">
+  <br>
+  <%= form_for @post do |form| %>
+  <%= form.label :message, id:"basic-addon1" %>
+  <%= form.text_area :message, class:"form-control" %>
 
-  <%= form.submit "Submit" %>
+  <br>
+  <%= form.label "Upload an image", id:"basic-addon1"  %>
+  <%= form.file_field :image, accept: "image/jpeg, image/png, image/heic", class:"form-control" %>
+  <br>
+  <%= form.submit "Submit", class:"btn btn-primary" %>
 <% end %>
+</div>
