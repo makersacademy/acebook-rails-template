@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Log In", type: :feature do
   scenario "user can log in" do
-    visit "/users/sign_in"
-    fill_in "user_email", with: "bob@example.com"
-    fill_in "user_password", with: "password1!"
-    click_button "Log in"
+    user_sign_up
+    click_link "Log Out"
+    user_log_in
     expect(current_path).to eq '/'
     expect(page).to have_content("Signed in successfully.")
   end
