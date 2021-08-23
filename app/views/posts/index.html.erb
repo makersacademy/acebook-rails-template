@@ -1,3 +1,4 @@
+<div class="container">
 <% @posts.reverse_each do |post| %>
   <% if post.image.attached? %>
   <img src="<%=(url_for(post.image))%>"
@@ -15,6 +16,7 @@
   </div>
 
 <% end %>
-<%= link_to new_post_path do %>
+<%= link_to new_post_path, class:"btn btn-primary" do %>
   New post
 <% end %>
+</div>
