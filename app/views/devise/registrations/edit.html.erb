@@ -15,22 +15,22 @@
   <% end %>
 
     <div class="field input-group mb-4">
-    <span class="input-group-text" id="basic-addon1"><%= f.label :password %></span>
+    <%= f.label :password, class:"input-group-text", id:"basic-addon1"%>
     <%= f.email_field :password, autofocus: true, autocomplete: "email", class:"btn btn-primary" %>
   </div>
 
   <div class="field input-group mb-4">
-    <span class="input-group-text" id="basic-addon1"><%= f.label :password_confirmation %></span>
+    <%= f.label :password_confirmation, class:"input-group-text", id:"basic-addon1"%>
     <%= f.email_field :password_confirmation, autofocus: true, autocomplete: "email", class:"btn btn-primary" %>
   </div>
 
     <div class="field input-group mb-4">
-    <span class="input-group-text" id="basic-addon1"><%= f.label :current_password %></span>
+    <%= f.label :current_password, class:"input-group-text", id:"basic-addon1"%>
     <%= f.email_field :current_password, autofocus: true, autocomplete: "email", class:"btn btn-primary" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class:"btn btn-primary" %>
   </div>
 <% end %>
 

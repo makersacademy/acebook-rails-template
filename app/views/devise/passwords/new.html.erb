@@ -8,14 +8,14 @@
 
 
   <div class="field input-group mb-4">
-  <span class="input-group-text" id="basic-addon1"><%= f.label :username%></span>
+  <%= f.label :username, class:"input-group-text", id:"basic-addon1"%>
     <%= f.text_field :username, class:"form-control" %>
   </div>
 
 
 
   <div class="field input-group mb-4">
-    <span class="input-group-text" id="basic-addon1"><%= f.label :email%></span>
+    <%= f.label :email, class:"input-group-text", id:"basic-addon1"%>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
   </div>
 
