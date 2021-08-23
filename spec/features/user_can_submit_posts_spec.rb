@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
     attach_file("post[image]", './spec/files/attachment.jpeg')
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_css("img[src*='./spec/files/attachment.jpeg']")
+    expect(page).to have_css("img[src*='attachment.jpeg']")
   end
 
   scenario "Gives error message if post empty" do
