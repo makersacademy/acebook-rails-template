@@ -44,9 +44,7 @@
         <% end %>
       </ul>
     </div>
-   <% if notice %>
-      <%= render 'layouts/alerts' %>
-    <% end %>
+   <%= render 'layouts/alerts' if notice %>
     <%= yield %>
   </body>
 </html>
