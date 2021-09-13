@@ -1,7 +1,18 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<li><%= link_to "Homepage", "/welcome", method: :get %></li>
+<li><%= link_to "New post", "/posts/new", method: :get%></li>
+<li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
+<li class="right_links">Online: <%= current_user.username %></li>
+
+<br>
+
+<h2>Posts</h2>
+
+<ul>
+<% @posts.each do |post| %>
+    <p><%= link_to post.message, post %></p>
+    <p><%= image_tag post.image if post.image.attached? %></p>
+  <% end %>
+</ul>
+
+<%= button_to 'Logout', '/logout', method: :post%>
