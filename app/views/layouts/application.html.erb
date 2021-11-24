@@ -10,14 +10,13 @@
 
   <body>
 
-  <h1> Hello World </h1>
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<%= link_to 'Sign In', new_user_sign_in_session_path %>
+
 
 <%= link_to 'Sign out', destroy_user_sign_in_session_path, method: :delete %>
 
