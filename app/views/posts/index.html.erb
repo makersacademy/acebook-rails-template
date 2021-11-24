@@ -2,8 +2,11 @@
   <p><%= post.message %></p>
 
   <button id = '<%= post.message %>' value='<%=post.message%>'><%= post.likes %> Likes </button>
+  <p><%=post.likes%></p>
   <% end %>
+<% end %>
+
   
   <%= link_to new_post_path do %>
     New post
-    <% end %>
+<% end %>

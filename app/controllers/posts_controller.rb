@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  # def update
+  #   redirect_to posts_url
+  # end
+  
   private
 
   def post_params
