@@ -4,12 +4,8 @@ class DeviseCreateUserSignIns < ActiveRecord::Migration[6.0]
   def change
     create_table :user_sign_ins do |t|
       ## Database authenticatable
-      t.string :first_name, 
-      t.string :surname,
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :dob
-      t.string :gender
 
       ## Recoverable
       t.string   :reset_password_token
