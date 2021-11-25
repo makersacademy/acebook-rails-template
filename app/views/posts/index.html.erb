@@ -60,13 +60,13 @@
           <p class="card-text"><%= post.message %></p>
 
 
+  
+    
+          <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
 
           
-          <button_to 'Add Like', update_path(post.id) id = '<%= post.message %>'><%= post.likes %> Likes </button>
-          <%= button_to 'Press me', update_path(post.id), method: :get %>
+
           <a href="#" class="card-link">Comment</a>
-
-
         </div>
       </div>
         <div class="row">

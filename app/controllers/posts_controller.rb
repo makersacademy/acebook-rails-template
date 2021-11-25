@@ -12,9 +12,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def update(id)
-    post = Post.find_by(id: id)
-    post.update(likes: (post.likes + 1 ))
+  def update
+    p post = Post.find_by(id: id_params)
+    post.update(likes: (post.likes.to_i + 1 ))
     redirect_to posts_url
   end
 
@@ -24,4 +24,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
+  def id_params
+    p params.require(:id)
+  end
+
 end
