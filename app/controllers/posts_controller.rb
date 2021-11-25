@@ -12,9 +12,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  # def update
-  #   redirect_to posts_url
-  # end
+  def update(id)
+    post = Post.find_by(id: id)
+    post.update(likes: (post.likes + 1 ))
+    redirect_to posts_url
+  end
+
   
   private
 
