@@ -40,14 +40,19 @@
       Write a post
     <% end %> </p1>
 
-    <div class="center"
-<div class="mb-3 offset-4" style="text-align: center;">
-  <label for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
-  <textarea class="form-control offset-4" id="exampleFormControlTextarea1" rows="4" style="width: 40rem;"></textarea>
-  <div class="row">
-  <br>
-</div>
-</div>
+<div class = "row">
+  <div class="center"
+    <div class="form-control offset-4" style="text-align: center;">
+     <label for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
+      <%= form_for @post, html: {class: 'form-control offsetWidth-8'} do |form| %>
+        <%= form.text_field :message%>
+        <%= form.submit "Submit" %>
+      <% end %>
+      <div class="row">
+        <br>
+      </div>
+    </div>
+  </div>
 </div>
 
 <% @posts.each do |post| %>
@@ -63,16 +68,7 @@
 
           <a href="#" class="card-link">Comment</a>
           
-          <%= form_for @post do |form| %>
-            <%= form.label :Comment %>
-            <%= form.text_field :Comment %>
-            <%= form.submit "Post Comment" %>
-          <% end %>
-
-
-
-
-
+            
 
 
 

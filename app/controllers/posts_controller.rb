@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
     @posts = Post.all.order(created_at: :desc)
   end
 
@@ -31,3 +32,11 @@ class PostsController < ApplicationController
   end
 
 end
+
+# <%= form_for @post do |form| %>
+#   <%= form.label :Comment %>
+#   <%= form.text_field :Comment %>
+#   <%= form.submit "Post Comment" %>
+# <% end %>
+
+# <textarea class="form-control offset-4" id="exampleFormControlTextarea1" rows="4" style="width: 40rem;"></textarea>
