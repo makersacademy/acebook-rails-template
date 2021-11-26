@@ -23,7 +23,11 @@ RSpec.feature "Timeline", type: :feature do
     click_link "Write a post"
     fill_in "Message", with: "First post"
     click_button "Submit"
-    click_button ("Likes")
+    click_link "Write a post"
+    fill_in "Message", with: "Second post"
+    click_button "Submit"
+    expect('Second post').to appear_before('First post')
+    
   end
 
 end
