@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_123227) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes"
   end
 
   create_table "user_sign_ins", force: :cascade do |t|
