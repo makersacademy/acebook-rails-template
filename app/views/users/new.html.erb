@@ -1,0 +1,63 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name %><br>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :surname %> <br>
+    <%= f.text_field :surname %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <br>
+  <div class="form-group">
+   <%= f.label :gender %> <br />
+   <%= f.label :gender_male, 'male' %>
+   <%= f.radio_button :gender, 'male', :checked => true %>
+   <%= f.label :gender_female, 'female' %>
+   <%= f.radio_button :gender, 'female' %>
+   <%= f.label :gender_custom, 'custom' %>
+   <%= f.radio_button :gender, 'custom' %><br />
+ </div>
+
+  <br>
+  <div class="field">
+  <%= f.label :Date_of_Birth %> <br>
+  <%= f.date_select :dob, :start_year=>1950,:end_year=>2050%>
+   </div>
+
+  <br>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
+<% end %>
