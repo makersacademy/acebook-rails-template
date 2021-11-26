@@ -29,5 +29,4 @@ RSpec.feature "Timeline", type: :feature do
     expect('Second post').to appear_before('First post')
     
   end
-
 end

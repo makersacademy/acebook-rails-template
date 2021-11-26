@@ -58,14 +58,7 @@
           <h5 class="card-title">Users name</h5>
           <h6 class="card-subtitle mb-2 text-muted">26/11/2021</h6>
           <p class="card-text"><%= post.message %></p>
-
-
-  
-    
           <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
-
-          
-
           <a href="#" class="card-link">Comment</a>
         </div>
       </div>
@@ -75,7 +68,6 @@
     </div>
   </div>
 <% end %>
-
 
   </body>
 </html>
