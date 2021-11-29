@@ -69,14 +69,36 @@
          <%= form_for @comment, html: {class: 'form-control offsetWidth-8'} do |form| %>
           <%= form.label 'comment' %>
           <%= form.text_field :comment %>
+          <%= hidden_field_tag :post_id, post.id %>
           <%= form.submit "Submit comment" %>
-        <% end %>
+          <% end %>
+
+          <div class="row">
+          <br>
+          </div>
+
+          <% @posts_comments.each do |comments| %>
+            <% if comments.post_id == post.id %>
+            <%= comments.comment %>
+            <div class="row">
+            <br>
+            </div>
+            <% end %>
+          <% end %> 
+          
+              
+          
+
+          <div class="row">
+          <br>
+          </div>
 
 
       </div>
         <div class="row">
-          <br>
+          <br> 
         </div>
+
     </div>
   </div>
 <% end %>

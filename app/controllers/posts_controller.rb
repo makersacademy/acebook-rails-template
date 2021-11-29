@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  
   def new
     @post = Post.new
   end
@@ -12,6 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @comment = Comment.new
     @posts = Post.all.order(created_at: :desc)
+    @posts_comments = Comment.all.order(created_at: :desc)
   end
 
   def update
