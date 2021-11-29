@@ -65,7 +65,14 @@
           <p class="card-text"><%= post.message %></p>
           <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
         </div>
-         <a href="/comments" class="card-link">Comment</a>
+
+         <%= form_for @comment, html: {class: 'form-control offsetWidth-8'} do |form| %>
+          <%= form.label 'comment' %>
+          <%= form.text_field :comment %>
+          <%= form.submit "Submit comment" %>
+        <% end %>
+
+
       </div>
         <div class="row">
           <br>

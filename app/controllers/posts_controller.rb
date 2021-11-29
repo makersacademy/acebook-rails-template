@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @comment = Comment.new
     @posts = Post.all.order(created_at: :desc)
   end
 
