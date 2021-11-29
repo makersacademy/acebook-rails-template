@@ -1,5 +1,5 @@
 <%= form_for @comment, html: {class: 'form-control offsetWidth-8'} do |form| %>
-  <% form.label 'Comment'>
-  <%= form.text_field :comment%>
+  <%= form.label 'comment' %>
+  <%= form.text_field :comment %>
   <%= form.submit "Submit comment" %>
 <% end %>

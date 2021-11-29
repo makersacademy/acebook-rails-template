@@ -45,7 +45,7 @@
     <div class="form-control offset-4" style="text-align: center;">
      <label for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
       <%= form_for @post, html: {class: 'form-control offsetWidth-8'} do |form| %>
-        <%= form.text_field :message%>
+        <%= form.text_field :message %>
         <%= form.submit "Submit" %>
       <% end %>
       <div class="row">
