@@ -19,7 +19,9 @@ class UsersController < ApplicationController
   end 
 
   def index 
-  
+    if params[:search_by_user] != ""
+      @user_searched = User.where(first_name: params[:search_by_user])
+    end 
   end 
   
   private
