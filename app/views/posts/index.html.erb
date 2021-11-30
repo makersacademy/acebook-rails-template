@@ -71,7 +71,7 @@
     <div class ="row offset-2">
       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
         <div class="card-body">
-          <h5 class="card-title">Users name</h5>
+          <h5 class="card-title"><%= current_user.first_name %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at %></h6>
           <p class="card-text"><%= post.message %></p>
           <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
