@@ -12,10 +12,15 @@ class SessionsController < ApplicationController
       render "new"
     end
   end
-  
+
+  # def index
+  # p '+++++'
+  # @user = User.find_by(first_name: params[:first_name])
+  # p '+++++'
+  # end 
   def destroy
     session[:user_id] = nil
-    redirect_to '/posts#index', notice: "Logged out!"
+    redirect_to root_url, notice: "Logged out!"
   end
   
 end

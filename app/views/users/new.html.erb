@@ -55,7 +55,10 @@
   <br>
   <div class="field">
   <%= f.label :Date_of_Birth %> <br>
-  <%= f.date_select :dob, :start_year=>1950,:end_year=>2050%>
+  <%= f.date_select :dob, :start_year => Time.now.year - 50, 
+  :end_year => Time.now.year + 5, 
+  :order => [:day, :month, :year],
+  :include_blank => true%>
    </div>
 
   <br>

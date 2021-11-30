@@ -21,20 +21,27 @@
   </div>
 </nav>
     
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Profile</a>
-  </li>
-  <li class="nav-item">
+
+    <ul class="nav justify-content-end">
+    <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="/users/index">Profile</a>
+    </li>
+    <li class="nav-item">
     <a class="nav-link" href="#">Settings</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Sign Out</a>
-  </li>
- </ul>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" <%= link_to "Log Out", logout_path %></a>
+    </li>
+    </ul>
+    
+    <p1 class="h2 offset-1"> <%= link_to new_post_path do %>
+      Write a post
+    <% end %> </p1>
+
+ 
     
 <div class="container">
 <div class = "row">
@@ -51,6 +58,7 @@
       </div>
     </div>
   </div>
+
 </div>
 </div>
 
@@ -59,9 +67,9 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="container">
-    <div class ="row offset-4">
-      <div class="card" style="width: 30rem;">
+  <div  class="container">
+    <div class ="row offset-2">
+      <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
         <div class="card-body">
           <h5 class="card-title">Users name</h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at %></h6>
