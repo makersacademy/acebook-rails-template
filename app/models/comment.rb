@@ -7,7 +7,7 @@ def ind_comments(id)
     else 
       @each_posts_comments = []
     end 
-  end 
+  end  
 end
  
 end 
