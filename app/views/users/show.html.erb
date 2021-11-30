@@ -23,7 +23,7 @@
     
     <ul class="nav justify-content-end">
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+    <a class="nav-link active" aria-current="page" href="/posts">Home</a>
     </li>
     <li class="nav-item">
     <a class="nav-link" href="/users/index">Profile</a>
@@ -35,49 +35,30 @@
     <a class="nav-link" <%= link_to "Log Out", logout_path %></a>
     </li>
     </ul>
-    
-    <p1 class="h2 offset-1"> <%= link_to new_post_path do %>
-      Write a post
-    <% end %> </p1>
 
-    <div id="home" class="center"
-<div class="mb-3 offset-4" style="text-align: center;">
-  <label for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
-  <textarea class="form-control offset-4" id="exampleFormControlTextarea1" rows="4" style="width: 40rem;"></textarea>
-  <div class="row">
+  
   <br>
 </div>
 </div>
 </div>
-
-<% @posts.each do |post| %>
-  <div  class="container">
-    <div class ="row offset-2">
-      <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
-        <div class="card-body">
-          <h5 class="card-title">Users name</h5>
-          <h6 class="card-subtitle mb-2 text-muted">26/11/2021</h6>
-          <p class="card-text"><%= post.message %></p>
-
-
-  
-    
-          <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
-
-          
-
-          <a href="#" class="card-link">Comment</a>
-        </div>
-      </div>
-        <div class="row">
-          <br>
-        </div>
-    </div>
-  </div>
-<% end %>
-
-
-  </body>
-</html>
 </div>
 
+  <div  class="container ">
+    <div class ="row offset-2">
+      <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
+        <div class="card-body ">
+       <h3> Personal Detail </h3>
+        <p>Name: <%= current_user.first_name %> </p>
+        <p>Surname: <%= current_user.surname %> </p>
+        <p>Email: <%= current_user.email %> </p>
+        <p>Gender: <%= current_user.gender %> </p>
+        <p>Date of birth: <%= current_user.dob[:day, :month, :year] %> </p>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+
+</div>
+ </body>
+</html>
