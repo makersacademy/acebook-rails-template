@@ -25,8 +25,10 @@
 <% end %>
 
 <% if current_user %>
+<h3>
   Logged in as <%= current_user.first_name %>.
   <%= link_to "Log Out", logout_path %>
+  </h3>
 <% else %>
   <%= link_to "Log In", login_path %>
 <% end %>
