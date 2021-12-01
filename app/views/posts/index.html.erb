@@ -47,6 +47,7 @@
         <%= form_for @post do |form| %>
           <%= form.label 'message' %>
           <%= form.text_field :message %>
+          <%= form.hidden_field :user_id, value: current_user.id %>
           <%= form.submit "Submit" %>
         <% end %>
     </div>
@@ -58,9 +59,11 @@
     <div class ="row offset-2">
       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
         <div class="card-body">
-          <h5 class="card-title"><%= current_user.first_name %></h5>
+          <h5 class="card-title"><p><% username = @users.find_by(id: post.user_id)%> </p>
+          <p><%= username.first_name %></p></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at %></h6>
           <p class="card-text"><%= post.message %></p>
+
           <%= button_to (post.likes.to_s + ' Likes'), post_path(post.id), :method => :patch %>
         </div>
         <hr>
@@ -68,7 +71,7 @@
           <%= form.label 'comment' %>
           <%= form.text_field :comment %>
           <%= hidden_field_tag :post_id, post.id %>
-          <%= hidden_field_tag :current_user_id, current_user.id %>
+          <%= hidden_field_tag :user_id, current_user.id %>
           <%= form.submit "Submit comment" %>
         <% end %>
 
@@ -81,8 +84,8 @@
             <div class="container">
               <div class ="row">
                 <div class="card" style="width: 30rem;">
-                  <p><% username = @users.find_by(id: comments.user_id)%> </p>
-                  <p><%= username.first_name %></p>
+                <% username = @users.find_by(id: comments.user_id)%>
+                <p><%= username.first_name %></p></h5>
                   <%= comments.created_at %> <br>
                   <%= comments.comment %>
                     <div class="row">
