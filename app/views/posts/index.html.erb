@@ -81,6 +81,7 @@
           <%= form.label 'comment' %>
           <%= form.text_field :comment %>
           <%= hidden_field_tag :post_id, post.id %>
+          <%= hidden_field_tag :current_user_id, current_user.id %>
           <%= form.submit "Submit comment" %>
         <% end %>
 
@@ -93,7 +94,8 @@
             <div class="container">
               <div class ="row">
                 <div class="card" style="width: 30rem;">
-                  <p> User Name </p>
+                  <p><% username = @users.find_by(id: comments.user_id)%> </p>
+                  <p><%= username.first_name %></p>
                   <%= comments.created_at %> <br>
                   <%= comments.comment %>
                     <div class="row">
