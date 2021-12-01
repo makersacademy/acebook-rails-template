@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @posts = Post.all.order(created_at: :desc)
     @posts_comments = Comment.all.order(created_at: :desc)
+    @users = User.all
   end
 
   def update

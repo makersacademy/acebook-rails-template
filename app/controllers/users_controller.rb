@@ -14,17 +14,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def show 
-  
+  def index 
+    if params[:search_by_user] != ""
+      @user_searched = User.where("lower(first_name) = ?", params[:search_by_user].downcase)
+    end 
   end 
 
-  def index 
-  
-  end 
-  
   private
+
   def user_params
-   p params.require(:user).permit(:first_name, :surname, :email, :password, :password_confirmation, :gender, :dob)
+   params.require(:user).permit(:first_name, :surname, :email, :password, :password_confirmation, :gender, :dob)
   end
 
 end
