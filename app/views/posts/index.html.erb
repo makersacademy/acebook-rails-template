@@ -82,7 +82,7 @@
               <div class ="row">
                 <div class="card" style="width: 30rem;">
                   <p><% username = @users.find_by(id: comments.user_id)%> </p>
-                  <p>user name</p>
+                  <p><%= username.first_name %></p>
                   <%= comments.created_at %> <br>
                   <%= comments.comment %>
                     <div class="row">
