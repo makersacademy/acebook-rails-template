@@ -14,20 +14,17 @@
 <nav class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand">Acebook</a>
-
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <div class="form-control me-2"
+    <%= form_tag "/users", method: "GET" do %>
+      <%= label_tag :search_by_user %>
+      <%= text_field_tag :search_by_user, params[:search_by_user] %>
       <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-
+    <% end %>
+  </div>
   </div>
 </nav>
 
 
-<%= form_tag "/users", method: "GET" do %>
-  <%= label_tag :search_by_user %>
-  <%= text_field_tag :search_by_user, params[:search_by_user] %>
-<% end %>
 
     
 
