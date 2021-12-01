@@ -43,26 +43,25 @@
 </div>
 </div>
 
-<div  class="container ">
 <% if @user_searched == [] %>
-<p> No Search Results </p>
+  <p> No Search Results </p>
 <% else %> 
-<% @user_searched.each do |user| %>
-    <div class ="row offset-2">
-      <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
-        <div class="card-body ">
-       <h3> Personal Detail </h3>
-        <p>Name: <%= user.first_name %> </p>
-        <p>Surname: <%= user.surname %> </p>
-        <p>Email: <%= user.email %> </p>
-        <p>Gender: <%= user.gender %> </p>
-        <p>Date of birth: <%= user.dob %> </p>
+  <% @user_searched.each do |user| %>
+    <div  class="container ">
+      <div class ="row offset-2">
+        <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
+          <div class="card-body ">
+            <h3> Personal Detail </h3>
+            <p>Name: <%= user.first_name %> </p>
+            <p>Surname: <%= user.surname %> </p>
+            <p>Email: <%= user.email %> </p>
+            <p>Gender: <%= user.gender %> </p>
+            <p>Date of birth: <%= user.dob %> </p>
+          </div>
         </div>
       </div>
-    <% end %>
     </div>
-  </div>
+  <% end %>
 <% end %>
-</div>
- </body>
+</body>
 </html>
