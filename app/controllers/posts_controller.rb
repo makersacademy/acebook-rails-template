@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  
   def new
     @post = Post.new
   end
@@ -9,12 +11,28 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @post = Post.new
+    @comment = Comment.new
+    @posts = Post.all.order(created_at: :desc)
+    @posts_comments = Comment.all.order(created_at: :desc)
   end
+
+  def update
+    post = Post.find_by(id: id_params)
+    post.increment(:likes)
+    post.save
+    redirect_to posts_url
+  end
+
 
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
+
+  def id_params
+    params.require(:id)
+  end
 end
+

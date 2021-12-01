@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    </head>
+  <body>
+
+  <h3> Click to <%= link_to "Log In", login_path %> </h3>
+
+  <div  class="container ">
+  <div class ="row offset-2">
+    <div class="card shadow p-3 mb-5 bg-light rounded" style="width: 80rem;">
+      <div class="card-body " style="font-size: 18px;">
+    
+      <h1>Please Sign Up</h1>
+ 
+   <%= form_for @user do |f| %>
+     <% if @user.errors.any? %>
+       <div class="error_messages">
+         <h2>Form is invalid</h2>
+         <ul>
+           <% @user.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+     
+     <div class="field">
+       <%= f.label :first_name %> <br>
+       <%= f.text_field :first_name %><br>
+     </div>
+ 
+     <br>
+     <div class="field">
+       <%= f.label :surname %> <br>
+       <%= f.text_field :surname %>
+     </div>
+ 
+     <br>
+     <div class="field">
+       <%= f.label :email %><br />
+       <%= f.text_field :email %>
+     </div>
+ 
+     <br>
+     <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password %>
+     </div>
+ 
+     <br>
+     <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation %>
+     </div>
+ 
+     <br>
+     <div class="form-group">
+     <%= f.label :gender %> <br />
+     <%= f.label :gender_male, 'male' %>
+     <%= f.radio_button :gender, 'male', :checked => true %>
+     <%= f.label :gender_female, 'female' %>
+     <%= f.radio_button :gender, 'female' %>
+     <%= f.label :gender_custom, 'custom' %>
+     <%= f.radio_button :gender, 'custom' %><br />
+   </div>
+ 
+     <br>
+     <div class="field">
+     <%= f.label :Date_of_Birth %> <br>
+     <%= f.date_select :dob, :start_year => Time.now.year - 50, 
+     :end_year => Time.now.year + 5, 
+     :order => [:day, :month, :year],
+     :include_blank => true%>
+     </div>
+ 
+     <br>
+     <div class="actions"><%= f.submit "Sign Up" %></div>
+   <% end %>
+  </div>
+ </div>
+   
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+
+
+   </body>
+</html>
+
