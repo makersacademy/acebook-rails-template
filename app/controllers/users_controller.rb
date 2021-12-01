@@ -20,9 +20,12 @@ class UsersController < ApplicationController
 
   def index 
     if params[:search_by_user] != ""
-      @user_searched = User.where(first_name: params[:search_by_user])
+      @user_searched = User.where("lower(first_name) = ?", params[:search_by_user].downcase)
     end 
   end 
+
+
+  # Product.where("lower(name) = ?", name.downcase).first
   
   private
   def user_params
