@@ -2,12 +2,12 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
+1. Fork this repository to `five-aces` and customize
 the below**
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+[You can find the engineering project outline here.](https://github.com/ravensears/five-aces-group-project)
 
-2. The card wall is here: <please update>
+2. The card wall is here: <https://trello.com/b/ezLGgoKk/acebook-five-aces>
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
