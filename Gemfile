@@ -7,6 +7,13 @@ end
 
 ruby "3.0.0"
 
+
+
+
+
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
 # Use postgresql as the database for Active Record
@@ -30,7 +37,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do 
+  gem 'rspec'
+  gem 'simplecov', require: false, group: :test
+  gem 'simplecov-console', require: false, group: :test
+end
+
 group :development, :test do
+  gem 'rubocop', '1.20'
+  gem 'twilio-ruby'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
