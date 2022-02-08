@@ -34,3 +34,13 @@ ExecJS::RuntimeUnavailable:
  ```
 That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
 and then run `bundle exec rspec` again
+
+
+
+## CI/CD process - commands
+
+ 3335  git fetch https://github.com/ravensears/acebook-five-aces.git
+ 3336  git branch -a
+ 3339  git checkout U4_test_CI_CD
+ 3341  git fetch
+ 3343  git checkout U4_test_CI_CD 
