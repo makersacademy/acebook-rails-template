@@ -1,7 +1,15 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+
+<a href="https://www.youtube.com/watch?v=fmyvWz5TUWg&t=6393s&ab_channel=freeCodeCamp.org
+">The Gospel</a><br>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+<% end %>
+
