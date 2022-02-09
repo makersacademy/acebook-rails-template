@@ -1,4 +1,17 @@
 <%= form_for @post do |form| %>
+  <div class="mb-3">
+ 
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Create a post</label>
+
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="type here..."></textarea>
+  <%= form.submit "Submit" %>
+  
+  
+  
+  </div>
+
   <%= form.label :message %>
   <%= form.text_field :message %>
 
