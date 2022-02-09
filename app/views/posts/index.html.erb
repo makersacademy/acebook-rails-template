@@ -2,7 +2,7 @@
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
   <%= link_to "View post", post %>
- <!-- <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %> -->
+  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 
 <%= link_to new_post_path do %>
