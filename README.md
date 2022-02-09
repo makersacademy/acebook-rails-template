@@ -64,6 +64,4 @@ and migrate it, ran: rails db:migrate
 
 ran: rails routes (to see new routes added)
 
-commented out line: 'devise_for :users' in config/routes.rb (to get website working again)
-
 
