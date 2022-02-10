@@ -64,7 +64,7 @@ and migrate it, ran: rails db:migrate
 
 ran: rails routes (to see new routes added)
       
-## Mock up design
+## Mockup Design
 
       
 ![Welcome!](https://user-images.githubusercontent.com/87937468/153431859-d29a5428-1171-44a5-8850-7afec1a5cd4d.png)
