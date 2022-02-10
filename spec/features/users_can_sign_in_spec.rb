@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature "Timeline", type: :feature do
   before(:each) do 
     visit "/users/sign_up"
