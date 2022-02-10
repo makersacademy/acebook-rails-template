@@ -9,6 +9,7 @@ ruby "3.0.0"
 
 group :development, :test do
   gem "rspec_junit_formatter"
+  gem 'simplecov', require: false, group: :test
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
