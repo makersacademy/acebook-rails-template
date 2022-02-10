@@ -1,19 +1,9 @@
-<%= form_for @post do |form| %>
-  <div class="mb-3">
- 
+
+<div id="container">
+  <span>
+  <%= form_for @post do |form| %>
+    <%= form.label :Create_Post %> <br>
+    <%= form.text_area :message %> <br>
+    <%= form.submit "Submit"  %>
+  <% end %>
 </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Create a post</label>
-
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="type here..."></textarea>
-  <%= form.submit "Submit" %>
-  
-  
-  
-  </div>
-
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
