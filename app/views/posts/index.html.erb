@@ -1,4 +1,7 @@
-<%# Welcome <%= current_user.email %> %>
+<% if current_user %>
+Welcome <%= current_user.email %>
+<% end %>
+
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
@@ -8,5 +11,6 @@
 <% end %>
 
 <%= link_to new_post_path do %>
+
   New post
 <% end %>
