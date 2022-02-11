@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <button type="Delete"> Delete </button>
 <% end %>
 
 <%= link_to new_post_path do %>

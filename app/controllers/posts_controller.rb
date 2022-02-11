@@ -12,9 +12,14 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
   end
 
+  def destroy
+    @post.destroy
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
