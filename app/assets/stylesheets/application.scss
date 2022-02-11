@@ -18,3 +18,35 @@
  */
  @import "bootstrap";
  @import "rails_bootstrap_forms";
+
+ span {
+     display: flex;
+     padding-left: 20px;
+ }
+
+ .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.card-body{
+    text-align: justify;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.navbar-brand{
+    margin-left: auto;
+}
+
+.add-post {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    margin-left: 400px;
+}
