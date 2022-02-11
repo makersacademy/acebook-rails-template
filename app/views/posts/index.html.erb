@@ -1,7 +1,10 @@
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post

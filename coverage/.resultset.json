@@ -414,6 +414,7 @@
           null,
           null,
           null,
+          null,
           1,
           null,
           null,
@@ -604,6 +605,8 @@
           1,
           null,
           1,
+          null,
+          1,
           null
         ]
       },
@@ -633,6 +636,8 @@
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/controllers/posts_controller.rb": {
         "lines": [
           1,
+          null,
+          null,
           1,
           2,
           null,
@@ -658,6 +663,25 @@
         "lines": [
           1,
           1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -701,6 +725,6 @@
         ]
       }
     },
-    "timestamp": 1644505216
+    "timestamp": 1644592808
   }
 }
