@@ -1,9 +1,12 @@
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="users/signup">Sign Out</a>
 </nav>
 <br/>
 <div>
 <div class="add-post">
+  
 <%= link_to new_post_path do %>
   <button class="btn btn-primary btn-sm">Add a post</button>
 <% end %>
