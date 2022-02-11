@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def delete
+    @post = Post.delete
+  end
+
   private
 
   def post_params
