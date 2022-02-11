@@ -49,3 +49,11 @@ git checkout U4_test_CI_CD
 After merging files into the main repo, go to this link: https://github.com/ravensears/acebook-five-aces/actions 
 and wait until the tick changes from orange to green. You can click on the process name i.e. 'Merge pull request #2' to see any issues or errors. 
 
+## Dropping users table after getting duplicate user error
+\c pgapp_test
+\d
+DROP TABLE users;
+
+\c pgapp_development
+\d
+DROP TABLE users;
