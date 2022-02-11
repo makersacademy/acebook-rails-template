@@ -22,3 +22,7 @@
 
 .byebug_history
 .env
+
+coverage/.resultset.json
+coverage/index.html
+coverage/.last_run.json
