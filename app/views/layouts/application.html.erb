@@ -14,11 +14,12 @@
 
     <marquee behavior='alternate'> I am a header</marquee>
     
-
-
+    
     <%if user_signed_in? %>
+    <%= link_to 'sign out', destroy_user_session_path, method: :delete %><br>
     <a href="/users/edit">Edit User</a><br>
     <% end %>
+
 
     <a href="/users/sign_in">Sign In</a><br>
     <a href="/users/password/new">Forgot Password</a><br>
