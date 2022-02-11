@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rrs/acebook/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -42,7 +42,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/spec/rails_helper.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -103,7 +103,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/environment.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -112,10 +112,10 @@
           1
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/application.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/application.rb": {
         "lines": [
           1,
-          null,
+          1,
           1,
           null,
           null,
@@ -134,14 +134,14 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/boot.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/environments/test.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -187,7 +187,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -197,7 +197,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/assets.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -215,7 +215,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -226,7 +226,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -235,7 +235,7 @@
           1
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -243,7 +243,7 @@
           1
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/inflections.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -263,7 +263,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/mime_types.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -271,7 +271,7 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -289,22 +289,24 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/config/routes.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/config/routes.rb": {
         "lines": [
           1,
           1,
           null,
           1,
+          1,
+          1,
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/app/helpers/application_helper.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/app/controllers/posts_controller.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -317,12 +319,27 @@
           null,
           null,
           1,
-          5,
+          6,
+          null,
+          null,
+          1,
+          0,
+          null,
           null,
           null,
           1,
           0,
           0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           1,
@@ -333,34 +350,18 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/app/controllers/application_controller.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
-        "lines": [
-          1,
-          null,
           1,
           1,
           1,
@@ -372,7 +373,22 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/spec/models/post_spec.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -381,13 +397,13 @@
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/app/models/post.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/rrs/acebook/acebook-five-aces/app/models/application_record.rb": {
+      "/Users/joyomodiale/Documents/Makers/Projects/acebook-five-aces/app/models/application_record.rb": {
         "lines": [
           1,
           1,
@@ -395,6 +411,6 @@
         ]
       }
     },
-    "timestamp": 1644510435
+    "timestamp": 1644592330
   }
 }
