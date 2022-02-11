@@ -26,4 +26,12 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "POST /destroy" do
+    it "responds with 200" do
+      post = Post.create{ "Hello, world!" }
+      post.destroy
+      expect(Post.find_by(message: "Hello, world!")).not_to be
+    end
+  end
 end

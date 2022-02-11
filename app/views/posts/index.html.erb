@@ -1,8 +1,31 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.created_at %></p>
-<% end %>
-
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="users/signup">Sign Out</a>
+</nav>
+<br/>
+<div>
+<div class="add-post">
 <%= link_to new_post_path do %>
-  New post
+  <button class="btn btn-primary btn-sm">Add a post</button>
 <% end %>
+</div>
+<br/>
+<div class="row">
+<div class="col-sm-6">
+    <% @posts.each do |post| %>
+      <div class ="card">
+      <div class = "card-body">
+        <p><%= post.message %><br/></p>
+        <p><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
+      </div>
+      <span>
+      <%=button_to 'Delete', post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
+      &nbsp;
+      <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
+     </span>
+     &nbsp;
+      </div>
+      <br/>
+      <% end %>
+</div>
+</div>
+</div>
