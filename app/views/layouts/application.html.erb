@@ -8,6 +8,13 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <% if user_signed_in? %>
+  
+  <% else %> <!--user isn't signed in-->
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
+
   <body>
     <%= yield %>
     <p class="notice"><%= notice %></p>
