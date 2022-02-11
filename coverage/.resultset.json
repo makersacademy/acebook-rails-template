@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/controllers/posts_controller_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -36,6 +38,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/rails_helper.rb": {
         "lines": [
+          null,
+          null,
           null,
           1,
           1,
@@ -98,6 +102,8 @@
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -106,6 +112,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -128,6 +136,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1
@@ -135,6 +145,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -186,11 +198,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/initializers/assets.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -215,11 +230,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/initializers/cookies_serializer.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -547,11 +565,14 @@
           null,
           null,
           null,
+          null,
+          null,
           1
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/initializers/inflections.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -575,11 +596,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/initializers/wrap_parameters.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -598,8 +622,9 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/config/routes.rb": {
         "lines": [
-          1,
           null,
+          null,
+          1,
           1,
           null,
           1,
@@ -611,6 +636,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/models/user.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -621,6 +648,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -628,36 +657,35 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/helpers/posts_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/helpers/welcome_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/controllers/posts_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
           null,
           null,
           1,
-          0,
-          null,
-          null,
-          null,
           1,
-          null,
+          1,
           null,
           null,
           1,
@@ -668,23 +696,17 @@
           1,
           null,
           null,
-          null,
           1,
           0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
           null,
           null,
           null,
           1,
+          null,
+          null,
+          1,
+          0,
+          null,
           0,
           0,
           0,
@@ -699,6 +721,19 @@
           null,
           1,
           0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           0,
           0,
@@ -707,6 +742,7 @@
           null,
           null,
           1,
+          null,
           null,
           1,
           0,
@@ -721,6 +757,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -728,6 +766,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -743,6 +783,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/helpers/posts_helper_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -762,6 +804,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -781,6 +825,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/models/post_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -790,12 +836,16 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/app/models/post.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/models/user_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -805,22 +855,23 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/requests/posts_spec.rb": {
         "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           1,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           null,
           null,
           1,
@@ -939,6 +990,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/requests/welcome_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -950,6 +1003,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/routing/posts_routing_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -968,7 +1023,6 @@
           null,
           1,
           1,
-          null,
           null,
           null,
           1,
@@ -992,6 +1046,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/views/posts/edit.html.erb_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -1005,7 +1061,6 @@
           1,
           null,
           1,
-          null,
           1,
           null,
           null,
@@ -1014,6 +1069,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/views/posts/index.html.erb_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -1037,6 +1094,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/views/posts/new.html.erb_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -1050,7 +1109,6 @@
           1,
           null,
           1,
-          null,
           1,
           null,
           null,
@@ -1059,6 +1117,8 @@
       },
       "/Users/alexanderjamshidi/Documents/Projects/acebook-CHATS/spec/views/posts/show.html.erb_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -1076,6 +1136,6 @@
         ]
       }
     },
-    "timestamp": 1644600425
+    "timestamp": 1644600539
   }
 }
