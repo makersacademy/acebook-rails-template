@@ -105,3 +105,11 @@ def sign_up
   fill_in("user_password_confirmation", with: "123456")
   click_button("Sign up")
 end
+
+def sign_in
+  click_link("Sign In")
+  fill_in("user_email", with: "hello@hello.com")
+  fill_in("user_password", with: "123456")
+  click_button("Log in")
+end
+
