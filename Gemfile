@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+gem 'bootstrap', '~> 5.1.3'
+
+gem 'jquery-rails'
+gem 'turbolinks'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
