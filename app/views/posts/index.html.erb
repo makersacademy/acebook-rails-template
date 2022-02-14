@@ -13,7 +13,8 @@
 <br><br><br>
 
 <% @posts.each do |post| %>
-  <p><% p post.user.name %> said: <%= post.message %></p>
+  <% p post.user_id %> 
+  <%= post.user_id %> said: <%= post.message %></p> %>
   <p><%= post.created_at %></p>
   <%= link_to "View post", post %>
   <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
