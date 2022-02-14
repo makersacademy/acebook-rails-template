@@ -16,12 +16,13 @@ class PostsController < ApplicationController
 
   def edit 
     @post = Post.find(params[:id])
-    
+    validate_is_editable
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    if validate_is_editable == true
+    @post.update(post_params) 
       redirect_to posts_url
     else 
       render 'edit'
@@ -39,4 +40,21 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
+  
+
+  def validate_is_editable
+    #if user = !@post.user
+    # redirect_to posts_url, notice: 'Error: You can only edit your own post!'
+    #elsif 
+    if !@post.editable?
+    redirect_to posts_url, notice: 'Oops, this post is older than 10 minutes'
+    return 
+    end
+  end
+
+    # if Post.persisted? && !Post.editable?
+    #   @post.errors[:editable] << "can edit in just 10 minutes after creation"
+    # end
+
+  
 end
