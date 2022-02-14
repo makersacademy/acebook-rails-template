@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before(:each) do
+    
+      user = User.create(
+        {:email => "guy@gmail.com", 
+        :password => "111111"}
+      )
+      
     Post.delete_all
     @post = Post.create(message: "Hello, there!")
   end
