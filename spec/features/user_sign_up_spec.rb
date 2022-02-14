@@ -70,7 +70,7 @@ RSpec.feature "Sign up", type: :feature do
 
       click_button "Sign up"
 
-      expect(page).to have_content("Welcome you're signed up")
+      expect(page).to have_content("Welcome! You have signed up successfully.")
     end
   end
 end

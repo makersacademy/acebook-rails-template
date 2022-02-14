@@ -2,6 +2,9 @@
 Welcome <%= current_user.email %>
 <% end %>
 
+<!-- confirming users are signed-up -->
+<%= flash.notice %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
