@@ -9,6 +9,6 @@ feature 'sign out' do
     fill_in("user_password_confirmation", with: "123456")
     click_button("Sign up")
     click_link("Sign Out")
-    expect("Signed out successfully.")
+    expect(page).to have_content("Signed out successfully.")
   end
 end
