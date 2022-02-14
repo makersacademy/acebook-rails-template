@@ -10,6 +10,7 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @posts.reverse.each do |post| %>
       <tr>
@@ -21,6 +22,11 @@
     <% end %>
   </tbody>
 </table>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+<% end %>
+
 
 <br>
 

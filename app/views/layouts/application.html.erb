@@ -7,31 +7,40 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <marquee behavior='alternate'> I am a header</marquee>
-    
-    
-    <%if user_signed_in? %>
-    <%= link_to 'sign out', destroy_user_session_path, method: :delete %><br>
-    <a href="/users/edit">Edit User</a><br>
-    <% end %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Acebook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-    <a href="/users/sign_in">Sign In</a><br>
-    <a href="/users/password/new">Forgot Password</a><br>
-    <a href="/users/password/edit">Edit User Password</a><br>
-    <a href="/users/cancel">Cancel User Registration</a><br>
-    <a href="/users/sign_up">Sign Up</a><br>
-    
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Account", edit_user_registration_path %></a>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign In", new_user_session_path %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign Up", new_user_registration_path %></a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
 
     <%= yield %>
 
-
-    <marquee behavior='alternate' direction='right'>I am a footer</marquee>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<!--May need to add alerts above yield-->
   </body>
 </html>
 

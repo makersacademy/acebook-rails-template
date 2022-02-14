@@ -115,3 +115,19 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+def sign_up
+  visit('/')
+  click_link("Sign Up")
+  fill_in("user_email", with: "hello@hello.com")
+  fill_in("user_password", with: "123456")
+  fill_in("user_password_confirmation", with: "123456")
+  click_button("Sign up")
+end
+
+def sign_in
+  click_link("Sign In")
+  fill_in("user_email", with: "hello@hello.com")
+  fill_in("user_password", with: "123456")
+  click_button("Log in")
+end
+
