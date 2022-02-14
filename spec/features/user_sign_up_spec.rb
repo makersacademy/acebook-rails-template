@@ -2,11 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
   scenario "redirects to index if not signed up" do # failing
-    visit "/"
+    visit "/posts/new"
 
-    click_link "New post"
-
-    expect(page).to_not have_content("Message")
+    expect(page).to_not have_content("Sign Out")
     expect(page).to have_content("Sign up")
   end
 
@@ -72,7 +70,7 @@ RSpec.feature "Sign up", type: :feature do
 
       click_button "Sign up"
 
-      expect(page).to have_content("Sign up successful")
+      expect(page).to have_content("Welcome you're signed up")
     end
   end
 end

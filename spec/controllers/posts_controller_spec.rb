@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
   describe "GET /new " do
     it "responds with 200" do
+      @user = User.new(:email => "amyace@gmail.com", :password => "123456", :password_confirmation => "123456")
+      sign_in @user
+
       get :new
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:success)
     end
   end
 

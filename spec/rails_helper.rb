@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
+require 'web_helpers/user_sign_up'
 SimpleCov.start 'rails'
 
 # Add additional requires below this line. Rails is not loaded until this point!
