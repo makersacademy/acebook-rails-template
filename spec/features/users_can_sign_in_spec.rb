@@ -4,6 +4,7 @@ RSpec.feature "Timeline", type: :feature do
   before(:each) do 
     visit "/users/sign_up"
     fill_in "Email", with: "bananas@gmail.com"
+    fill_in "Name", with: "bananas@gmail.com"
     fill_in "Password", with: "12345678"
     fill_in "user[password_confirmation]", with: "12345678"
     click_button "Sign up"
