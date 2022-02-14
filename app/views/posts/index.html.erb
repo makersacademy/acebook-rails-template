@@ -1,7 +1,20 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<div class="text-center">
+<br>
+<% if current_user %>
+<b>Welcome <%= current_user.email %></b>
 <% end %>
+<br><br>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+<br><br><br>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+  <p><%= post.created_at %></p>
+  <%= link_to "View post", post %>
+  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+
+</div>
