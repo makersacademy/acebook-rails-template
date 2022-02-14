@@ -12,7 +12,7 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
   gem 'rubocop', '~> 1.25', '>= 1.25.1'
   gem 'rubocop-rails', '~> 2.13', '>= 2.13.2'
-end
+end 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
