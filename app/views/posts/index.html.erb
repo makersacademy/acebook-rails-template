@@ -1,9 +1,16 @@
+<div class="text-center">
+<br>
 <% if current_user %>
-Welcome <%= current_user.email %>
+<b>Welcome <%= current_user.email %></b>
 <% end %>
+<br><br>
 
 <!-- confirming users are signed-up -->
 <%= flash.notice %>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+<br><br><br>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
@@ -12,7 +19,4 @@ Welcome <%= current_user.email %>
   <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 
-<%= link_to new_post_path do %>
-
-  New post
-<% end %>
+</div>
