@@ -9,7 +9,7 @@ RSpec.describe Post, type: :model do
       )
       
     Post.delete_all
-    @post = Post.create(message: "Hello, there!")
+    @post = Post.create({ message: "Hello, there!", user_id: user.id} )
   end
 
   it 'checks that a post can be created' do
@@ -18,6 +18,10 @@ RSpec.describe Post, type: :model do
 
   it 'checks a post can be read' do
     expect(Post.find_by_message("Hello, there!")).to eq(@post)
+  end
+
+  it 'checks that a post has a user_id' do
+    expect(Post.find_by_message("Hello, there!").user_id).to be
   end
 
   it 'updates a post' do

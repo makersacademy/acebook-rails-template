@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #   end
   # end
   resources :posts
+  resources :users, only: [:create, :new]
   root to: 'posts#index'
   # get :to => 'posts/new', redirect root
 end
