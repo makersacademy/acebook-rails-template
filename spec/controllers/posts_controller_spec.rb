@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require_relative '../support/devise'
 
 RSpec.describe PostsController, type: :controller do
-  before(:each) do 
-    sign_up
-  end 
+  login_user
+  
 
   describe 'GET posts/new ' do
+    
     it 'responds with 200' do
       get :new
       expect(response).to have_http_status(200)
