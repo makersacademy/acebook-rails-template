@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/controllers/posts_controller_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -41,7 +41,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/rails_helper.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -129,7 +129,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/environment.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -140,7 +140,7 @@
           1
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/application.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/application.rb": {
         "lines": [
           null,
           null,
@@ -164,7 +164,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/boot.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -173,7 +173,7 @@
           1
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/environments/test.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -221,7 +221,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/application_controller_renderer.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +232,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/assets.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -252,7 +252,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/backtrace_silencers.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -264,7 +264,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/cookies_serializer.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -275,7 +275,7 @@
           1
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/devise.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -590,7 +590,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/filter_parameter_logging.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -600,7 +600,7 @@
           1
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/inflections.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -621,7 +621,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/mime_types.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -630,7 +630,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/initializers/wrap_parameters.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -650,7 +650,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/factories/factories.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/factories/factories.rb": {
         "lines": [
           1,
           1,
@@ -660,7 +660,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/config/routes.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -677,7 +677,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/models/user.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -689,7 +689,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/models/application_record.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -698,7 +698,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/helpers/application_helper.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -706,7 +706,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/helpers/posts_helper.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/helpers/posts_helper.rb": {
         "lines": [
           null,
           null,
@@ -714,7 +714,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/helpers/welcome_helper.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -722,7 +722,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/support/controller_macros.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/support/controller_macros.rb": {
         "lines": [
           1,
           1,
@@ -743,7 +743,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/support/devise.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/support/devise.rb": {
         "lines": [
           1,
           null,
@@ -755,7 +755,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/controllers/posts_controller.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -765,7 +765,7 @@
           null,
           null,
           1,
-          11,
+          13,
           null,
           null,
           null,
@@ -831,7 +831,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/controllers/application_controller.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -840,7 +840,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/signed_in_users_see_posts_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/signed_in_users_see_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -856,13 +856,7 @@
           1,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/user_can_sign_out_spec.rb": {
-        "lines": [
           1,
-          null,
           1,
           1,
           1,
@@ -877,7 +871,25 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/user_can_sign_out_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           null,
           null,
@@ -898,7 +910,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/users_can_edit_or delete_account_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/users_can_edit_or delete_account_spec.rb": {
         "lines": [
           1,
           null,
@@ -922,7 +934,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/users_can_sign_in_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/users_can_sign_in_spec.rb": {
         "lines": [
           1,
           null,
@@ -946,7 +958,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/features/welcome_page_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/features/welcome_page_spec.rb": {
         "lines": [
           1,
           null,
@@ -958,31 +970,17 @@
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/helpers/posts_helper_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/helpers/posts_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1003,7 +1001,28 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/models/post_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/helpers/welcome_helper_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/models/post_spec.rb": {
         "lines": [
           null,
           null,
@@ -1014,7 +1033,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/models/post.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -1022,7 +1041,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/models/user_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/models/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -1033,7 +1052,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/requests/posts_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/requests/posts_spec.rb": {
         "lines": [
           null,
           null,
@@ -1170,7 +1189,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/requests/welcome_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/requests/welcome_spec.rb": {
         "lines": [
           null,
           null,
@@ -1183,7 +1202,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/routing/posts_routing_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/routing/posts_routing_spec.rb": {
         "lines": [
           null,
           null,
@@ -1226,55 +1245,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/views/posts/edit.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/views/posts/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/views/posts/new.html.erb_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/views/posts/edit.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -1297,7 +1268,55 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/spec/views/posts/show.html.erb_spec.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/views/posts/index.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/views/posts/new.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/spec/views/posts/show.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -1317,7 +1336,7 @@
           null
         ]
       },
-      "/Users/ckapihya/Projects/acebook-CHATS/app/controllers/welcome_controller.rb": {
+      "/Users/hannah/Projects/makers-dec/acebook-CHATS/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
@@ -1325,7 +1344,7 @@
           1,
           null,
           1,
-          19,
+          23,
           null,
           null,
           1,
@@ -1339,6 +1358,6 @@
         ]
       }
     },
-    "timestamp": 1644942919
+    "timestamp": 1644945123
   }
 }
