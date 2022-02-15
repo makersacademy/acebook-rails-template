@@ -3,6 +3,9 @@
       <a class="navbar-brand" href="/"><img src="/images/myace_logo_v2.svg" height='60' alt="myAce logo"></a>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if user_signed_in? %> 
+            <li class="nav-item"> 
+              <%= link_to "My Profile", user_path(current_user), class: "ace-btn" %>  
+            </li>
             <li class="nav-item">
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "ace-btn"%>
             </li>

@@ -1,0 +1,6 @@
+<h1><%= @user.name%>'s profile page</h1>
+
+
+<% @user.posts.each do |p| %>
+  <p style="margin: 10px;"><%= p.message %></p>
+<%end%>

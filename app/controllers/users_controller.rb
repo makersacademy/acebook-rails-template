@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  # def show
-  #   @posts = current_user.posts.order(created_at: :desc)
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc)
+  end
+
+  # def index
+  #   # @users = User.all
+  #   @users = User.where('id != ?' , current_user.id).page(params[:page]).per(12)
   # end
 
   def create

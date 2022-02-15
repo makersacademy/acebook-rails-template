@@ -1,0 +1,10 @@
+.post-box {
+  background-color: rgb(248, 250, 252);
+  border: solid 1px rgb(172, 185, 196);
+  border-radius: 8px ;
+  margin: 12px;
+  padding: 10px;
+  width: 500px;
+  
+
+}

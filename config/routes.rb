@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
+  get 'profile/show'
   devise_for :users
-  
-  # devise_scope :user do
-  #   unauthenticated :user do
-  #     root :to => 'devise/registrations#new', as: :unauthenticated_root
-  #   end
-  #   authenticated :user do
-  #     root :to => 'posts#index', as: :authenticated_root
-  #     resources :posts 
-  #   end
-  # end
+
   resources :posts
-  resources :users, only: [:create, :new]
+  resources :profile
+  resources :users, only: [:create, :new, :show]
   root to: 'posts#index'
-  # get :to => 'posts/new', redirect root
+  
 end
 
 
