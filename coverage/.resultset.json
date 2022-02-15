@@ -422,7 +422,6 @@
           null,
           null,
           null,
-          null,
           1,
           null,
           null,
@@ -625,6 +624,7 @@
           1,
           null,
           null,
+          null,
           1,
           null,
           null
@@ -705,8 +705,6 @@
           1,
           0,
           0,
-          0,
-          0,
           null,
           0,
           null,
@@ -758,6 +756,7 @@
       "/Users/rrs/acebook/acebook-five-aces/app/models/post.rb": {
         "lines": [
           1,
+          null,
           null
         ]
       },
@@ -771,6 +770,6 @@
         ]
       }
     },
-    "timestamp": 1644601021
+    "timestamp": 1644926470
   }
 }
