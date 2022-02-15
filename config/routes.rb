@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  devise_for :users
+  
+  # devise_scope :user do
+  #   unauthenticated :user do
+  #     root :to => 'devise/registrations#new', as: :unauthenticated_root
+  #   end
+  #   authenticated :user do
+  #     root :to => 'posts#index', as: :authenticated_root
+  #     resources :posts 
+  #   end
+  # end
   resources :posts
+  resources :users, only: [:create, :new]
+  root to: 'posts#index'
+  # get :to => 'posts/new', redirect root
 end
+
+

@@ -1,7 +1,31 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<div class="text-center">
+<br>
+<% if current_user %>
+<b>Welcome <%= current_user.name %>!</b>
 <% end %>
+<br><br>
 
-<%= link_to new_post_path do %>
+<!-- confirming users are signed-up -->
+<%= flash.notice %>
+<%= link_to new_post_path, class:"new-post-btn" do %>
   New post
 <% end %>
+<br><br><br>
+
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><strong><%= post.user.name %></strong> said:</h5>
+      <p class="card-text"><%= post.message %></p>
+
+      <footer class="post-footer">
+        <%= link_to "View post", post, class:"post-btn" %>
+        <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+      </footer>
+    </div>
+  </div>
+
+  <br><br>
+<% end %>
+
+</div>
