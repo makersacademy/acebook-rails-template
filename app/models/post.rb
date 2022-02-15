@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-    belongs_to :user
+    # belongs_to :user
     #  attr_reader :created_at, :persisted
 
     def editable?
