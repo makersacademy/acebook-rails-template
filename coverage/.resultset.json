@@ -1,10 +1,15 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
+          null,
           1,
           1,
           1,
@@ -13,10 +18,20 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
+          null,
+          null,
           1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -42,7 +57,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/rails_helper.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/rails_helper.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           1,
@@ -73,6 +92,9 @@
           1,
           null,
           1,
+          1,
+          null,
+          null,
           null,
           1,
           null,
@@ -103,7 +125,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/environment.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/environment.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           1,
@@ -112,7 +138,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/application.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/application.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           1,
@@ -134,14 +164,22 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/boot.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/boot.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/environments/test.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/environments/test.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -187,7 +225,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -197,7 +239,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/assets.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/assets.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -215,7 +261,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -226,7 +276,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -235,7 +289,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/devise.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/devise.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -550,7 +608,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -558,7 +620,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/inflections.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/inflections.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -578,7 +644,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/mime_types.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/mime_types.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -586,7 +656,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -604,7 +678,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/config/routes.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/routes.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -619,7 +697,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/models/user.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/user.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -627,23 +709,37 @@
           null,
           1,
           null,
+          null,
+          null,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/models/application_record.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/application_record.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           1,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/helpers/application_helper.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/helpers/application_helper.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/controllers/posts_controller.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/controllers/posts_controller.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -653,8 +749,9 @@
           null,
           null,
           1,
-          4,
-          4,
+          3,
+          null,
+          3,
           null,
           null,
           1,
@@ -663,13 +760,14 @@
           null,
           1,
           0,
-          null,
+          0,
           null,
           null,
           1,
           0,
           0,
           0,
+          0,
           null,
           0,
           null,
@@ -684,12 +782,33 @@
           1,
           null,
           1,
-          4,
+          3,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/controllers/application_controller.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/controllers/application_controller.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           1,
@@ -713,7 +832,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -729,7 +852,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -744,7 +871,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/models/post_spec.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/post_spec.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
@@ -753,6 +884,7 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/models/post.rb": {
         "lines": [
           1,
@@ -761,6 +893,25 @@
         ]
       },
       "/Users/rrs/acebook/acebook-five-aces/spec/models/user_spec.rb": {
+=======
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/post.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/user_spec.rb": {
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           null,
           null,
@@ -770,6 +921,10 @@
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1644926470
+=======
+    "timestamp": 1644929518
+>>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
   }
 }
