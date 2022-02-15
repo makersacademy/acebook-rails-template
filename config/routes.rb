@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'registrations#new'
+  root '/users/sign_in'
   #HTML route          Controller_name  #method
   get '/users/sign_up', to:'registrations#new'
 
