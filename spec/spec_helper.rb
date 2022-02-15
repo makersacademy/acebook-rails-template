@@ -3,6 +3,7 @@
 require 'simplecov'
 require 'simplecov-console'
 
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console
                                                                  # Want a nice code coverage website? Uncomment this next line!
@@ -37,6 +38,9 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+  # config.include Capybara::DSL
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -130,4 +134,3 @@ def sign_in
   fill_in("user_password", with: "123456")
   click_button("Log in")
 end
-
