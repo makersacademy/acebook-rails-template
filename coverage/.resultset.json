@@ -1,11 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
-=======
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
->>>>>>> 69a3ecc811ecdfcf238cd8dffdfbf9b04d9ff592
         "lines": [
           1,
           null,
