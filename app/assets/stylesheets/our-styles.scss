@@ -3,11 +3,79 @@
   color: #001852;
   padding: 1em 1.2em;
   margin-left: 0.5em;
-  border-radius: 10px;
   font-weight: 400;
 }
 
 .ace-btn:hover{
   background-color: #001852;
   color: white;
+}
+
+.new-post-btn {
+  text-decoration: none;
+  background-color: #FD8379;
+  color: white;
+  padding: 1em 1.2em;
+  margin-left: 0.5em;
+  font-weight: 700;
+}
+
+.new-post-btn:hover{
+  background-color: #001852;
+  color: white;
+}
+
+.post-btn {
+  text-decoration: none;
+  color: #001852;
+  padding: 0.5em 0.8em;
+  margin-left: 0.5em;
+  font-weight: 400;
+  font-size: 8.5pt;
+}
+
+.post-btn:hover{
+  background-color: #001852;
+  color: white;
+}
+
+.navbar {
+  background-color: #D8E0F1 !important;
+}
+
+.post-box{
+  display: table;
+  width: auto;
+  background-color: #eee;         
+  border: 1px solid #666666;         
+  border-spacing: 5px;
+
+}
+
+.card {
+  background-color: #D8E0F1;
+  width: 40%;
+  margin:auto;
+  border-radius:0;
+  border: none;
+  h5{
+    font-size: 12pt;
+    color: #001852;
+  }
+}
+
+.card-title {
+  text-align: left;
+  font-size: 10pt !important;
+}
+
+.card-text {
+  color: #001852;
+  font-family: 'Roboto Serif', sans-serif;
+  text-align: left;
+  font-weight: 300;
+}
+
+.post-footer {
+  text-align: right;
 }
