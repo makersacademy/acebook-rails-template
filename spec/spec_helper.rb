@@ -3,6 +3,7 @@
 require 'simplecov'
 require 'simplecov-console'
 
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console
                                                                  # Want a nice code coverage website? Uncomment this next line!
@@ -133,4 +134,3 @@ def sign_in
   fill_in("user_password", with: "123456")
   click_button("Log in")
 end
-
