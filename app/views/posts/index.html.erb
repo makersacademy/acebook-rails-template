@@ -7,20 +7,25 @@
 
 <!-- confirming users are signed-up -->
 <%= flash.notice %>
-<%= link_to new_post_path do %>
+<%= link_to new_post_path, class:"new-post-btn" do %>
   New post
 <% end %>
 <br><br><br>
 
 <% @posts.each do |post| %>
-  <div class="post-box">
-    <p><%= post.user.name %> said:</p>
-    <p><%= post.created_at.to_date.strftime('%d %b %Y') %></p>
-    <p><%= post.message %></p>
-    
-    <%= link_to "View post", post %>
-    <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><strong><%= post.user.name %></strong> said:</h5>
+      <p class="card-text"><%= post.message %></p>
+
+      <footer class="post-footer">
+        <%= link_to "View post", post, class:"post-btn" %>
+        <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+      </footer>
+    </div>
   </div>
+
+  <br><br>
 <% end %>
 
 </div>
