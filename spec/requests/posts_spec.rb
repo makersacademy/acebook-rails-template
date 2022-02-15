@@ -44,6 +44,7 @@ RSpec.describe '/posts', type: :request do
   describe 'GET /new' do
     it 'renders a successful response' do
       get new_post_url
+      # this test sucks :( 
       expect(response).to be_successful
     end
   end
