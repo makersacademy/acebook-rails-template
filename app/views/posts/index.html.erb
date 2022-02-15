@@ -1,7 +1,7 @@
 <div class="text-center">
 <br>
 <% if current_user %>
-<b>Welcome <%= current_user.email %></b>
+<b>Welcome <%= current_user.name %>!</b>
 <% end %>
 <br><br>
 
@@ -13,11 +13,14 @@
 <br><br><br>
 
 <% @posts.each do |post| %>
-  <% p post.user_id %> 
-  <%= post.user_id %> said: <%= post.message %></p> %>
-  <p><%= post.created_at %></p>
-  <%= link_to "View post", post %>
-  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div class="post-box">
+    <p><%= post.user.name %> said:</p>
+    <p><%= post.created_at.to_date.strftime('%d %b %Y') %></p>
+    <p><%= post.message %></p>
+    
+    <%= link_to "View post", post %>
+    <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
 <% end %>
 
 </div>
