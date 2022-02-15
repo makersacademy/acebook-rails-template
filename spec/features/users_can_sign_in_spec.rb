@@ -27,7 +27,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Password", with: "12345678"
     click_button "Log in"
 
-    expect(page).to have_content "New post"
+    expect(page).to have_content "New Post"
   end
 
   scenario "User is redirected to their posts page" do

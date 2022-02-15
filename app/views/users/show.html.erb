@@ -1,6 +1,29 @@
-<h1><%= @user.name%>'s profile page</h1>
+<div class="text-center">
+<h1 class="page-title"><%= @user.name%>'s profile page</h1>
 
+My Posts
 
-<% @user.posts.each do |p| %>
-  <p style="margin: 10px;"><%= p.message %></p>
-<%end%>
+<% @user.posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <strong>
+        <a href="<%= user_path(post.user.id) %>">
+          <%= post.user.name %>
+        </strong>
+        </a> said:
+      </h5>
+      
+      <p class="card-text"><%= post.message %></p>
+
+      <footer class="post-footer">
+         <% if current_user.id == post.user.id %>
+         <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
+          <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+        <% end %>
+      </footer>
+    </div>
+  </div>
+<br><br>  
+<% end %> 
+</div> 

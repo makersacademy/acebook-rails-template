@@ -12,27 +12,29 @@
 <% end %>
 <br><br><br>
 
-<% @posts.each do |post| %>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">
-        <strong><a href="<%= user_path(post.user.id) %>">
-          <%= post.user.name %></strong>
-        </a> said:
-      </h5>
-      
-      <p class="card-text"><%= post.message %></p>
+<div class="main">
+  <% @posts.each do |post| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <strong><a href="<%= user_path(post.user.id) %>">
+            <%= post.user.name %></strong>
+          </a> said:
+        </h5>
+        
+        <p class="card-text"><%= post.message %></p>
 
-      <footer class="post-footer">
-        <%= link_to "View post", post, class:"post-btn" %>
-         <% if current_user.id == post.user.id %>
-          <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
-        <% end %>
-      </footer>
+        <footer class="post-footer">
+          <%= link_to "View post", post, class:"post-btn" %>
+          <% if current_user.id == post.user.id %>
+            <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+          <% end %>
+        </footer>
+      </div>
     </div>
-  </div>
 
   <br><br>
-<% end %>
+  <% end %>
 
+  </div>
 </div>
