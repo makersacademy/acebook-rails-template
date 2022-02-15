@@ -1,4 +1,13 @@
 .ace-btn {
-  background-color: pink;
-  color: red;
+  text-decoration: none;
+  color: #001852;
+  padding: 1em 1.2em;
+  margin-left: 0.5em;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+.ace-btn:hover{
+  background-color: #001852;
+  color: white;
 }
