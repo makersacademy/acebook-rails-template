@@ -24,14 +24,14 @@
         
         <p class="card-text"><%= post.message %></p>
         
-      <footer class="post-footer">
-        <%= link_to "View post", post, class:"post-btn" %>
-         <% if current_user.id == post.user.id %>
-          <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
-          <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
-        <% end %>
-      </footer>
-
+        <footer class="post-footer">
+          <%= link_to "View post", post, class:"post-btn" %>
+          <% if current_user.id == post.user.id %>
+            <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
+            <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+          <% end %>
+        </footer>
+      </div>
     </div>
 
   <br><br>
