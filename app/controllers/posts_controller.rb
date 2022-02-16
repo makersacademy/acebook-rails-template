@@ -3,12 +3,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-      # redirect_to 'devise/registrations#new'
   end
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to request.env["HTTP_REFERER"]
   end
 
   def index
