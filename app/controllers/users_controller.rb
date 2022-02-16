@@ -21,9 +21,20 @@ class UsersController < ApplicationController
     redirect_to current_user_path
   end
 
+  def edit
+    @user = User.find(params[:id])
+    # render template: => ('Edit registration', edit_user_registration_path)
+    # edit_user_registration_path
+  end
+
+  def update
+    current_user.update(user_params)
+    redirect_to edit_user_registration_path
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:avatar,:name, :email, :id)
   end
 
   

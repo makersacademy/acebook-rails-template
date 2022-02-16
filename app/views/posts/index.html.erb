@@ -30,12 +30,19 @@
   <% @posts.each do |post| %>
     <div class="card">
       <div class="card-body">
+        <!-- AVATAR -->
+        <div class="avatar">
+          <% if post.user.avatar.attached? %>
+            <%= image_tag post.user.avatar, class: "avatar-img" %>
+          <% end %>
+        </div>
+        <!-- USER NAME -->
         <h5 class="card-title">
           <strong><a href="<%= user_path(post.user.id) %>">
             <%= post.user.name %></strong>
           </a> said:
         </h5>
-        
+        <!-- POST MESSAGE -->
         <p class="card-text"><%= post.message %></p>
         
         <footer class="post-footer">

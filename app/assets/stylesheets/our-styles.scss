@@ -6,21 +6,21 @@
   font-weight: 400;
 }
 
-.ace-btn:hover{
+.ace-btn:hover {
   background-color: #001852;
   color: white;
 }
 
 .new-post-btn {
   text-decoration: none;
-  background-color: #FD8379;
+  background-color: #fd8379;
   color: white;
   padding: 1em 1.2em;
   margin-left: 0.5em;
   font-weight: 700;
 }
 
-.new-post-btn:hover{
+.new-post-btn:hover {
   background-color: #001852;
   color: white;
 }
@@ -34,29 +34,28 @@
   font-size: 8.5pt;
 }
 
-.post-btn:hover{
+.post-btn:hover {
   background-color: #001852;
   color: white;
 }
 
 .navbar {
-  background-color: #D8E0F1 !important;
+  background-color: #d8e0f1 !important;
 }
 
-.post-box{
+.post-box {
   display: table;
   width: auto;
-  background-color: #eee;         
-  border: 1px solid #666666;         
+  background-color: #eee;
+  border: 1px solid #666666;
   border-spacing: 5px;
-
 }
 
 .card {
-  background-color: #D8E0F1;
+  background-color: #d8e0f1;
   width: 40%;
   margin: auto;
-  border-radius:0;
+  border-radius: 0;
   border: none;
 }
 
@@ -72,11 +71,22 @@
 
 .card-text {
   color: #001852;
-  font-family: 'Roboto Serif', sans-serif;
+  font-family: "Roboto Serif", sans-serif;
   text-align: left;
   font-weight: 300;
 }
 
 .post-footer {
   text-align: right;
+}
+
+.avatar {
+  text-align: left;
+  border: 1px solid #efefef;
+  margin-left: 0;
+}
+.avatar-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
 }
