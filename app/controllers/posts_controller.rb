@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.where(feed: true).order("created_at DESC")
+    @post = Post.new
   end
 
   def destroy
@@ -41,7 +42,11 @@ class PostsController < ApplicationController
   
   private
 
+  # def post_params
+  #   params.require(:post).permit(:message, :user_id)
+  # end
+
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :receiver_id, :user_id, :feed)
   end
 end
