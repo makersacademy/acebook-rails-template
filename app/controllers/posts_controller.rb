@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_to request.env["HTTP_REFERER"]
   end
 
   def show

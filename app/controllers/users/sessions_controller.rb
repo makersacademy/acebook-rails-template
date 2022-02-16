@@ -3,11 +3,11 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-  GET /resource/sign_in
-  def new
-    super
+  # GET /resource/sign_in
+  # def new
+    # super
     # flash.notice "Welcome you're signed up"
-  end
+  # end
 
   # POST /resource/sign_in
   # def create

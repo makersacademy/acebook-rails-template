@@ -1,6 +1,9 @@
 <div class="text-center">
 <br>
 <p><%= @post.message %></p>
-<%= link_to "Edit post", edit_post_path(@post) %>
+<% if current_user.id == @post.user.id %>
+  <%= link_to "Edit post", edit_post_path(@post) %>
+<% end %>
+
 
 </div>

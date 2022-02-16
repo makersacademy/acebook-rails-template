@@ -10,11 +10,6 @@ class UsersController < ApplicationController
     @post = Post.new
   end
 
-  # def index
-  #   # @users = User.all
-  #   @users = User.where('id != ?' , current_user.id).page(params[:page]).per(12)
-  # end
-
   def create
     User.create(user_params)
     redirect_to current_user_path

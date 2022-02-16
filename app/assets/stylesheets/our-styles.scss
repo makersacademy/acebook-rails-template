@@ -55,18 +55,19 @@
 .card {
   background-color: #D8E0F1;
   width: 40%;
-  margin:auto;
+  margin: auto;
   border-radius:0;
   border: none;
-  h5{
-    font-size: 12pt;
-    color: #001852;
-  }
 }
 
 .card-title {
   text-align: left;
   font-size: 10pt !important;
+  a {
+    font-size: 12pt;
+    color: #001852;
+    text-decoration: none;
+  }
 }
 
 .card-text {
