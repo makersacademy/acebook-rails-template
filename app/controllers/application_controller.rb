@@ -9,11 +9,15 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end 
+
+  def after_sign_in_path_for(user)
+    user_path(current_user.id)
+  end
   
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-  # config.autoload_paths << Rails.root.join('lib')
+
 end

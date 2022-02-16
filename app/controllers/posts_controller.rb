@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-      # redirect_to 'devise/registrations#new'
   end
 
   def create
