@@ -1,5 +1,4 @@
-
-
+<p>Welcome <%= current_user.email %></p>
 <nav class="navbar navbar-light bg-light" >
 <p style="text-align:center;" ></p>
   <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -18,16 +17,17 @@
 <div class="col-sm-6">
     <% @posts.each do |post| %>
       <div class ="card">
-      <div class = "card-body">
-        <p><%= post.message %><br/></p>
-        <p><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
-      </div>
-      <span>
-      <%=button_to 'Delete', post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
-      &nbsp;
-      <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
-     </span>
-     &nbsp;
+        <div class = "card-body">
+          <p><%= post.user_id %></p>
+          <p><%= post.message %><br/></p>
+          <p><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
+        </div>
+        <span>
+          <%=button_to 'Delete', post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
+          &nbsp;
+          <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
+        </span>
+          &nbsp;
       </div>
       <br/>
       <% end %>
