@@ -15,7 +15,8 @@
   <tbody>
     <% @posts.reverse.each do |post| %>
       <tr>
-        <td><%= post.message %></td>
+
+        <td><%= simple_format(post.message) %></td>
         <td><%= " #{current_user.first_name} #{current_user.surname} " %></td>
 
         <td><%= post.created_at.strftime("%d/%m/%y") %></td>
