@@ -778,16 +778,29 @@
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
-          1,
-          1,
-          1,
+          null,
+          null,
           null,
           1,
           null,
           null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
           null,
           null,
           null,
@@ -856,8 +869,16 @@
         "lines": [
           1,
           null,
-          null,
-          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -891,8 +912,8 @@
         "lines": [
           null,
           null,
-          null,
-          null,
+          1,
+          2,
           null
         ]
       },
@@ -907,15 +928,25 @@
           null
         ]
       },
-      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/like.rb": {
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/controllers/likes_controller.rb": {
         "lines": [
           1,
           1,
+          null,
           1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1645028836
+    "timestamp": 1645030710
   }
 }
