@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
-  scenario "redirects to index if not signed up" do 
-    visit "/posts/new"
+  scenario "redirects sign in if not signed up or signed_in" do 
+    visit "/"
 
     expect(page).to_not have_content("Sign Out")
     expect(page).to have_content("Sign up")
