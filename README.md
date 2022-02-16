@@ -34,3 +34,39 @@ ExecJS::RuntimeUnavailable:
  ```
 That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
 and then run `bundle exec rspec` again
+
+
+
+
+=== Adding Devise ===
+gem 'devise', '~> 4.8', '>= 4.8.1' (added to gemfile)
+ran: bundle install
+
+Follow instructions here: https://github.com/heartcombo/devise
+
+ran: $ rails generate devise:install (and follow steps in terminal)
+
+- pasted into config/envrionments/development.rb:
+   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+- pasted into config/envrionments/production.rb:
+  config.action_mailer.default_url_options = { host: 'https://acebook--chats.herokuapp.com/', port: 8080 }
+
+- pasted into app/views/layouts/application.html.erb:
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
+- ran:  rails g devise:views (added a lot of app/views files)
+
+Setup database (user table):
+ran: rails generate devise user
+and migrate it, ran: rails db:migrate
+
+ran: rails routes (to see new routes added)
+      
+## Mockup Design
+
+      
+![Welcome!](https://user-images.githubusercontent.com/87937468/153431859-d29a5428-1171-44a5-8850-7afec1a5cd4d.png)
+
+

@@ -7,8 +7,60 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Acebook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Account", edit_user_registration_path %></a>
+        <%# post nav  %>
+          <a class="nav-link" <%= link_to "posts", posts_index_path %></a> 
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign In", new_user_session_path %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" <%= link_to "Sign Up", new_user_registration_path %></a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
     <%= yield %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<!--May need to add alerts above yield-->
   </body>
 </html>
+
+<!---
+   Controller#Action
+                        new_user_session GET    /users/sign_in(.:format)                                                                          devise/sessions#new
+                            user_session POST   /users/sign_in(.:format)                                                                          devise/sessions#create
+                    destroy_user_session DELETE /users/sign_out(.:format)                                                                         devise/sessions#destroy
+                       new_user_password GET    /users/password/new(.:format)                                                                     devise/passwords#new
+                      edit_user_password GET    /users/password/edit(.:format)                                                                    devise/passwords#edit
+                           user_password PATCH  /users/password(.:format)                                                                         devise/passwords#update
+                                         PUT    /users/password(.:format)                                                                         devise/passwords#update
+                                         POST   /users/password(.:format)                                                                         devise/passwords#create
+                cancel_user_registration GET    /users/cancel(.:format)                                                                           devise/registrations#cancel
+                   new_user_registration GET    /users/sign_up(.:format)                                                                          devise/registrations#new
+                  edit_user_registration GET    /users/edit(.:format)                                                                             devise/registrations#edit
+                       user_registration PATCH  /users(.:format)                                                                                  devise/registrations#update
+                                         PUT    /users(.:format)                                                                                  devise/registrations#update
+                                         DELETE /users(.:format)                                                                                  devise/registrations#destroy
+                                         POST   /users(.:format)   
+--->
