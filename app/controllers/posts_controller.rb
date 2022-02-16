@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to request.env["HTTP_REFERER"]
+    redirect_to request.env["HTTP_REFERER"] 
   end
 
   def index
@@ -40,10 +40,6 @@ class PostsController < ApplicationController
   end
   
   private
-
-  # def post_params
-  #   params.require(:post).permit(:message, :user_id)
-  # end
 
   def post_params
     params.require(:post).permit(:message, :receiver_id, :user_id, :feed)
