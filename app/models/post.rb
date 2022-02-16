@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-    belongs_to :user
+    # belongs_to :user
     has_many :likes, dependent: :destroy
     #  attr_reader :created_at, :persisted
 
