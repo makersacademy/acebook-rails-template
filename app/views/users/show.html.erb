@@ -1,7 +1,11 @@
 <div class="text-center">
 <h1 class="page-title"><%= @user.name%>'s profile page</h1>
-<%= link_to "Edit Profile", edit_user_path(current_user) %>
 
+
+  <% if current_user.id == @user.id %>
+  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class:"post-btn" %>
+  <% end %>
+  
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
