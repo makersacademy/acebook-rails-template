@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'jquery-rails'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 4'
   gem 'selenium-webdriver'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -57,6 +59,7 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
