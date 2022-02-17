@@ -104,3 +104,11 @@ As an awesome developer of myAce,
 So users are not confused if they visit a non-existent user page,
 I want a custom 404 to let them know what happened
 ```
+
+### __Wireframes__
+
+# <img src='./public/images/wireframe-1.png' style='height: 500px'>
+
+# <img src='./public/images/wireframe-2.png' style='height: 500px'>
+
+
