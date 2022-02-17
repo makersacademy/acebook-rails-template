@@ -5,6 +5,8 @@ Project for Makers Academy weeks 8 & 9 using Ruby on Rails
 
 *Primary gems used: Devise for users and secuity, Bootstrap for design*
 
+Our site is hosted on Heroku: [myAce website](myace.herokuapp.com)
+
 ### __User Stories__
 
 ```
