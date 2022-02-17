@@ -54,6 +54,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4'
+  gem 'rails_real_favicon'
 end
 
 group :development do
