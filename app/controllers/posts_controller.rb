@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     # @post = Post.create(post_params)
-    @post = current_user.posts.create(post_params)
+    @post = current_user.posts.create(post_params) if current_user
     redirect_to posts_url
   end
 
