@@ -15,9 +15,8 @@
   <tbody>
     <% @posts.reverse.each do |post| %>
       <tr>
-
         <td><%= simple_format(post.message) %></td>
-        <td><%= " #{current_user.first_name} #{current_user.surname} " %></td>
+        <td><%= " #{User.find(post.user_id).first_name} #{User.find(post.user_id).surname} " %></td>
 
         <td><%= post.created_at.strftime("%d/%m/%y") %></td>
         <td><%= post.created_at.strftime("%H:%M") %></td>
@@ -26,6 +25,7 @@
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% post.comments %>
     <% end %>
   </tbody>
 </table>

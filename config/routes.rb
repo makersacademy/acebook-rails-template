@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'posts/new'
 
-  resources :posts
+  resources :posts do 
+    resources :comments
+  end 
 end
