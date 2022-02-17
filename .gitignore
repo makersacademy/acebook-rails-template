@@ -22,3 +22,8 @@
 
 .byebug_history
 .DS_Store
+
+coverage
+
+.rubocop-https---raw-githubusercontent-com-makersacademy-scaffolint-v2-2-0--rubocop-yml
+/config/master.key
