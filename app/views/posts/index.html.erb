@@ -1,53 +1,47 @@
 <%= render 'application/favicon' %>
 
 <nav class="navbar-custom" >
-<p style="text-align:center;" ></p>
-  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm" %>
+  <p style="text-align:center;" ></p>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm" %>
 </nav>
+
 <div class="background" >
-&nbsp;
-<p id="name" style="text-align:center;" >Welcome <%= current_user.name.capitalize if current_user %>!</p>
-<br/>
-<div>
-<div class="add-post">
-  
-<%= link_to new_post_path do %>
-  
-  <button class="btn btn-primary btn-sm">Add a post</button>
-<% end %>
-</div>
-<br/>
-<div class="row">
-<div class="col-sm-6">
-    <% @posts.each do |post| %>
-      <div class ="card">
-
-        <div class = "card-body">
-          <p> <strong> <%= post.user.try(:username)%> </strong> posted: </p>
-          <p><%= post.message %><br/></p>
-          &nbsp;
-          <p id = "time" ><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
-        
-        <span>
-          <%=button_to "Delete" , post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
-          &nbsp;
-          <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
-        </span>
-       
-                  
-       
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-      </div>
-      </span>
-      <%= button_to 'Like', post_likes_path(post), method: :post %>
-      </span>
-      
-     &nbsp;
-
-      </div>
-      <br/>
+  &nbsp;
+  <p id="name" style="text-align:center;" >Welcome <%= current_user.name.capitalize if current_user %>!</p>
+  <br/>
+  <div>
+    <div class="add-post">
+      <%= link_to new_post_path do %>
+        <button class="btn btn-primary btn-sm">Add a post</button>
       <% end %>
-</div>
-</div>
-</div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm-6">
+        <% @posts.each do |post| %>
+        <div class ="card">
+          <div class = "card-body">
+            <p> <strong> <%= post.user.try(:username)%> </strong> posted: </p>
+            <p><%= post.message %><br/></p>
+            &nbsp;
+            <p id = "time" ><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
+        
+            <span>
+              <%=button_to "Delete" , post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
+              &nbsp;
+              <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
+            </span>
+                  
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+            </span>
+             <%= button_to 'Like', post_likes_path(post), method: :post %>
+            </span>
+            &nbsp;
+          </div>
+        </div>
+        <br/>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
