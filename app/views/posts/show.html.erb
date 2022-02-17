@@ -11,8 +11,14 @@
 <h2> Comments </h2>
 <% @post.comments.each do |comment| %>
   <p>
-  <strong><%= "#{User.find(comment.user_id).first_name} #{User.find(comment.user_id).surname}:" %></strong>
+  <table><tr><td>
+    <strong><%= "#{User.find(comment.user_id).first_name} #{User.find(comment.user_id).surname}:" %></strong>
+  </td>
+  <td colspan="2">
   <%= comment.body %>
+  </td></tr><tr><td>
+  <sub><%= " (#{comment.created_at.strftime("%d/%m/%y")} #{comment.created_at.strftime("%H:%M")})" %></sub>
+  </td>
   </p>
   <% end %>
 
