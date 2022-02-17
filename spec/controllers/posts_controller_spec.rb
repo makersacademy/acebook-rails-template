@@ -2,6 +2,9 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
 
   before(:each) do
+
+    request.env["HTTP_REFERER"] = "where_i_posted"
+   
     @user = User.create(:email => "amyace@gmail.com", :password => "123456", :password_confirmation => "123456")
     @user2 = User.create(:email => "user2@gmail.com", :password => "123456", :password_confirmation => "123456")
 
@@ -19,7 +22,7 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     it "responds with 302" do
       post :create, params: { post: { message: "Hello, world!", receiver_id: @user2.id, user_id: @user.id, feed: false } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to "where_i_posted"
     end
 
     it "creates a post" do 
