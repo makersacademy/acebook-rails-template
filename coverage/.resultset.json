@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -54,7 +54,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/rails_helper.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -118,7 +118,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/environment.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -127,7 +127,7 @@
           1
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/application.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/application.rb": {
         "lines": [
           1,
           1,
@@ -142,6 +142,8 @@
           null,
           1,
           null,
+          1,
+          null,
           null,
           null,
           null,
@@ -149,14 +151,14 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/boot.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/environments/test.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -202,7 +204,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +214,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/assets.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -230,7 +232,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -241,7 +243,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -250,7 +252,7 @@
           1
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/devise.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -565,7 +567,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -573,7 +575,7 @@
           1
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/inflections.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -593,7 +595,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/mime_types.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -601,7 +603,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/web_app_manifest.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/web_app_manifest.rb": {
         "lines": [
           null,
           null,
@@ -623,7 +625,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -641,12 +643,22 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/config/routes.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/config/routes.rb": {
         "lines": [
           1,
           null,
+          null,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           null,
@@ -658,7 +670,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/user.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/models/user.rb": {
         "lines": [
           1,
           null,
@@ -674,26 +686,32 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/application_record.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/helpers/application_helper.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/helpers/likes_helper.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/controllers/posts_controller.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/rrs/acebook/acebook-five-aces/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           null,
@@ -756,7 +774,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/controllers/application_controller.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -788,7 +806,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -806,7 +824,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_edit_posts_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_edit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -823,9 +841,9 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_like_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_like_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           null,
           null,
@@ -881,7 +899,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -896,7 +914,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/helpers/likes_helper_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/helpers/likes_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -915,7 +933,26 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/like_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/helpers/welcome_helper_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rrs/acebook/acebook-five-aces/spec/models/like_spec.rb": {
         "lines": [
           1,
           null,
@@ -924,7 +961,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/like.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -933,7 +970,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/post_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -942,7 +979,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/post.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/app/models/post.rb": {
         "lines": [
           1,
           null,
@@ -958,7 +995,7 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/user_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/models/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -967,9 +1004,20 @@
           null
         ]
       },
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/requests/likes_spec.rb": {
+      "/Users/rrs/acebook/acebook-five-aces/spec/requests/likes_spec.rb": {
         "lines": [
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rrs/acebook/acebook-five-aces/spec/requests/welcome_spec.rb": {
+        "lines": [
+          null,
           null,
           null,
           null,
@@ -979,6 +1027,6 @@
         ]
       }
     },
-    "timestamp": 1645117644
+    "timestamp": 1645118185
   }
 }

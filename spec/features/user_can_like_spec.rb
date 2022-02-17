@@ -1,4 +1,4 @@
-require 'rails_helper'
+#rrequire 'rails_helper'
 
 # RSpec.feature "Like", type: :feature do
 #   it "A post starts with 0 likes" do
