@@ -600,6 +600,7 @@
           null
         ]
       },
+
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/web_app_manifest.rb": {
         "lines": [
           null,
@@ -622,6 +623,7 @@
           null
         ]
       },
+
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
@@ -652,6 +654,8 @@
           1,
           1,
           1,
+          1,
+          null,
           null
         ]
       },
@@ -662,6 +666,8 @@
           null,
           1,
           null,
+          1,
+          1,
           null,
           null
         ]
@@ -674,6 +680,12 @@
         ]
       },
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
@@ -766,7 +778,9 @@
           null
         ]
       },
+      
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+
         "lines": [
           1,
           null,
@@ -778,11 +792,17 @@
           1,
           1,
           1,
+          1,
+          null,
+          1,
           null,
           null
         ]
       },
+
+
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_edit_posts_spec.rb": {
+
         "lines": [
           1,
           null,
@@ -799,6 +819,66 @@
           null
         ]
       },
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
@@ -814,6 +894,44 @@
           null
         ]
       },
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/post_spec.rb": {
         "lines": [
           1,
@@ -828,6 +946,7 @@
           1,
           null,
           null,
+          1,
           null,
           null,
           1,
@@ -837,7 +956,20 @@
         ]
       },
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/user_spec.rb": {
+
         "lines": [
+          null,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/requests/likes_spec.rb": {
+
+        "lines": [
+          1,
+          null,
           null,
           null,
           null,
@@ -846,6 +978,8 @@
         ]
       }
     },
+
     "timestamp": 1645099074
+
   }
 }
