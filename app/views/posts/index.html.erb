@@ -23,7 +23,7 @@
       <div class ="card">
 
         <div class = "card-body">
-          <p> <strong> <%= post.user.try(:username)%> </strong> </p>
+          <p> <strong> <%= post.user.try(:username)%> </strong> posted: </p>
           <p><%= post.message %><br/></p>
           &nbsp;
           <p id = "time" ><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
