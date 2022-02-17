@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    redirect_to edit_user_registration_path
+    redirect_to current_user_path
   end
 
   private
