@@ -6,8 +6,5 @@ class Post < ApplicationRecord
 
     def editable?
         Time.now.to_i < created_at.since(600).to_i
-        
     end
-
-    
 end
