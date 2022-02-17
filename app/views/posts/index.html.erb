@@ -1,6 +1,12 @@
-<h1>Posts</h1>
-<%= link_to 'New Post', new_post_path %>
-
+<div class="container mt-5 mb-5 ">
+  <div class="row d-flex align-items-center justify-content-center">
+  
+  
+    <%= render 'form', post: @post %>
+  
+  
+  </div>
+<div>
 <% @posts.reverse.each do |post| %>
   <div class="container mt-5 mb-5">
       <div class="row d-flex align-items-center justify-content-center">
@@ -15,8 +21,7 @@
                   <div class="p-2">
                       <p class="text-justify"><%= simple_format(post.message) %></p>
                       <hr>
-                      <div class="d-flex justify-content-between align-items-center">
-                          <div class="d-flex flex-row icons d-flex align-items-center"> <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i> </div>
+                      <div class="d-flex justify-content-between align-items-left">
                           <span><%= "#{post.comments.length} Comments" %> </span>
                           <div class="d-flex flex-row muted-color"> <span class="ml-2"><%= link_to 'Edit', edit_post_path(post) %></span> - <span> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span></div>
                       </div>
@@ -24,22 +29,22 @@
                       <div class="comments">
                       <% post.comments.each do |comment| %>
                           <div class="d-flex flex-row mb-2"> <img src="https://w7.pngwing.com/pngs/430/261/png-transparent-ace-of-spades-playing-card-symbol-miscellaneous-leaf-sign-thumbnail.png" width="40" class="rounded-image">
-                              <div class="d-flex flex-column ml-2"> <span class="name"><%= " #{User.find(comment.user_id).first_name} #{User.find(comment.user_id).surname} " %></span> <small class="comment-text"><%= comment.body %></small>
+                              <div class="d-flex flex-column ml-2"> <span class="name"><%= " #{User.find(comment.user_id).first_name} " " #{User.find(comment.user_id).surname} " %></span> <small class="comment-text"><%= comment.body %></small>
                                   <div class="d-flex flex-row align-items-center status"> 
-                                  <pre class="tab">
+                                  
                                   <p class="comment-font"><font color="grey"><%= post.created_at.strftime("%d/%m/%y") %> <%= comment.created_at.strftime("%H:%M") %></font></p>
-                                  </pre>
+                                  
                                   </div>
                               </div>
                           </div>
                       <% end %>    
-                          <%= form_with model: [post, post.comments.build] do 
+                          <%= form_with model: [post, post.comments.build]  do 
                             |form| %>
                             <p>
                             <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
                             </p>
                             <p>
-                            <%= form.text_area :body, class: 'form-control'%>
+                            <%= form.text_area :body, class: 'form-control', placeholder: "Add a new commen..."%>
                             </p>
                             <p>
                             <%= form.submit class: 'form-control' %>

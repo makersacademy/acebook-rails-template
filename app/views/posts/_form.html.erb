@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :message %>
-    <%= form.text_area :message %>
+    <%= form.text_area :message, class: 'form-control', placeholder: "Write a new post..." %>
   </div>
 
   <div class="field">
@@ -21,6 +20,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'form-control' %>
   </div>
 <% end %>

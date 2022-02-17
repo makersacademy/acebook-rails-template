@@ -15,7 +15,6 @@
     </a>
   <% if user_signed_in? %>
     <a class="navbar-brand" <%= link_to "Acebook", posts_index_path %></a>
-    
   <% else %>
     <a class="navbar-brand" <%= link_to "Acebook", welcome_index_path %></a>
   <% end %>
@@ -50,8 +49,18 @@
     </ul>
   </div>
 </nav>
-   <center> <p class="notice"><%= notice %></p>
+    <div class="comment-font" style="padding-left:20px">
+    <% if user_signed_in? %>
+    <b><%= "Signed in as: " %></b>
+    <%= "#{current_user.first_name} #{current_user.surname}" %>
+    <%= "(#{current_user.email})" %>
+                                  
+    <% end %>
+    </div>
+    
+    <center> <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p></center>
+
     <%= yield %>
 <!--May need to add alerts above yield-->
   </body>
