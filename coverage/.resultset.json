@@ -757,6 +757,25 @@
           null
         ]
       },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/controllers/user_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
         "lines": [
           1,
@@ -778,29 +797,29 @@
           1,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
           1,
           1,
           1,
           1,
           1,
+          null,
           1,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -927,26 +946,8 @@
           null,
           null
         ]
-      },
-      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/controllers/likes_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1645030710
+    "timestamp": 1645098216
   }
 }
