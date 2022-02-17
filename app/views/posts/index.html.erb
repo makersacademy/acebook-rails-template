@@ -1,31 +1,26 @@
-<div class="text-center">
 <% if current_user %>
-<h3><b>Welcome <%= current_user.name %>!</b></h3>
+  <h3 class="page-title">Welcome <%= current_user.name %>!</h3>
+<% end %>
+
+<!--********** NEW POST FORM ********* -->
+<%= form_for @post do |form| %>
+<div class="new-post-form">
+  <%= form.label :message %><br/>
+  <%= form.text_area :message, placeholder: "What's on your mind, #{current_user.name}?" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field  :receiver_id, value: current_user.id %>
+  <%= form.hidden_field  :feed, value: true %>
+  <%= form.submit "Post" %>
+</div>
 <% end %>
 <br><br>
 
-
-  <%= form_for @post do |form| %>
-  <div class="new-post-form">
-    <%= form.label :message %><br/>
-    <%= form.text_area :message, placeholder: "What's on your mind, #{current_user.name}?" %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.hidden_field  :receiver_id, value: current_user.id %>
-    <%= form.hidden_field  :feed, value: true %>
-    <%= form.submit "Post" %>
-    </div>
-  <% end %>
-
-
-</div>
-<br><br><br>
-
-<div class="main">
-  <% @posts.each do |post| %>
-    <div class="card">
-      <div class="card-body">
-        <!-- AVATAR -->
-        <div class="wrapper">
+<!--********** POSTS ********* -->
+<% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <!-- AVATAR -->
+      <div class="wrapper">
         <div class="avatar">
           <% if post.user.avatar.attached? %>
             <%= image_tag post.user.avatar, class: "avatar-img" %>
@@ -33,34 +28,29 @@
         </div>
         <!-- USER NAME -->
         <h5 class="card-title">
-          <strong><a href="<%= user_path(post.user.id) %>">
-            
-            <%= post.user.name %></strong>
+          <a href="<%= user_path(post.user.id) %>">
+            <strong><%= post.user.name %></strong>
           </a> said:
         </h5>
-        </div>
-        <!-- POST MESSAGE -->
-        <p class="card-text"><%= post.message %></p>
-
-
-
-        <footer class="post-footer">
-          <div class="post-date">
-            <%= post.created_at.to_date.strftime("%d %b %Y") %> 
-          </div>
-          <div>
-            <%= link_to "View post", post, class:"post-btn" %>
-            <% if current_user.id == post.user.id %>
-              <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
-              <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
-            <% end %>
-          </div>
-        </footer>
       </div>
+      <!-- POST MESSAGE -->
+      <p class="card-text"><%= post.message %></p>
+      <!-- POST DATE -->
+      <footer class="post-footer">
+        <div class="post-date">
+          <%= post.created_at.to_date.strftime("%d %b %Y") %> 
+        </div>
+        <!-- POST BUTTONS -->
+        <div>
+          <%= link_to "View post", post, class:"post-btn" %>
+          <% if current_user.id == post.user.id %>
+            <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
+            <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+          <% end %>
+        </div>
+      </footer>
     </div>
-
-  <br><br>
-  <% end %>
-
   </div>
-</div>
+  <br><br>
+<% end %>
+

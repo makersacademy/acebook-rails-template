@@ -1,3 +1,7 @@
+.page-title {
+  margin-bottom: 30px;
+}
+
 .new-post-form {
   background-color: #d8e0f1;
   width: 40%;
@@ -13,6 +17,7 @@
   }
   label {
     margin: none;
+    font-weight: 700;
   }
   input[type="submit"] {
     background-color: #001852;
@@ -117,6 +122,39 @@
 .post-footer {
   display: flex;
   justify-content: space-between;
+}
+
+.user-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  text-align: left;
+  .avatar-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .user-details {
+    a {
+      font-size: 1.5em;
+      color: #001852;
+      text-decoration: none;
+      margin-bottom: 15px;
+    }
+    .post-btn {
+      background-color: #fd8379;
+      margin-left: 0;
+      color: white;
+      font-size: 10pt;
+    }
+    .post-btn:hover {
+      background-color: #001852;
+      margin-left: 0;
+    }
+  }
+  
 }
 
 .avatar {
