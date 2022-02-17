@@ -1,6 +1,7 @@
 <% if current_user %>
   <h3 class="page-title">Welcome <%= current_user.name %>!</h3>
 <% end %>
+<%= Rails.application.credentials.dig(:aws, :access_key_id) %>
 
 <!--********** NEW POST FORM ********* -->
 <%= form_for @post do |form| %>
