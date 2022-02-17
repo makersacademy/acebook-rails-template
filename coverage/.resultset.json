@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rrs/acebook/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -54,10 +54,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/spec/rails_helper.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/rails_helper.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           1,
@@ -121,11 +125,15 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/environment.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/environment.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           1,
@@ -134,11 +142,15 @@
           1
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/application.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/application.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           1,
@@ -163,10 +175,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/boot.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/boot.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -174,10 +190,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/environments/test.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/environments/test.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -223,12 +243,16 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
  
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/application_controller_renderer.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -238,12 +262,16 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/assets.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/assets.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -261,12 +289,16 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/backtrace_silencers.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -277,12 +309,16 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/cookies_serializer.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -291,12 +327,16 @@
           1
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
  
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/devise.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/devise.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -612,10 +652,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/filter_parameter_logging.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -624,10 +668,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/inflections.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/inflections.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -647,11 +695,15 @@
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/mime_types.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/mime_types.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -662,9 +714,36 @@
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/web_app_manifest.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/initializers/wrap_parameters.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           null,
           null,
@@ -683,10 +762,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/config/routes.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/config/routes.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -698,54 +781,78 @@
           1,
           1,
           1,
+          1,
+          null,
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/app/models/user.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/user.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
           null,
-          null,
           1,
           null,
-          null,
+          1,
+          1,
           null,
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
  
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/app/models/application_record.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/application_record.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           1,
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/app/helpers/application_helper.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/helpers/application_helper.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/app/controllers/posts_controller.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/helpers/likes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/controllers/posts_controller.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -809,10 +916,14 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/app/controllers/application_controller.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/controllers/application_controller.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           1,
@@ -837,11 +948,17 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+=======
+      
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_delete_posts_spec.rb": {
+
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -852,6 +969,9 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
           1,
           null,
           null
@@ -862,8 +982,9 @@
         "lines": [
 =======
 
-  
-      "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_edit_posts_spec.rb": {
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_edit_posts_spec.rb": {
+
         "lines": [
           1,
           null,
@@ -881,9 +1002,73 @@
         ]
       },
 
+<<<<<<< HEAD
       "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
        "lines": [
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
           1,
           null,
           1,
@@ -900,8 +1085,31 @@
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
       "/Users/rrs/acebook/acebook-five-aces/spec/models/post_spec.rb": {
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/like_spec.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
@@ -911,33 +1119,70 @@
         ]
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/app/models/post.rb": {
 =======
 
       "/Users/vanessaflorio/Desktop/acebook-five-aces/app/models/post.rb": {
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/post_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/app/models/post.rb": {
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
           1,
           null,
           null,
+          1,
           null,
           null,
           1,
           1,
-          null,
-          null,
-          null,
           null,
           null
         ]
       },
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/rrs/acebook/acebook-five-aces/spec/models/user_spec.rb": {
 =======
   
       "/Users/vanessaflorio/Desktop/acebook-five-aces/spec/models/user_spec.rb": {
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
+=======
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/models/user_spec.rb": {
+
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
         "lines": [
+          null,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/elliottzaki/Desktop/Projects/acebook-five-aces/spec/requests/likes_spec.rb": {
+
+        "lines": [
+          1,
+          null,
           null,
           null,
           null,
@@ -950,7 +1195,12 @@
     "timestamp": 1644935697
 =======
 
+<<<<<<< HEAD
     "timestamp": 1644926470
 >>>>>>> 33c61657ae53a164afce6fcb9bde7739e8ba2031
+=======
+    "timestamp": 1645099074
+
+>>>>>>> a0424141cce5e03ec2369003152bb7a5a27900d0
   }
 }

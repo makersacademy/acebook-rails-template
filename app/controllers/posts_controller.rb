@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-   validate_is_editable == true
+    validate_is_editable == true
     @post.update(post_params) 
       redirect_to posts_url and return
       render 'edit'
