@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     visit "/"
 
     fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Post"
     expect(page).to have_content("Hello, world!")
   end
 end

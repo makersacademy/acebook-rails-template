@@ -8,7 +8,7 @@ RSpec.feature "Posting", type: :feature do
         sign_up_user
         visit('/')
         fill_in 'Message', with: 'The bad boy of coding'
-        click_button 'Submit'
+        click_button 'Post'
 
         visit('/')
         expect(page).to have_content('The bad boy of coding')
@@ -24,7 +24,7 @@ RSpec.feature "Posting", type: :feature do
 
         sign_up_user
         fill_in 'Message', with: 'The bad boy of coding'
-        click_button 'Submit'
+        click_button 'Post'
 
         visit('/')
         expect(page).to_not have_content('The bad boy of coding')
@@ -38,7 +38,7 @@ RSpec.feature "Posting", type: :feature do
       
       scenario 'it appears on other receiving user\'s profile but not on posts/index or user(post-author) wall' do
         visit'/'
-        click_link 'Sign up'
+        click_link 'Sign Up'
         fill_in 'Name', with: 'User 1'
         fill_in 'Email', with: 'test@testmail.com'
         fill_in 'Password', with: '123456'
@@ -51,7 +51,7 @@ RSpec.feature "Posting", type: :feature do
         sign_up_user  
         visit "#{user.id}"
         fill_in 'Message', with: 'The baddest boy of coding'
-        click_button 'Submit'
+        click_button 'Post'
 
         expect(page).to have_content('The baddest boy of coding')
 

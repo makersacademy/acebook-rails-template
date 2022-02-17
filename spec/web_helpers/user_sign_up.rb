@@ -1,6 +1,5 @@
 def sign_up_user
   visit'/'
-  click_link 'Sign up'
   fill_in 'Name', with: 'Amy Ace'
   fill_in 'Email', with: 'test@test.com'
   fill_in 'Password', with: '123456'

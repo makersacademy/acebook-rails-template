@@ -27,7 +27,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Password", with: "12345678"
     click_button "Log in"
 
-    expect(page).to have_content "Amy Ace's profile page"
+    expect(page).to have_content "Amy Ace's profile"
   end
 
   scenario "User is redirected to their profile page on sign_in" do
@@ -36,7 +36,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Password", with: "12345678"
     click_button "Log in"
 
-    expect(page).to have_content "Amy Ace's profile page"
+    expect(page).to have_content "Amy Ace's profile"
   end
 
 end

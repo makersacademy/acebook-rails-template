@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     visit "/"
  
     fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Post"
 
     click_link "View post"
     click_link "Edit post"
