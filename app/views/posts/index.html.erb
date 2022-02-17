@@ -21,7 +21,11 @@
       <div class = "card-body">
         <p><%= post.message %><br/></p>
         <p><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
+        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
       </div>
+      </span>
+      <%= button_to 'Like', post_likes_path(post), method: :post %>
+      </span>
       <span>
       <%=button_to 'Delete', post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
       &nbsp;

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/users/sign_up', to:'registrations#new'
 
   get '/posts/new', to: 'posts#new'
-  get '/posts/:id/edit', to: 'posts#edit'
-  resources :posts
+  get 'posts/:id/edit', to: 'posts#edit'
+  resources :posts do
+    resources :likes
+  end
 end
