@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   # before_action authenticate_user
   
+
   def new
     @post = Post.new
   end
@@ -8,6 +9,8 @@ class PostsController < ApplicationController
   def create
     # @post = Post.create(post_params)
     @post = current_user.posts.create(post_params) if current_user
+    
+      
     redirect_to posts_url
   end
 
@@ -16,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def edit 
+    
     @post = Post.find(params[:id])
     validate_is_editable
   end
@@ -29,9 +33,19 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.delete
-    redirect_to posts_url
+    # @post = Post.find(params[:id])
+    # @post.delete
+    # redirect_to posts_url
+    
+      @post = Post.find(params[:id])
+      @post = Post.find(params[:id])
+      if current_user.id == @post.user_id
+        @post.delete
+      else
+        flash[:alert] = "You're not allowed to delete someone else's post..."
+        redirect_to posts_url 
+      end
+    
   end
 
   private
@@ -50,6 +64,8 @@ class PostsController < ApplicationController
     return 
     end
   end
+
+  
 
     # if Post.persisted? && !Post.editable?
     #   @post.errors[:editable] << "can edit in just 10 minutes after creation"
