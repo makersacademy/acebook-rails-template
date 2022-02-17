@@ -1,3 +1,37 @@
+.page-title {
+  margin-bottom: 30px;
+}
+
+.new-post-form {
+  background-color: #d8e0f1;
+  width: 40%;
+  margin: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  textarea {
+    padding: 1em;
+    height: 80px;
+    border: none;
+    margin-bottom: 15px;
+  }
+  label {
+    margin: none;
+    font-weight: 700;
+  }
+  input[type="submit"] {
+    background-color: #001852;
+    padding: 0.5em 1.2em;
+    margin: auto;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    border: none;
+    margin-right: 0;
+
+  }
+}
+
 .ace-btn {
   text-decoration: none;
   color: #001852;
@@ -28,10 +62,19 @@
 .post-btn {
   text-decoration: none;
   color: #001852;
-  padding: 0.5em 0.8em;
+  padding: 0.5em 0.5em;
   margin-left: 0.5em;
   font-weight: 400;
   font-size: 8.5pt;
+}
+
+.post-date {
+  color: #001852;
+  padding: 0.5em 0.5em;
+  font-weight: 400;
+  font-size: 8.5pt;
+  text-align: left;
+  margin-bottom: 0;
 }
 
 .post-btn:hover {
@@ -77,16 +120,55 @@
 }
 
 .post-footer {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  text-align: left;
+  .avatar-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .user-details {
+    a {
+      font-size: 1.5em;
+      color: #001852;
+      text-decoration: none;
+      margin-bottom: 15px;
+    }
+    .post-btn {
+      background-color: #fd8379;
+      margin-left: 0;
+      color: white;
+      font-size: 10pt;
+    }
+    .post-btn:hover {
+      background-color: #001852;
+      margin-left: 0;
+    }
+  }
+  
 }
 
 .avatar {
   text-align: left;
-  border: 1px solid #efefef;
-  margin-left: 0;
+  margin-right: 8px;
 }
 .avatar-img {
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
 }

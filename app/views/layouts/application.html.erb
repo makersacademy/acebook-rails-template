@@ -5,14 +5,14 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 
   <body>
-    <%= render 'shared/header'%>
-    <br>
-    <p class="text-center"><%= flash.notice %></p>
-    <br>
+    <div class="text-center">
+      <%= render 'shared/header'%>
+      <p><%= flash.notice %></p>
       <%= yield %>
-
+    </div>
   </body>
 </html>

@@ -38,6 +38,7 @@ class PostsController < ApplicationController
       render "edit"
     end
   end
+
   
   private
 
