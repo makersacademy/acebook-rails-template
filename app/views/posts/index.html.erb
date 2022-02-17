@@ -33,7 +33,7 @@
             </span>
                   
             <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-            </span>
+            <span>
              <%= button_to 'Like', post_likes_path(@post), method: "put" %>
             </span>
             &nbsp;
