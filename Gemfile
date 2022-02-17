@@ -60,4 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.2'
 
-gem 'aws-sdk-rails'
+gem "aws-sdk-s3", require: false
