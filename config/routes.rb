@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root :to => 'devise/registrations#new', as: :unauthenticated_root
   end
+  
+  put 'posts/:id/like', to: 'likes#show', as: 'like'
 
   #HTML route          Controller_name  #method
   get '/users/sign_up', to:'registrations#new'
