@@ -1,36 +1,25 @@
-# AceBook
+# <img src='./public/images/myace_logo_v2.svg' style='height: 100px'>
+## myAce: The next revolution in social media!
+#### Created by: Ben, Anthony, Fran, Jason, Naima, and Sahil
+Project for Makers Academy weeks 8 & 9 using Ruby on Rails
 
-REQUIRED INSTRUCTIONS:
+*Primary gems used: Devise for users and secuity, Bootstrap for design*
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+### __User Stories__
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+```
+As an avid user of myAce,
+So I can let people know how cool I am,
+I want to make a new post
+```
+```
+As an avid user of myAce
+So I can change what I posted after the fact,
+I want to edit my existing post
+```
+```
+As an avid user of myAce,
+So that I’m not later embarrassed by what I share in my loneliest moments,
+I want to be able to delete old posts
 ```
 
-## Troubleshooting
-
-If you don't have Node.js installed yet, you might run into this error when running rspec:
-```
-ExecJS::RuntimeUnavailable:
-  Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
- ```
-That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
-and then run `bundle exec rspec` again
