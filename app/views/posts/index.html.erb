@@ -1,7 +1,58 @@
+<% if current_user %>
+  <h3 class="page-title">Welcome <%= current_user.name %>!</h3>
+<% end %>
+<%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+<%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+
+<!--********** NEW POST FORM ********* -->
+<%= form_for @post do |form| %>
+<div class="new-post-form">
+  <%= form.label :message %><br/>
+  <%= form.text_area :message, placeholder: "What's on your mind, #{current_user.name}?" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field  :receiver_id, value: current_user.id %>
+  <%= form.hidden_field  :feed, value: true %>
+  <%= form.submit "Post" %>
+</div>
+<% end %>
+<br><br>
+
+<!--********** POSTS ********* -->
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div class="card">
+    <div class="card-body">
+      <!-- AVATAR -->
+      <div class="wrapper">
+        <div class="avatar">
+          <% if post.user.avatar.attached? %>
+            <%= image_tag post.user.avatar, class: "avatar-img" %>
+          <% end %>
+        </div>
+        <!-- USER NAME -->
+        <h5 class="card-title">
+          <a href="<%= user_path(post.user.id) %>">
+            <strong><%= post.user.name %></strong>
+          </a> said:
+        </h5>
+      </div>
+      <!-- POST MESSAGE -->
+      <p class="card-text"><%= post.message %></p>
+      <!-- POST DATE -->
+      <footer class="post-footer">
+        <div class="post-date">
+          <%= post.created_at.to_date.strftime("%d %b %Y") %> 
+        </div>
+        <!-- POST BUTTONS -->
+        <div>
+          <%= link_to "View post", post, class:"post-btn" %>
+          <% if current_user.id == post.user.id %>
+            <%= link_to "Edit post", edit_post_path(post), class:"post-btn" %>
+            <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class:"post-btn" %>
+          <% end %>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <br><br>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>

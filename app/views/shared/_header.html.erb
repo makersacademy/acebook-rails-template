@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid w-75 p-3">
+      <a class="navbar-brand" href="/"><img src="/images/myace_logo_v2.svg" height='60' alt="myAce logo"></a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %> 
+            <li class="nav-item"> 
+              <%= link_to "My Profile", user_path(current_user), class: "ace-btn" %>  
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "ace-btn"%>
+            </li>
+            <%# <li class="nav-item"> 
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "ace-btn" %>  
+            <%# </li> %> 
+
+        <% else %> 
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "ace-btn" %>
+          </li>
+          <li class="nav-item">
+            <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "ace-btn" %>
+          </li> 
+        <% end %> 
+      </ul>
+  </div>
+</nav>

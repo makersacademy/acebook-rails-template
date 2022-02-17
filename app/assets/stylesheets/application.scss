@@ -10,6 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ @import "bootstrap";
+ @import "our-styles";
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto+Serif:wght@100;300;500;700&display=swap');
+
+ * {
+  font-family: 'Open Sans', sans-serif;
+ }
