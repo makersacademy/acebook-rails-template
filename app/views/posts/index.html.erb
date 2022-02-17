@@ -1,4 +1,4 @@
-
+<%= render 'application/favicon' %>
 
 <nav class="navbar-custom" >
 <p style="text-align:center;" ></p>
@@ -21,6 +21,7 @@
 <div class="col-sm-6">
     <% @posts.each do |post| %>
       <div class ="card">
+
         <div class = "card-body">
           <p> <strong> <%= post.user.try(:username)%> </strong> </p>
           <p><%= post.message %><br/></p>
@@ -32,8 +33,17 @@
           &nbsp;
           <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
         </span>
-        </div>
-          
+       
+                  
+       
+        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+      </div>
+      </span>
+      <%= button_to 'Like', post_likes_path(post), method: :post %>
+      </span>
+      
+     &nbsp;
+
       </div>
       <br/>
       <% end %>
