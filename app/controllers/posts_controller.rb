@@ -22,6 +22,14 @@ class PostsController < ApplicationController
     
     @post = Post.find(params[:id])
     validate_is_editable
+    @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user_id
+      @post.editable? == true
+    else
+      flash[:alert] = "You're not allowed to edit someone else's post..."
+      
+    end
   end
 
   def update
@@ -30,6 +38,7 @@ class PostsController < ApplicationController
     @post.update(post_params) 
       redirect_to posts_url and return
       render 'edit'
+      
   end
 
   def destroy
