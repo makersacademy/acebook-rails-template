@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.feature "Like", type: :feature do
-  it "A post starts with 0 likes" do
-    visit "/posts"
-    click_link "Add a post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+# RSpec.feature "Like", type: :feature do
+#   it "A post starts with 0 likes" do
+#     visit "/posts"
+#     click_link "Add a post"
+#     fill_in "Message", with: "Hello, world!"
+#     click_button "Submit"
 
-    expect(page).to have_content('0 Likes')
-  end
+#     expect(page).to have_content('0 Likes')
+#   end
 #   before(:each) do
 #     u = User.new(username: "practice_user",
 #              email: "practice@practice.co.uk",
@@ -27,7 +27,7 @@ RSpec.feature "Like", type: :feature do
 #       # expect(page).to have_content('0 Likes')  
 #     end
 
-end
+# end
 
 
 
