@@ -32,9 +32,9 @@
               <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
             </span>
                   
-            <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
             </span>
-             <%= button_to 'Like', post_likes_path(post), method: :post %>
+             <%= button_to 'Like', post_path(post), method: :post %>
             </span>
             &nbsp;
           </div>
