@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root :to => 'devise/registrations#new', as: :unauthenticated_root
   end
 
+  put '/post/:id/like', to: 'posts#show', as: 'like'
 
   #HTML route          Controller_name  #method
   get '/users/sign_up', to:'registrations#new'

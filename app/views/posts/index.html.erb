@@ -37,10 +37,11 @@
   </span>
    &nbsp;
   <span>
-    <%= button_to 'Like', post_likes_path(post), method: :post, :class => "btn btn-primary btn-sm" %>
-    &nbsp;
-    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
    
+    <%# <%= button_to "Like", post_path(post), method: "put", :class => "btn btn-primary btn-sm" %>
+    <%# &nbsp;
+    <p><%= post.likes.count <%= (post.likes.count) == 1 ? 'Like' : 'Likes'
+    %>
   </span>
   <p id = "time" ><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
   </div>
