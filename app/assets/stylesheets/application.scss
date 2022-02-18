@@ -53,10 +53,12 @@
 
 #time {
     font-size: 12px;
+    margin-left: 20px;
 }
 
 .background {
     background-color: #d8e7ef;
+    
 }
 
 #name {
@@ -67,3 +69,10 @@
     background-color: #49708e;
     text-align:right;
 }
+
+#img-container {
+    text-align: auto;
+    display: block;
+    
+}
+
