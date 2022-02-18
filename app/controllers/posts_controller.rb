@@ -22,8 +22,6 @@ class PostsController < ApplicationController
     
     @post = Post.find(params[:id])
     validate_is_editable
-    @post = Post.find(params[:id])
-    @post = Post.find(params[:id])
     if current_user.id == @post.user_id
       @post.editable? == true
     else
@@ -46,10 +44,11 @@ class PostsController < ApplicationController
     # @post.delete
     # redirect_to posts_url
     
-      @post = Post.find(params[:id])
+      
       @post = Post.find(params[:id])
       if current_user.id == @post.user_id
         @post.delete
+        redirect_to posts_url 
       else
         flash[:alert] = "You're not allowed to delete someone else's post..."
         redirect_to posts_url 
