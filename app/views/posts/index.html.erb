@@ -1,7 +1,59 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
+<div class="container mt-5 mb-5 ">
+  <div class="row d-flex align-items-center justify-content-center">
+  
+  
+    <%= render 'form', post: @post %>
+  
+  
+  </div>
+<div>
+<% @posts.reverse.each do |post| %>
+  <div class="container mt-5 mb-5">
+      <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="d-flex justify-content-between p-2 px-3">
+                      <div class="d-flex flex-row align-items-center"> <img src="https://w7.pngwing.com/pngs/430/261/png-transparent-ace-of-spades-playing-card-symbol-miscellaneous-leaf-sign-thumbnail.png" width="50" class="rounded-circle">
+                          <div class="d-flex flex-column ml-2"> <span class="font-weight-bold"><%= " #{User.find(post.user_id).first_name} #{User.find(post.user_id).surname} " %></span> <small class="text-primary"></small> </div>
+                      </div>
+                    <div class="d-flex flex-row mt-1 ellipsis"> <pre class="tab"><small class="mr-2"><%= "#{post.created_at.strftime("%d/%m/%y")}  #{post.created_at.strftime("%H:%M")}" %></small></pre> <i class="fa fa-ellipsis-h"></i> </div>
+                  </div> <img src="https://images.gawker.com/17eivzah7yub3jpg/c_scale,fl_progressive,q_80,w_800.jpg" class="img-fluid">
+                  <div class="p-2">
+                      <p class="text-justify"><%= simple_format(post.message) %></p>
+                      <hr>
+                      <div class="d-flex justify-content-between align-items-left">
+                          <span><%= "#{post.comments.length} Comments" %> </span>
+                          <div class="d-flex flex-row muted-color"> <span class="ml-2"><%= link_to 'Edit', edit_post_path(post) %></span> - <span> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span></div>
+                      </div>
+                      <hr>
+                      <div class="comments">
+                      <% post.comments.each do |comment| %>
+                          <div class="d-flex flex-row mb-2"> <img src="https://w7.pngwing.com/pngs/430/261/png-transparent-ace-of-spades-playing-card-symbol-miscellaneous-leaf-sign-thumbnail.png" width="40" class="rounded-image">
+                              <div class="d-flex flex-column ml-2"> <span class="name"><%= " #{User.find(comment.user_id).first_name} " " #{User.find(comment.user_id).surname} " %></span> <small class="comment-text"><%= comment.body %></small>
+                                  <div class="d-flex flex-row align-items-center status"> 
+                                  
+                                  <p class="comment-font"><font color="grey"><%= post.created_at.strftime("%d/%m/%y") %> <%= comment.created_at.strftime("%H:%M") %></font></p>
+                                  
+                                  </div>
+                              </div>
+                          </div>
+                      <% end %>    
+                          <%= form_with model: [post, post.comments.build]  do 
+                            |form| %>
+                            <p>
+                            <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
+                            </p>
+                            <p>
+                            <%= form.text_area :body, class: 'form-control', placeholder: "Add a new commen..."%>
+                            </p>
+                            <p>
+                            <%= form.submit class: 'form-control' %>
+                            </p>
+                            <% end %>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 <% end %>

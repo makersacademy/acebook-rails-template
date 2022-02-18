@@ -1,11 +1,17 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    expect(page).to have_content("Hello, world!")
-  end
+require 'rails_helper'
+require_relative '../support/devise'
+
+
+RSpec.feature 'Timeline', type: :feature do
+  
+  scenario 'Can submit posts and view them' do
+    sign_up
+    visit '/posts'
+    click_link 'New Post'
+    fill_in 'post[message]', with: 'Hello, world!'
+    click_button 'Create Post'
+    expect(page).to have_content('Hello, world!')
+  end  
 end
