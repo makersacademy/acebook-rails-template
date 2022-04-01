@@ -1,6 +1,5 @@
-Heroku URL: https://dashboard.heroku.com/apps/blooming-bastion-46086
-
- AceBook
+Heroku URL: 
+ [Acebook](https://blooming-bastion-46086.herokuapp.com/)
 
 REQUIRED INSTRUCTIONS:
 
