@@ -1,0 +1,8 @@
+Create Table:
+bin/rails generate migration CreateUsers name:string surname:string
+run bin/rails db:migrate
+
+Add column to existing table:
+bin/rails generate migration CreateUsers name:string surname:string
+run bin/rails db:migrate
+

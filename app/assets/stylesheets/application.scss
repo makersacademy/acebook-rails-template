@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+ */
+ @import "bootstrap";
+ @import "rails_bootstrap_forms";
+
+ span {
+     display: flex;
+     padding-left: 20px;
+ }
+
+ .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.card-body{
+    text-align: justify;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.navbar-brand{
+    margin-left: auto;
+}
+
+.add-post {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    margin-left: 400px;
+}
+
+#time {
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.background {
+    background-color: #d8e7ef;
+    
+}
+
+#name {
+    font-size: 25px;
+}
+
+.navbar-custom {
+    background-color: #49708e;
+    text-align:right;
+}
+
+#img-container {
+    text-align: auto;
+    display: block;
+    
+}
+

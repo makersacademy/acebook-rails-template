@@ -1,5 +1,7 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }

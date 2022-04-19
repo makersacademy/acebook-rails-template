@@ -5,13 +5,24 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby "3.0.0"
+
+gem 'devise'
+##sprockets rails
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+##bootstrap
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.1.3'
+gem "bootstrap_form", "~> 5.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 6.1.4.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.12.6'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -28,13 +39,22 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do 
+  gem 'rspec'
+  gem 'simplecov', require: false, group: :test
+  gem 'simplecov-console', require: false, group: :test
+end
+
 group :development, :test do
+  gem 'rubocop', '1.20'
+  gem 'twilio-ruby'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4'
+  gem 'rails_real_favicon'
 end
 
 group :development do
@@ -45,3 +65,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

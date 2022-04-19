@@ -1,0 +1,11 @@
+<%= render 'application/favicon' %>
+<div class="col-md-8 offset-4">
+<%= form_for @post do |form| %>
+  <br/>
+  <strong> <%= form.label :message %> </strong>
+  <br/>
+  <br/>
+  <%= form.text_area(:message, size: '50x10') %>
+  <br/>
+  <%= form.submit "Submit", :class => "btn btn-primary btn-sm"%>
+  <% end %>

@@ -1,7 +1,54 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<%= render 'application/favicon' %>
 
+<nav class="navbar-custom" >
+  <p style="text-align:center;" ></p>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-sm" %>
+</nav>
+
+<div class="background" >
+
+<%= image_tag 'five_aces (1).png', :class => "img-contaier" %>
+<p id="name" style="text-align:center;" >Welcome <%= current_user.name.capitalize if current_user %>!</p>
+<br/>
+<div>
+<div class="add-post">
+  
 <%= link_to new_post_path do %>
-  New post
+  
+  <button class="btn btn-primary btn-sm">Add a post</button>
 <% end %>
+</div>
+<br/>
+<div class="row">
+<div class="col-sm-6">
+  
+<% @posts.each do |post| %>
+  <div class ="card">
+    <div class = "card-body">
+      <p> <strong> <%= post.user.try(:username)%> </strong> posted:</p>
+      <p><%= post.message %><br/></p>
+      &nbsp;
+      
+  </div>
+  <span>
+    <%=button_to "Delete" , post_path(post), method: :delete, :class => "btn btn-primary btn-sm", data: {confirm: 'Are you sure'}%>
+    &nbsp;
+    <a href='posts/<%=post.id%>/edit' class="btn btn-primary btn-sm">Edit</a>
+  </span>
+   &nbsp;
+  <span>
+   
+    <%# <%= button_to "Like", post_path(post), method: "put", :class => "btn btn-primary btn-sm" %>
+    <%# &nbsp;
+    <p><%= post.likes.count <%= (post.likes.count) == 1 ? 'Like' : 'Likes'
+    %>
+  </span>
+  <p id = "time" ><%= post.created_at.strftime("%d %B %Y %H:%M") %></p>
+  </div>
+  <br/>
+  <% end %>
+
+</div>
+</div>
+</div>
+</div>
