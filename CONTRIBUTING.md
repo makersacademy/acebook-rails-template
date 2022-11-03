@@ -39,3 +39,14 @@ Then find the next ticket in `To Do` to tackle. If there's nothing left, call an
   - becomes familiar with the codebase
 - Perhaps find a way to measure velocity if this interests you: https://manifesto.co.uk/how-to-measure-velocity-agile/
 - Then organise the next planning session!
+
+
+<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
+
+---
+
+**How was this resource?**  
+[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Facebook-rails-template&prefill_File=CONTRIBUTING.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Facebook-rails-template&prefill_File=CONTRIBUTING.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Facebook-rails-template&prefill_File=CONTRIBUTING.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Facebook-rails-template&prefill_File=CONTRIBUTING.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Facebook-rails-template&prefill_File=CONTRIBUTING.md&prefill_Sentiment=😀)  
+Click an emoji to tell us.
+
+<!-- END GENERATED SECTION DO NOT EDIT -->
