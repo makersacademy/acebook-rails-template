@@ -49,3 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Add SimpleCov
 gem 'simplecov', require: false, group: :test
 
+# Install RuboCop
+gem 'rubocop', require: false
+
