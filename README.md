@@ -38,7 +38,7 @@ and then run `bundle exec rspec` again
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 ## Trello board 
-https://trello.com/b/aN3xtXXl/acebook-rails-template
+https://trello.com/b/MCfRHErb/acebook-acedit
 ---
 
 **How was this resource?**  
