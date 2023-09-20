@@ -57,7 +57,7 @@ jobs:
         # Add or replace any other lints here
       - name: Install Brakeman
         run: |
-          gem install brakeman
+          gem install brakeman -v 5.4.1
       - name: Run Brakeman
         run: |
           brakeman -f json > tmp/brakeman.json || exit 0
