@@ -54,7 +54,17 @@ jobs:
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           bundler-cache: true
-      # Add or replace any other lints here
+        # Add or replace any other lints here
+      - name: install Brakeman
+        run: |
+          gem install brakeman
+      - name: Run Brakeman
+      run: |
+          brakeman -f json > tmp/brakeman.json || exit 0 
+
+
+
+
       # - name: Security audit dependencies
       #   run: bin/bundler-audit --update
       # - name: Security audit application code
