@@ -7,9 +7,9 @@
 name: "Ruby on Rails CI"
 on:
   push:
-    branches: [ "github_actions" ]
+    branches: [ "main, github_actions" ]
   pull_request:
-    branches: [ "github_actions" ]
+    branches: [ "main, github_actions" ]
 jobs:
   test:
     runs-on: ubuntu-latest
