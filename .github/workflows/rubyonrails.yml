@@ -59,7 +59,7 @@ jobs:
         run: |
           gem install brakeman
       - name: Run Brakeman
-      run: |
+        run: |
           brakeman -f json > tmp/brakeman.json || exit 0 
 
 
