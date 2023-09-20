@@ -55,12 +55,18 @@ jobs:
         with:
           bundler-cache: true
         # Add or replace any other lints here
-      - name: install Brakeman
+      - name: Install Brakeman
         run: |
           gem install brakeman
       - name: Run Brakeman
         run: |
-          brakeman -f json > tmp/brakeman.json || exit 0 
+          brakeman -f json > tmp/brakeman.json || exit 0
+
+      - name: Brakeman Report
+        uses: devmasx/brakeman-linter-action@v1.0.0
+        env:
+          REPORT_PATH: tmp/brakeman.json
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
 
