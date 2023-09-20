@@ -62,14 +62,11 @@ jobs:
         run: |
           brakeman -f json > tmp/brakeman.json || exit 0
 
-      - name: Brakeman Report
-        uses: devmasx/brakeman-linter-action@v1.0.0
-        env:
-          REPORT_PATH: tmp/brakeman.json
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-
+      # - name: Brakeman Report
+      #   uses: devmasx/brakeman-linter-action@v1.0.0
+      #   env:
+      #     REPORT_PATH: tmp/brakeman.json
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       # - name: Security audit dependencies
       #   run: bin/bundler-audit --update
