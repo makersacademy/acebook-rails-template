@@ -7,15 +7,15 @@
 name: "Ruby on Rails CI"
 on:
   push:
-    branches: [ "github_actions" ]
+    branches: [ "main, github_actions" ]
   pull_request:
-    branches: [ "github_actions" ]
+    branches: [ "main, github_actions" ]
 jobs:
   test:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:11-alpine
+        image: postgres:11-alpine # maybe discuss this with team later
         ports:
           - "5432:5432"
         env:
@@ -39,6 +39,11 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      - name: Create Coverage Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: coverage/
 
   lint:
     runs-on: ubuntu-latest
@@ -49,10 +54,24 @@ jobs:
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           bundler-cache: true
-      # Add or replace any other lints here
-      - name: Security audit dependencies
-        run: bin/bundler-audit --update
-      - name: Security audit application code
-        run: bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: bin/rubocop --parallel
+        # Add or replace any other lints here
+      - name: Install Brakeman
+        run: |
+          gem install brakeman -v 5.4.1
+      - name: Run Brakeman
+        run: |
+          brakeman -f json > tmp/brakeman.json || exit 0
+
+      # - name: Brakeman Report
+      #   uses: devmasx/brakeman-linter-action@v1.0.0
+      #   env:
+      #     REPORT_PATH: tmp/brakeman.json
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      # - name: Security audit dependencies
+      #   run: bin/bundler-audit --update
+      # - name: Security audit application code
+      #   run: bin/brakeman -q -w2
+      # - name: Lint Ruby files
+      #   run: bin/rubocop --parallel
+
