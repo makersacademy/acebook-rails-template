@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     get 'sign_in', to: 'devise/sessions#new'
     get "sign_up" => "devise/registrations#new" # 
   end
+
+  authenticated :user do
+    root to: 'posts#index', as: :authenticated_root
+  end
   
-  # devise_for :users, :controllers => {
-  #   registrations: 'registrations'
-  # }
 end
