@@ -44,6 +44,10 @@ jobs:
         with:
           name: code-coverage
           path: coverage/
+      # Add bootstrap using yarn
+      - name: Bootstrap using yarn
+        run: yarn add bootstrap
+      
 
   lint:
     runs-on: ubuntu-latest
