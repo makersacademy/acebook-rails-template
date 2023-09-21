@@ -54,3 +54,6 @@ gem 'rubocop', require: false
 
 gem 'devise'
 
+gem 'factory_bot_rails'
+
+
