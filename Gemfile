@@ -52,3 +52,5 @@ gem 'simplecov', require: false, group: :test
 # Install RuboCop
 gem 'rubocop', require: false
 
+gem 'devise'
+
