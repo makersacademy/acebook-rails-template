@@ -46,17 +46,6 @@ jobs:
         with:
           name: code-coverage
           path: coverage/
-      # Add bootstrap using yarn
-      # - name: Install Node.js
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 14
-      # - name: Install Yarn
-      #   run: npm install -g yarn
-      # - name: Install dependencies
-      #   run: yarn install
-      # - name: Bootstrap using yarn
-      #   run: yarn bootstrap
       
 
   lint:
