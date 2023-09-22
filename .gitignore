@@ -27,3 +27,4 @@ coverage
 
 
 /config/master.key
+/config/secrets.yml
