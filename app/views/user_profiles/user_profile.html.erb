@@ -10,8 +10,9 @@
 </head>
 
 <body>
-<h1 class="username">Username</h1>
-<div><h1 class="title">Acebook</h1></div>
+<h1 class="username"><%= @username %></h1>
+<div><%= link_to "Acebook", posts_path, class: "title no-underline " %></div>
+
 <!--  Write new post button -->
 <center>
   
@@ -78,6 +79,9 @@ body {
 .btn:hover {
   background-color: #C28A6A; /* Change to your desired hover background color */
   color: #fff; /* Change to your desired hover text color */
+}
+.no-underline {
+  text-decoration: none;
 }
 </style>
 
