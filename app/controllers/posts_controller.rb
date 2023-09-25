@@ -6,8 +6,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id # Set the user_id attribute
+    if @post.save
+      # Handle successful post creation
+      redirect_to posts_url
+    # else
+    #   # Handle errors
+    end
   end
 
   def index
