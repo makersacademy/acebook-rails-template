@@ -24,7 +24,7 @@
     <% @posts.each do |post| %>
         <div class="post-box">
             <% if @current_id == post.user_id %>
-                <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %>
+                <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-button" %>
             <% end %>
             <p>
                 <%= simple_format(post.message).html_safe %>
@@ -68,7 +68,22 @@ body {
     margin: 20px; <!--  Add spacing between posts -->
     padding: 20px; <!--  Add padding to the posts -->
     border-radius: 15px;
+    /* Positioning for the "Delete" button */
+    position: relative;
 }
+
+.delete-button {
+    background-color: #643F47;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px; /* Adjust the distance from the bottom as needed */
+    right: 5px; /* Adjust the distance from the right as needed */
+    border-radius: 5px;
+    text-decoration: none;
+}
+
 </style>
 
 <% if user_signed_in? %>
