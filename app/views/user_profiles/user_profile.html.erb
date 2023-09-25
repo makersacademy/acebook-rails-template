@@ -14,11 +14,13 @@
    
 <!--  Write new post button -->
 <center>
-  <form action="/posts/new" method="GET">
+  
     <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
-      WRITE NEW POST
+      <a>WRITE NEW POST</a>
     </button>
-  </form>
+    <%= link_to "Visit New Post Page", new_post_path, class: "btn" %>
+
+ 
 </center>
 
 
