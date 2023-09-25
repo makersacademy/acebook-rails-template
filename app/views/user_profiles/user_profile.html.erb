@@ -5,19 +5,16 @@
 
 <!--  Page header -->
 <head>
-    <h1 class="username">Username</h1>
-    <div><h1 class="title">Acebook</h1></div>
+    
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
-   
+<h1 class="username">Username</h1>
+<div><h1 class="title">Acebook</h1></div>
 <!--  Write new post button -->
 <center>
   
-    <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
-      <a>WRITE NEW POST</a>
-    </button>
     <%= link_to "Visit New Post Page", new_post_path, class: "btn" %>
 
  
@@ -72,6 +69,15 @@ body {
     margin: 20px; <!--  Add spacing between posts -->
     padding: 20px; <!--  Add padding to the posts -->
     border-radius: 15px;
+}
+.btn{
+  width: 100%;
+  background-color: #643F47;
+  color: white;
+}
+.btn:hover {
+  background-color: #C28A6A; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
 }
 </style>
 
