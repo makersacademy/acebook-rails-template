@@ -1,11 +1,79 @@
-<% @posts.each do |post| %>
-  <p><%= simple_format(post.message).html_safe %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+
+<!--  Page header -->
+<head>
+    <h1 class="username">Username</h1>
+    <div><h1 class="title">Acebook</h1></div>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body>
+   
+<!--  Write new post button -->
+<center>
+  <form action="/posts/new" method="GET">
+    <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
+      WRITE NEW POST
+    </button>
+  </form>
+</center>
+
+
+<!--  Separate posts with outline boxes -->
+<div>
+    <% @posts.each do |post| %>
+        <div class="post-box">
+            <p>
+                <%= simple_format(post.message).html_safe %>
+            </p>
+        </div>
+    <% end %>
+</div>
+
+
+</body>
+</html>
+
+
+<!--  Formatting for each class -->
+<style>
+
+body {
+    font-family: 'Roboto';
+    font-size: 15px;
+    background-color: #191B1E;
+}
+
+.username {
+    color: #C28A6A;
+    font-size: 18px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.title {
+    color: #C28A6A;
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+.post-box {
+    border-color: white;
+    border-width: thin;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    margin: 20px; <!--  Add spacing between posts -->
+    padding: 20px; <!--  Add padding to the posts -->
+    border-radius: 15px;
+}
+</style>
 
 <% if user_signed_in? %>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 <% end %>
+
