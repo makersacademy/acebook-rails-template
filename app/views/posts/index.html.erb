@@ -2,6 +2,7 @@
 <html lang="en">
 
 
+
 <!--  Page header -->
 <head>
     <h1 class="username">Username</h1>
@@ -71,3 +72,8 @@ body {
     border-radius: 15px;
 }
 </style>
+
+<% if user_signed_in? %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% end %>
+
