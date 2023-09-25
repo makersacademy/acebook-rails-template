@@ -13,7 +13,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Log in"
 
     visit "/posts"
-    click_link "New post"
+    click_button "WRITE NEW POST"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
