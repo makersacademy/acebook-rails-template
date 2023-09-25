@@ -18,6 +18,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @current_id = current_user.id
+    p @posts
+    #@can_delete = current_user.id == @post.user_id  # Check if the current user is the owner of the post
   end
 
   def show
@@ -25,7 +28,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.destroy(params[:id])
+    @post = Post.find(params[:id])
+    if current_user == @post.user
+      @post.destroy
+      redirect_to posts_url, notice: "Post deleted successfully."
+    else
+      redirect_to posts_url, alert: "You are not authorized to delete this post."
+    end
   end
 
   private
