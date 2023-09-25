@@ -1,6 +1,77 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message , :cols => 30, :rows => 10%>
 
-  <%= form.submit "Submit" %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body>
+<div class= "container">
+  <div><h1 class="title">Acebook</h1></div>
+
+  <div><h2 >Create a post</h2></div>
+
+  <%= form_for @post do |form| %>
+
+    <div>
+      <%= form.text_area :message , :cols => 30, :rows => 10, class:"text"%>
+    </div>
+    <div >
+      <%= form.submit "Submit" , class: "btn"%>
+    </div>
+
+  <% end %>
+</div>
+
+</body>
+</html>
+
+
+<!--  Formatting for each class -->
+<style>
+*{
+  padding:5px;
+}
+body {
+    font-family: 'Roboto';
+    background-color: #191B1E;
+  
+}
+h2{
+    color: #C28A6A;
+    font-size: 30px;
+
+}
+
+.title {
+    color: #C28A6A;
+    font-size: 40px;
+
+}
+
+
+.container{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  height: 100vh; 
+}
+.text{
+  background-color: #643F47;
+  color: white;
+}
+.btn{
+  width: 100%;
+  background-color: #643F47;
+  color: white;
+}
+.btn:hover {
+  background-color: #C28A6A; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
+}
+</style>
+
+
+
