@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   authenticated :user do
     root to: 'posts#index', as: :authenticated_root
   end
-  
+  get '/:username', to: 'user_profiles#show', as: :user_profile
 end
