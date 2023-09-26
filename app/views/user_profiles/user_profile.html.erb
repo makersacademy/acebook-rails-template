@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h1 class="username"><%= @username %></h1>
+<div class = "container-right"><%= link_to @username, user_profile_path, class: "username no-underline " %></div>
 <div><%= link_to "Acebook", posts_path, class: "title no-underline " %></div>
 
 <!--  Write new post button -->
@@ -56,11 +56,14 @@ body {
     padding: 15px 32px; 
     text-align: center;
 }
+.container-right{
+    text-align: right;
+  
+}
 
 .username {
     color: #C28A6A;
     font-size: 18px;
-    text-align: right;
     margin-right: 20px;
 }
 
