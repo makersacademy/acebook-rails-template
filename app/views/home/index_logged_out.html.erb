@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+<div class="row">
+  <div class="column">
+    <!--  Page header -->
+    <head>
+        <div><h1 class="title">Acebook</h1></div>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    </head>
+ </div>
+
+
+<div class="column">
+
+  <!--  Sign in button -->
+
+    <form action="/sign_in" method="GET">
+      <button style="position: absolute; top: 38%; background-color:#643F47; color: white; padding: 15px; width: 150px; text-align: center; margin-left: 50px;">
+        SIGN IN
+      </button>
+    </form>
+
+
+  <!--  Sign up button -->
+
+    <form action="/sign_up" method="GET">
+      <button style="position: absolute; top: 52%; background-color:#643F47; color: white; padding: 15px; width: 150px; text-align: center; margin-left: 50px;">
+        REGISTER
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+</body>
+</html>
+
+
+<!--  Formatting for each class -->
+<style>
+
+body {
+    font-family: 'Roboto';
+    font-size: 15px;
+    background-color: #191B1E;
+}
+
+.title {
+    color: #C28A6A;
+    font-size: 80px;
+    text-align: right;
+    padding: 10px;
+    line-height: 500px;
+}
+
+.column {
+  width: 50%;
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
