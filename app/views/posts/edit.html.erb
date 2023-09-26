@@ -1,0 +1,81 @@
+<!-- edit.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div class="edit-post-container">
+  <h2>Edit Post</h2>
+
+  <%= form_for(@post) do |f| %>
+    <div class="field">
+      <label for="post_message">Message:</label>
+      <%= f.text_area :message, id: "post_message" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "update-button" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back', posts_path %>
+</div>
+
+</body>
+</html>
+
+<style>
+
+body {
+    font-family: 'Roboto';
+    font-size: 15px;
+    background-color: #191B1E;
+}
+
+.edit-post-container h2 {
+  color: #C28A6A;
+}
+
+.edit-post-container .field label {
+  color: #C28A6A;
+}
+
+.edit-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This makes the container take the full height of the viewport */
+}
+
+/* Increase the height and width of the text area */
+.field textarea {
+  height: 200px; /* Adjust the height as needed */
+  width: 300px; /* Adjust the width as needed */
+  resize: vertical; /* Allow vertical resizing */
+  background-color: #C28A6A;
+}
+
+/* Additional styling for form elements */
+.field {
+  margin-bottom: 15px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.update-button {
+  background-color: #643F47;
+  color: white; /* You may also want to change the text color for better visibility */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Optional: Add hover styles for better user feedback */
+.update-button:hover {
+  background-color: #542d36; /* Change the color on hover */
+}
+
+</style>

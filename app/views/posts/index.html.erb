@@ -23,7 +23,9 @@
 <div>
     <% @posts.each do |post| %>
         <div class="post-box">
+        <!--  User can delete their own posts -->
             <% if @current_id == post.user_id %>
+                <%= link_to "Edit", edit_post_path(post), class: "edit-button" %>
                 <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-button" %>
             <% end %>
             <p>
@@ -80,6 +82,18 @@ body {
     position: absolute;
     bottom: 5px; /* Adjust the distance from the bottom as needed */
     right: 5px; /* Adjust the distance from the right as needed */
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.edit-button {
+    background-color: #643F47;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px; /* Adjust the distance from the bottom as needed */
+    right: 70px; /* Adjust the distance from the right as needed */
     border-radius: 5px;
     text-decoration: none;
 }

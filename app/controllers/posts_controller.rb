@@ -35,6 +35,29 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    # Add authorization to ensure the current user can only edit their own posts
+    if current_user != @post.user
+      redirect_to posts_url, alert: "You are not authorized to edit this post."
+    end
+  end
+  
+  def update
+    @post = Post.find(params[:id])
+    # Add authorization to ensure the current user can only update their own posts
+    if current_user == @post.user
+      if @post.update(post_params)
+        redirect_to posts_url, notice: "Post updated successfully."
+      else
+        # Handle errors
+        render 'edit'
+      end
+    else
+      redirect_to posts_url, alert: "You are not authorized to edit this post."
+    end
+  end
+
   private
 
   def post_params
