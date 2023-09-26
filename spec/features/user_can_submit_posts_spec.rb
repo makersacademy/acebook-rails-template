@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
 
-  scenario "Can submit posts and view them" do
+  scenario "Can submit post and view them" do
 
     user = FactoryBot.create(:user) # Create a user using FactoryBot
 
