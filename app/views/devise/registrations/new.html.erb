@@ -1,43 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div><h1 class="title">Acebook</h1></div>
-<h2>Create your account</h2>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<body>
+  <div>
+    <h1><%= link_to "Acebook", posts_path, class: "title" %></h1>
+  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div>
+    <h2 class="login">Create your account</h2>
+  </div>
+
+  <div class="form-container">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+  <div class="label">
+    <%= f.label :email, "Email" %>
+  </div>
+  <div class="input">
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :username %><br />
+<div class="field">
+  <div class="label">
+    <%= f.label :username, "Username" %>
+  </div>
+  <div class="input">
     <%= f.text_field :username, autocomplete: "new-username" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+<div class="field">
+  <div class="label">
+    <%= f.label :password, "Password" %>
+  </div>
+  <div class="input">
     <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <div class="hint">
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      </div>
+    <% end %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+</div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <%= render "devise/shared/links" %>
+</body>
+</html>
 
-<%= render "devise/shared/links" %>
 
 <!--  Formatting for each class -->
 <style>
 
 body {
-    color: white;
-    font-family: 'Roboto';
-    font-size: 18px;
-    background-color: #191B1E;
+  color: white;
+  font-family: 'Roboto';
+  font-size: 18px;
+  background-color: #191B1E;
+  display: flex; /* Establishes flex container, flexible box layout */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Aligns items to the start of the flex container */
+  height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+  margin: 0;
 }
+
+
+.title {
+  text-decoration: none; /* This removes the underline from the link (Acebook)*/
+  color: #C28A6A;
+  font-size: 40px;
+  padding: 10px;
+}
+
+.login {
+  color: #C28A6A;
+  font-size: 30px;
+  padding: 10px;
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #191B1E;/* or #FFF White background */
+  padding: 20px;
+  /* color: white; White text */
+  border-radius: 5px;
+}
+
+.field {
+  margin: 10px 0;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+}
+
+.field .label {
+  flex-basis: 20%;
+  padding-right: 10px;
+}
+
+.field .input {
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.field label {
+  display: block;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+    width: 100%;
+}
+
+.field .hint {
+  margin-top: 5px; /* Add spacing between the input and the hint */
+}
+
+
+
+/* 
+
+h2{
+    color: #C28A6A;
+    font-size: 30px;
+}
+
+
+h1{
+    color: #C28A6A;
+    font-size: 30px;
+}
+
+
+.container{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  height: 80vh; 
+} */
 
 </style>
