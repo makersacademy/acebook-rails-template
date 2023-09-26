@@ -34,7 +34,9 @@ and associates it with the respective username -->
                 <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-button" %>
             <% end %>
       <post_top>
-        <p class="post_top_text"><%= post.user.username if post.user %></p> 
+     
+        <div class = "post_top_text"><%= link_to post.user.username, user_profile_path(username: post.user.username), class:"no-underline white-font"%></div>
+
         <p class="post_top_text" style="text-align: right;"><%= post.created_at if post.created_at %></p>
       </post_top>
       <p class="post-message"><%= simple_format(post.message).html_safe  %></p> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
@@ -48,7 +50,12 @@ and associates it with the respective username -->
 
 <!--  Formatting for each class -->
 <style>
-
+.left {
+  text-align: right;
+}
+.white-font{
+  color: white;
+}
 body {
     color: white;
     font-family: 'Roboto';
