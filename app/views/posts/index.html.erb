@@ -5,13 +5,15 @@
 
 <!--  Page header -->
 <head>
-    <h1 class="username">Username</h1>
-    <div><h1 class="title">Acebook</h1></div>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
-   
+
+<!--  Adds actual username instead of hardcoding it  -->
+   <h1 class="username"><%= @username %></h1>
+    <div><h1 class="title">Acebook</h1></div>
+
 <!--  Write new post button -->
 <center>
   <form action="/posts/new" method="GET">
@@ -22,16 +24,17 @@
 </center>
 
 
-<!--  Separate posts with outline boxes -->
+<!--  Separates posts with outline boxes,
+and associates it with the respective username -->
 <div>
-    <% @posts.each do |post| %>
-        <div class="post-box">
-            <p>
-                <%= simple_format(post.message).html_safe %>
-            </p>
-        </div>
-    <% end %>
+  <% @posts.each do |post| %>
+    <div class="post-box">
+      <p class="user-name"><%= post.user.username if post.user %></p>
+      <p class="post-message"><%= simple_format(post.message).html_safe  %></p> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
+    </div>
+  <% end %>
 </div>
+
 
 
 </body>
@@ -42,8 +45,10 @@
 <style>
 
 body {
+    color: white;
     font-family: 'Roboto';
     font-size: 15px;
+    text-align: center;
     background-color: #191B1E;
 }
 
@@ -66,11 +71,24 @@ body {
     border-width: thin;
     border-style: solid;
     color: white;
-    text-align: center;
-    margin: 20px; <!--  Add spacing between posts -->
-    padding: 20px; <!--  Add padding to the posts -->
+    margin: 20px; /*Adds spacing between posts-boxes*/
+    padding: 20px; /*Adds padding to the posts-boxes*/
     border-radius: 15px;
 }
+
+.user-name { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
+  margin: 0; 
+  padding: 5px; 
+  font-weight: bold;
+  text-align: left; 
+}
+
+.post-message { /*this will separate the 'post-message' from the post-box and center it */
+  margin: 0; 
+  padding: 10px; 
+  text-align: center; 
+}
+
 </style>
 
 <% if user_signed_in? %>

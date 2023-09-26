@@ -17,7 +17,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.includes(:user).all # this links all posts individually with the associated user.
+    @username = current_user.username # this sets the associated username.
   end
 
   def show
@@ -29,4 +31,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
 end
