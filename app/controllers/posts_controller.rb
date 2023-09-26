@@ -19,8 +19,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @current_id = current_user.id
-    p @posts
-    #@can_delete = current_user.id == @post.user_id  # Check if the current user is the owner of the post
   end
 
   def show
