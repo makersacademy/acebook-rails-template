@@ -3,12 +3,14 @@
 
 <!--  Page header -->
 <head>
-    <h1 class="username">Username</h1>
-    <div><h1 class="title">Acebook</h1></div>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
 <body>
+
+<!--  Adds actual username instead of hardcoding it  -->
+   <h1 class="username"><%= @username %></h1>
+    <div><h1 class="title">Acebook</h1></div>
 
 <!--  Write new post button -->
 <center>
@@ -19,21 +21,26 @@
   </form>
 </center>
 
-<!--  Separate posts with outline boxes -->
+
+<!--  Separates posts with outline boxes,
+and associates it with the respective username -->
 <div>
-    <% @posts.each do |post| %>
-        <div class="post-box">
+  <% @posts.reverse.each do |post| %>
+    <div class="post-box">
         <!--  User can delete their own posts -->
             <% if @current_id == post.user_id %>
                 <%= link_to "Edit", edit_post_path(post), class: "edit-button" %>
                 <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-button" %>
             <% end %>
-            <p>
-                <%= simple_format(post.message).html_safe %>
-            </p>
-        </div>
-    <% end %>
+      <post_top>
+        <p class="post_top_text"><%= post.user.username if post.user %></p> 
+        <p class="post_top_text" style="text-align: right;"><%= post.created_at if post.created_at %></p>
+      </post_top>
+      <p class="post-message"><%= simple_format(post.message).html_safe  %></p> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
+    </div>
+  <% end %>
 </div>
+
 
 </body>
 </html>
@@ -42,8 +49,10 @@
 <style>
 
 body {
+    color: white;
     font-family: 'Roboto';
     font-size: 15px;
+    text-align: center;
     background-color: #191B1E;
 }
 
@@ -66,9 +75,8 @@ body {
     border-width: thin;
     border-style: solid;
     color: white;
-    text-align: center;
-    margin: 20px; <!--  Add spacing between posts -->
-    padding: 20px; <!--  Add padding to the posts -->
+    margin: 20px; /*Adds spacing between posts-boxes*/
+    padding: 20px; /*Adds padding to the posts-boxes*/
     border-radius: 15px;
     /* Positioning for the "Delete" button */
     position: relative;
@@ -96,6 +104,25 @@ body {
     right: 70px; /* Adjust the distance from the right as needed */
     border-radius: 5px;
     text-decoration: none;
+}
+
+
+.post_top_text { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
+  margin: 0; 
+  padding: 5px; 
+  font-weight: bold;
+  text-align: left; 
+}
+
+.post-message { /*this will separate the 'post-message' from the post-box and center it */
+  margin: 0; 
+  padding: 10px; 
+  text-align: center; 
+}
+
+.post_top {
+  display: flex;
+  justify-content: space-between;
 }
 
 </style>

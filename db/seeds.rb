@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# User.create(
+#     #this block of code creates a default user so as to add a user_id in the db posts model;
+#     #if this is not in place an error would pop up.
+#     id: 1
+#     username: "Default User",
+#     email: "default@example.com",
+#     password: "password"
+# )
