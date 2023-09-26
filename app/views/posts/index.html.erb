@@ -30,7 +30,7 @@ and associates it with the respective username -->
   <% @posts.each do |post| %>
     <div class="post-box">
       <p class="user-name"><%= post.user.username if post.user %></p>
-      <p class="post-message"><%= post.message %></p>
+      <p class="post-message"><%= simple_format(post.message).html_safe  %></p> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
     </div>
   <% end %>
 </div>
@@ -48,6 +48,7 @@ body {
     color: white;
     font-family: 'Roboto';
     font-size: 15px;
+    text-align: center;
     background-color: #191B1E;
 }
 
