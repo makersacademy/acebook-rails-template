@@ -15,10 +15,7 @@
 
 <!--  Write new post button -->
 <center>
-  
-    <%= link_to "Visit New Post Page", new_post_path, class: "btn" %>
-
- 
+    <%= button_to "Visit New Post Page", new_post_path, class: "custom-btn no-underline" %> 
 </center>
 
 
@@ -45,6 +42,12 @@ body {
     font-family: 'Roboto';
     font-size: 15px;
     background-color: #191B1E;
+}
+.custom-btn{
+    background-color:#643F47; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center;
 }
 
 .username {
