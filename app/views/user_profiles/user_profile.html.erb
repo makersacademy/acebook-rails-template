@@ -15,7 +15,11 @@
 
 <!--  Write new post button -->
 <center>
-    <%= button_to "Visit New Post Page", new_post_path, class: "custom-btn no-underline" %> 
+  <form action="/posts/new" method="GET">
+    <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
+      WRITE NEW POST
+    </button>
+  </form>
 </center>
 
 
