@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id # Set the user_id attribute
-    username = current_user.username # Get the username
 
     if @post.save
       redirect_to session.delete(:previous_path) || posts_path
