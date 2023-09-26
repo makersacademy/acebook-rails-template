@@ -25,13 +25,14 @@
 
 <!--  Separate posts with outline boxes -->
 <div>
-    <% @posts.each do |post| %>
-        <div class="post-box">
-            <p>
-                <%= simple_format(post.message).html_safe %>
-            </p>
-        </div>
-    <% end %>
+
+  <% @posts.each do |post| %>
+    <div class="post-box">
+      <p class="user-name"><%= post.user.username if post.user %></p>
+      <div class="post-message"><%= simple_format(post.message).html_safe %></div> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
+    </div>
+  <% end %>
+
 </div>
 
 
@@ -43,10 +44,12 @@
 <style>
 
 body {
+    color: white;
     font-family: 'Roboto';
     font-size: 15px;
     background-color: #191B1E;
 }
+
 .custom-btn{
     background-color:#643F47; 
     color: white; 
@@ -64,7 +67,6 @@ body {
 .title {
     color: #C28A6A;
     font-size: 40px;
-    text-align: left;
     padding: 10px;
 }
 
@@ -73,11 +75,24 @@ body {
     border-width: thin;
     border-style: solid;
     color: white;
-    text-align: center;
-    margin: 20px; <!--  Add spacing between posts -->
-    padding: 20px; <!--  Add padding to the posts -->
+    margin: 20px; /*Adds spacing between posts-boxes*/
+    padding: 20px; /*Adds padding to the posts-boxes*/
     border-radius: 15px;
 }
+
+.user-name { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
+  margin: 0; 
+  padding: 5px; 
+  font-weight: bold;
+  text-align: left; 
+}
+
+.post-message { /*this will separate the 'post-message' from the post-box and center it */
+  margin: 0; 
+  padding: 10px; 
+  text-align: center;
+}
+
 .btn{
   width: 80%;
   background-color: #643F47;
