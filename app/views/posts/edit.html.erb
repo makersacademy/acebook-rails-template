@@ -2,13 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
 <body>
 <div class="edit-post-container">
   <h2>Edit Post</h2>
 
   <%= form_for(@post) do |f| %>
     <div class="field">
-      <label for="post_message">Message:</label>
+      <label for="post_message">Message</label>
+    </div>
+    <div class="field">
       <%= f.text_area :message, id: "post_message" %>
     </div>
 
@@ -52,7 +58,8 @@ body {
   height: 200px; /* Adjust the height as needed */
   width: 300px; /* Adjust the width as needed */
   resize: vertical; /* Allow vertical resizing */
-  background-color: #C28A6A;
+  background-color: #643F47;
+  color: white;
 }
 
 /* Additional styling for form elements */
@@ -76,6 +83,10 @@ body {
 /* Optional: Add hover styles for better user feedback */
 .update-button:hover {
   background-color: #542d36; /* Change the color on hover */
+}
+
+.message {
+  text-align: top;
 }
 
 </style>
