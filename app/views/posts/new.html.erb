@@ -13,8 +13,12 @@
   <div><h2 >Create a post</h2></div>
 
   <%= form_for @post do |form| %>
+  <div>
+  <%= form.label :message, "Message", class: "label" %>
+  </div>
 
     <div>
+    
       <%= form.text_area :message , :cols => 30, :rows => 10, class:"text"%>
     </div>
     <div >
@@ -37,6 +41,9 @@ body {
     font-family: 'Roboto';
     background-color: #191B1E;
   
+}
+.label {
+  color:#C28A6A;
 }
 h2{
     color: #C28A6A;
