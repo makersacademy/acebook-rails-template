@@ -13,7 +13,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Password", with: user.password
     click_button "Log in"
 
-    expect(page).to have_content("Logout")
+    expect(page).to have_content(/WRITE NEW POST/)
   end
 
   scenario "Cannot sign in with incorrect email" do

@@ -1,19 +1,18 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :store_previous_path, only: [:new]
 
   def new
     @post = Post.new
+  
   end
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = current_user.id # Sets the user_id attribute
+    @post.user_id = current_user.id # Set the user_id attribute
+
     if @post.save
-      # Handle successful post creation
-      redirect_to posts_url
-    # else
-    #   # Handle errors
-      
+      redirect_to session.delete(:previous_path) || posts_path
     end
   end
 
