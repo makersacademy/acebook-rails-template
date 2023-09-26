@@ -27,9 +27,12 @@
 <!--  Separates posts with outline boxes,
 and associates it with the respective username -->
 <div>
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
     <div class="post-box">
-      <p class="user-name"><%= post.user.username if post.user %></p>
+      <post_top>
+        <p class="post_top_text"><%= post.user.username if post.user %></p> 
+        <p class="post_top_text" style="text-align: right;"><%= post.created_at if post.created_at %></p>
+      </post_top>
       <p class="post-message"><%= simple_format(post.message).html_safe  %></p> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
     </div>
   <% end %>
@@ -76,7 +79,7 @@ body {
     border-radius: 15px;
 }
 
-.user-name { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
+.post_top_text { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
   margin: 0; 
   padding: 5px; 
   font-weight: bold;
@@ -87,6 +90,11 @@ body {
   margin: 0; 
   padding: 10px; 
   text-align: center; 
+}
+
+post_top {
+  display: flex;
+  justify-content: space-between;
 }
 
 </style>
