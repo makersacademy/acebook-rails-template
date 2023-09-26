@@ -23,7 +23,7 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
-```
+> yarn add bootstrap
 
 ## Troubleshooting
 
@@ -37,7 +37,8 @@ and then run `bundle exec rspec` again
 
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
-
+## Trello board 
+https://trello.com/b/MCfRHErb/acebook-acedit
 ---
 
 **How was this resource?**  

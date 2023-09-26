@@ -1,0 +1,135 @@
+<!DOCTYPE html> <!-- This defines the document type as HTML5 */ -->
+<html lang="en"> <!-- English language */ -->
+<head>
+    <meta charset="UTF-8"> <!-- This specifies the charcter encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport settings for a responsive design to match different screen sizes-->
+    <title>Acebook</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Roboto';
+            font-size: 15px;
+            background-color: #191B1E;
+            display: flex; /* Establishes flex container, flexible box layout */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligns items to the start of the flex container */
+            height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+            margin: 0;
+        }
+
+        .title {
+            color: #C28A6A;
+            font-size: 40px;
+            padding: 10px;
+        }
+
+        .login {
+            color: #C28A6A;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            background-color: #191B1E; /* or #FFF White background */
+            padding: 20px;
+            /* color: white; White text */
+            border-radius: 5px;
+        }
+
+        .field {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .field label {
+            display: block; /* Displays the label as a block element */
+            /* color: #333; */
+            color: #FFF; 
+        }
+
+        .field input[type="email"],
+        .field input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc; /* Add a thin border to the input */
+            border-radius: 5px;
+        }
+
+        .actions {
+            text-align: center; /* Center-align the content within .actions */
+            margin-top: 20px;
+        }
+
+        .actions input[type="submit"] {
+            background-color: #643F47; /* Change the background color */
+            color: #FFF; /* Change the text color to white */
+            padding: 15px 20px; /* Increase padding to make it slightly bigger */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .actions input[type="submit"]:hover {
+            background-color: #451F27; /* Change the background color on hover */
+        }
+
+        #error_explanation {
+        color: #FFF; /* Set text color to white */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="title">Acebook</h1>
+    <div><h2 class="login">Sign into Account</h2></div>
+
+    <% if flash.alert %>
+    <div id="error_explanation">
+        <ul>
+            <li><%= flash.alert %></li>
+        </ul>
+    </div>
+    <% end %>
+
+    <div class="form-container">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+            <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+            </div>
+            <% end %>
+
+            <div class="actions">
+                <%= f.submit "Log in" %>
+            </div>
+        <% end %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+</body>
+</html>
+
+
+
+
+
+
