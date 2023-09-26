@@ -15,7 +15,14 @@
 <!--  Write new post button -->
 <center>
   <form action="/posts/new" method="GET">
-    <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
+    <button style=
+    "background-color:#643F47; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center;
+    border-radius: 10px;"
+    onmouseover="this.style.backgroundColor='#542d36';"
+    onmouseout="this.style.backgroundColor='#643F47';">
       WRITE NEW POST
     </button>
   </form>
@@ -90,8 +97,12 @@ body {
     position: absolute;
     bottom: 5px; /* Adjust the distance from the bottom as needed */
     right: 5px; /* Adjust the distance from the right as needed */
-    border-radius: 5px;
+    border-radius: 7px;
     text-decoration: none;
+}
+
+.delete-button:hover {
+    background-color: #542d36;
 }
 
 .edit-button {
@@ -102,10 +113,13 @@ body {
     position: absolute;
     bottom: 5px; /* Adjust the distance from the bottom as needed */
     right: 70px; /* Adjust the distance from the right as needed */
-    border-radius: 5px;
+    border-radius: 7px;
     text-decoration: none;
 }
 
+.edit-button:hover {
+    background-color: #542d36;
+}
 
 .post_top_text { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
   margin: 0; 
