@@ -9,7 +9,8 @@
 <body>
 
 <!--  Adds actual username instead of hardcoding it  -->
-   <h1 class="username"><%= @username %></h1>
+<div class = "container-right no-underline"><%= link_to @username, user_profile_path(username: @username), class: "username no-underline " %></div>
+
     <div><h1 class="title">Acebook</h1></div>
 
 <!--  Write new post button -->
@@ -55,6 +56,10 @@ body {
     text-align: center;
     background-color: #191B1E;
 }
+.container-right{
+    text-align: right;
+  
+}
 
 .username {
     color: #C28A6A;
@@ -92,6 +97,9 @@ body {
     right: 5px; /* Adjust the distance from the right as needed */
     border-radius: 5px;
     text-decoration: none;
+}
+.no-underline {
+  text-decoration: none;
 }
 
 .edit-button {
