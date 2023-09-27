@@ -14,13 +14,15 @@
 <div><%= link_to "Acebook", posts_path, class: "title no-underline " %></div>
 
 <!--  Write new post button -->
-<center>
-  <form action="/posts/new" method="GET">
-    <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
-      WRITE NEW POST
-    </button>
-  </form>
-</center>
+<% if @current_username == @username %>
+  <center>
+    <form action="/posts/new" method="GET">
+      <button style="background-color:#643F47; color: white; padding: 15px 32px; text-align: center;">
+        WRITE NEW POST
+      </button>
+    </form>
+  </center>
+  <% end%>
 
 
 <!--  Separate posts with outline boxes -->
