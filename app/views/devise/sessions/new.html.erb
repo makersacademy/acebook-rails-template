@@ -22,6 +22,8 @@
             color: #C28A6A;
             font-size: 40px;
             padding: 10px;
+            text-decoration: none;
+
         }
 
         .login {
@@ -88,7 +90,10 @@
     </style>
 </head>
 <body>
-    <h1 class="title">Acebook</h1>
+    <h1>
+    <%= link_to "Acebook", unauthenticated_root_path, class: "title" %>
+    </h1>
+
     <div><h2 class="login">Sign into Account</h2></div>
 
     <% if flash.alert %>
