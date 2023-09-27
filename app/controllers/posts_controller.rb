@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.all
     @current_id = current_user.id
-    @posts = Post.includes(:user).all # this links all posts individually with the associated user.
+    @posts = Post.includes(:user).order(created_at: :asc).all # this links all posts individually with the associated user.
     @username = current_user.username # this sets the associated username.
   end
 
