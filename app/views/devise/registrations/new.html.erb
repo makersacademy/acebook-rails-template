@@ -5,59 +5,60 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 
+<div>
+  <h1><%= link_to "Acebook", posts_path, class: "title" %></h1>
+</div>
+
+<div>
+  <h2 class="login">Create your account</h2>
+</div>
+
 <body>
-  <div>
-    <h1><%= link_to "Acebook", posts_path, class: "title" %></h1>
-  </div>
 
-  <div>
-    <h2 class="login">Create your account</h2>
-  </div>
+<div class="form-container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="form-container">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-<div class="field">
-  <div class="label">
-    <%= f.label :email, "Email" %>
-  </div>
-  <div class="input">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="label">
-    <%= f.label :username, "Username" %>
-  </div>
-  <div class="input">
-    <%= f.text_field :username, autocomplete: "new-username" %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="label">
-    <%= f.label :password, "Password" %>
-  </div>
-  <div class="input">
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <div class="hint">
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <div class="field">
+      <div class="label">
+        <%= f.label :email, "Email" %>
       </div>
-    <% end %>
-  </div>
-</div>
-
-</div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
+      <div class="input">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
-    <% end %>
-  </div>
-  <%= render "devise/shared/links" %>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :username, "Username" %>
+      </div>
+      <div class="input">
+        <%= f.text_field :username, autocomplete: "new-username" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">
+        <%= f.label :password, "Password" %>
+      </div>
+      <div class="input">
+        <%= f.password_field :password, autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <div class="hint">
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "devise/shared/links" %>
+
 </body>
 </html>
 
@@ -98,67 +99,76 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  background-color: #191B1E;/* or #FFF White background */
+  background-color: #191B1E; 
   padding: 20px;
-  /* color: white; White text */
   border-radius: 5px;
 }
 
-.field {
+
+.field {/* This is each box*/
   margin: 10px 0;
   text-align: left;
   display: flex;
   align-items: flex-start;
 }
 
-.field .label {
-  flex-basis: 20%;
+.field .label {/* This is each box's label (email,username,password*/
+  flex-basis: 50%; /* This aligns boxes vertically on the left side*/
   padding-right: 10px;
 }
 
-.field .input {
-  flex-basis: 80%;
+.field .input {/* This bolck , as the one below working together, deals with each box being align vertically on the right side*/
+  flex-basis: 80%;/* This modifies the boxes length*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.field label {
-  display: block;
-}
-
-.field input[type="text"],
+.field input[type="text"], /* This bolck , as the one above working together, deals with each box being align vertically on the right side*/
 .field input[type="email"],
 .field input[type="password"] {
-    width: 100%;
-}
-
-.field .hint {
-  margin-top: 5px; /* Add spacing between the input and the hint */
-}
-
-
-
-/* 
-
-h2{
-    color: #C28A6A;
-    font-size: 30px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 
-h1{
-    color: #C28A6A;
-    font-size: 30px;
+.actions {/* actions deals with the sign up button */
+  display: flex;
+  justify-content: center; /* Centers button horizontally */
+  align-items: center; /* Centers button vertically */
+  margin-top: 20px;
+  text-align: center; /* Centers the button text if necessary */
 }
 
+.actions input[type="submit"] {
+  background-color: #643F47;
+  color: #FFF; 
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Ensures the button takes full width within its container */
+  max-width: 300px; /* Sets a maximum width (horizontally) to prevent it from spanning the entire screen */
+}
 
-.container{
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  height: 80vh; 
-} */
+.actions input[type="submit"]:hover {
+  background-color: #451F27;
+}
+
+.login-link {
+/*MVF: this doesn't align the log in link to the left , I tried also to change the devise coding in the app/views/devise/shared/_links.html.erb (this is added by me ", style: "text-align: left;"):
+ <%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name), style: "text-align: left;" %><br />
+<% end %> 
+*/
+  text-align: left !important;
+}
+
+#error_explanation {
+  color: red; /* Set text color to red for attention */
+}
 
 </style>
