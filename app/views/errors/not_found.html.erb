@@ -7,7 +7,11 @@
 <body>
 <div class= "header-container">
 <h1><%= link_to "Acebook", authenticated_root_path, class:"title" %></h1>
-<%= link_to @username, class: "username"%>
+
+<% if @username %>
+  <%= link_to @username, user_profile_path(username: @username)%>
+<% end %>
+
 </div>
 
 <div class= "container">
@@ -63,4 +67,5 @@ body {
     align-items: center;
     margin-top: 20px;
 }
+
 </style>
