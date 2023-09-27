@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+</head>
+<body>
+<div class= "header-container">
+<h1><%= link_to "Acebook", authenticated_root_path, class:"title" %></h1>
+<%= link_to @username, class: "username"%>
+</div>
+
+<div class= "container">
+<h3>Page Not Found</h3>
+<p>Sorry, the page you are looking for could not be found.</p>
+<%=button_to "Home", authenticated_root_path, method: :get, class: "btn"%>
+</div>
+
+</body>
+</html>
+
+<style>
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+a {
+    color: #C28A6A;
+    font-size: 18px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+body {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 15px;
+    background-color: #191B1E;
+}
+.title {
+    color: #C28A6A;
+    font-size: 40px;
+    padding: 10px;
+    text-decoration: none;
+}
+.btn{
+  background-color: #643F47; /* Change the background color */
+            color: #FFF; /* Change the text color to white */
+            padding: 15px 20px; /* Increase padding to make it slightly bigger */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+}
+.btn:hover{
+  background-color: #451F27;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+</style>
