@@ -18,7 +18,11 @@
   </div>
 
     <div>
-    
+      <!--  Display error message if submitted post was empty. -->
+      <div class="error_message">
+        <%= flash[:alert] if flash[:alert] %>
+      </div>
+
       <%= form.text_area :message , :cols => 30, :rows => 10, class:"text"%>
     </div>
     <div >
@@ -40,15 +44,15 @@
 body {
     font-family: 'Roboto';
     background-color: #191B1E;
-  
 }
+
 .label {
   color:#C28A6A;
 }
+
 h2{
     color: #C28A6A;
     font-size: 30px;
-
 }
 
 .title {
@@ -56,7 +60,6 @@ h2{
     font-size: 40px;
 
 }
-
 
 .container{
   display: flex; 
@@ -80,6 +83,10 @@ h2{
 }
 .no-underline {
   text-decoration: none;
+}
+
+.error_message {
+  color: red
 }
 </style>
 

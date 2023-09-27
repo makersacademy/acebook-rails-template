@@ -4,15 +4,17 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-  
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id # Set the user_id attribute
-
-    if @post.save
-      redirect_to session.delete(:previous_path) || posts_path
+    if params[:post][:message] == ""
+      redirect_to new_post_path, alert: "Cannot post empty message."
+    else
+      @post = Post.new(post_params)
+      @post.user_id = current_user.id # Set the user_id attribute
+      if @post.save
+        redirect_to posts_path
+      end
     end
   end
 
