@@ -5,6 +5,10 @@ class UserProfilesController < ApplicationController
         @current_username = current_user.username
         @username = params[:username]
         @posts = Post.where(user_id: @user.id).order("created_at DESC")
+
+        # Set @current_id if a user is signed in
+        @current_id = current_user.id if user_signed_in?
+
         if @user
             render 'user_profiles/user_profile'
         else
