@@ -50,6 +50,12 @@
         <% end %>
       </div>
     </div>
+    
+            <div class="field remember">
+                    <%= f.check_box :isAgeOver13 %>
+                    <%= f.label :isAgeOver13, "Confirm Age" %>
+            </div>
+           
 
     <div class="actions">
       <%= f.submit "Sign up" %>
