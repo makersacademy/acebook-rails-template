@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  Page header -->
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+
+<body>
+<div class = "container-right"><%= link_to @username, user_profile_path, class: "username no-underline " %></div>
+    <div><%= link_to "Acebook", posts_path, class: "title no-underline " %></div>
+
+<!--  Write new post button -->
+<% if @current_username == @username %>
+<center>
+  <form action="/posts/new" method="GET">
+    <button style=
+    "background-color:#643F47; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center;
+    border-radius: 10px;"
+    onmouseover="this.style.backgroundColor='#542d36';"
+    onmouseout="this.style.backgroundColor='#643F47';">
+      WRITE NEW POST
+    </button>
+  </form>
+</center>
+<% end%>
+
+
+<!--  Separate posts with outline boxes -->
+<div>
+  <% @posts.reverse.each do |post| %>
+    <div class="post-box">
+        <!--  User can delete their own posts -->
+            <% if @current_id == post.user_id %>
+                <%= link_to "Edit", edit_post_path(post), class: "edit-button" %>
+                <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "delete-button" %>
+            <% end %>
+      <post_top>
+        <div class = "post_top_text"><%= post.user.username if post.user %></p></div>
+        <p class = "post_top_text" style = "text-align: right;"><%= post.created_at if post.created_at %></p>
+      </post_top>
+      <div class="post-message"><%= simple_format(post.message).html_safe %></div> <!--  This allows multiple lines (paragraphs to be entered while writing the post message)  -->
+    </div>
+  <% end %>
+</div>
+
+
+</body>
+</html>
+
+
+<!--  Formatting for each class -->
+<style>
+
+body {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 15px;
+    background-color: #191B1E;
+}
+.post-message { /*this will separate the 'post-message' from the post-box and center it */
+  margin: 0; 
+  padding: 10px; 
+  text-align: center; 
+}
+
+post_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-btn{
+    background-color:#643F47; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center;
+}
+.container-right{
+    text-align: right;
+  
+}
+
+.username {
+    color: #C28A6A;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.title {
+    color: #C28A6A;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.post-box {
+    border-color: white;
+    border-width: thin;
+    border-style: solid;
+    color: white;
+    margin: 20px; /*Adds spacing between posts-boxes*/
+    padding: 20px; /*Adds padding to the posts-boxes*/
+    border-radius: 15px;
+    position: relative; /* N.B: Don't forget this as it will not show the edit/delete boxes!*/
+}
+
+.user-name { /*this will separate the 'username' from the post-box and aligns it on the left top corner */
+  margin: 0; 
+  padding: 5px; 
+  font-weight: bold;
+  text-align: left; 
+}
+
+.post-message { /*this will separate the 'post-message' from the post-box and center it */
+  margin: 0; 
+  padding: 10px; 
+  text-align: center;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.delete-button {
+    background-color: #643F47;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px; /* Adjust the distance from the bottom as needed */
+    right: 5px; /* Adjust the distance from the right as needed */
+    border-radius: 7px;
+    text-decoration: none;
+}
+.no-underline {
+  text-decoration: none;
+}
+
+.delete-button:hover {
+    background-color: #542d36;
+}
+
+.edit-button {
+    background-color: #643F47;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px; /* Adjust the distance from the bottom as needed */
+    right: 70px; /* Adjust the distance from the right as needed */
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.edit-button:hover {
+    background-color: #542d36;
+}
+</style>
+
+<% if user_signed_in? %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% end %>
+

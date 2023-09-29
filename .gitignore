@@ -21,3 +21,10 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore test coverage 
+coverage
+
+
+/config/master.key
+/config/secrets.yml
